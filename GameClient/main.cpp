@@ -23,47 +23,18 @@ INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
 
 
 
-/*
-    _In_  : 값을 받아옴
-    _Out_ : 값을 내보냄
-*/
-
-void Add(_In_ int _a, _In_ int _b, _Out_ int* _Out) {
-    *_Out = _a + _b;
-}
 
 
-// SAL : 주석언어
+
+
+
+
 // HINSTANCE hInstance 프로세스 아이디
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                      _In_opt_ HINSTANCE hPrevInstance,
                      _In_ LPWSTR    lpCmdLine,
                      _In_ int       nCmdShow)
 {
-    // 정적맴버함수는 객체가 없어도 호출가능하고, 클래스의 private 도 사용 가능
-    Engine* pEngine = Engine::GetEngine();
-
-    // new 를 사용하지 않고 동적할당하는 것은 막을 수 없다.
-    //Engine* pEngine = (Engine*)malloc(sizeof(Engine)); // 이럼 싱글톤 패턴 뚫기 가능;;
-
-    // singleton
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     hInst = hInstance; // 내가 만든 프로세스 아이디
     /*
     int Value = 0;
@@ -101,8 +72,9 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     wcex.hInstance = hInstance;
     wcex.hIcon = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_GAMECLIENT));
     wcex.hCursor = LoadCursor(nullptr, IDC_ARROW);
-    wcex.hbrBackground = (HBRUSH)(4);
-    wcex.lpszMenuName = MAKEINTRESOURCEW(IDC_GAMECLIENT);
+    wcex.hbrBackground = (HBRUSH)(1);
+    //wcex.lpszMenuName = MAKEINTRESOURCEW(IDC_GAMECLIENT); // 사용안할경우 null
+    wcex.lpszMenuName = nullptr;
     wcex.hIconSm = LoadIcon(wcex.hInstance, MAKEINTRESOURCE(IDI_SMALL));
 
     RegisterClassExW(&wcex);
@@ -116,8 +88,10 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     // 핸들         - 커널 오브젝트의 ID 개념
     // 생성이 안된경우 0 리턴
     // 성공하면 윈도우 id 리턴
-    HWND hWnd = CreateWindowW(L"MyGame", szTitle, WS_OVERLAPPEDWINDOW,
-        CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
+    
+    //HWND hWnd = CreateWindowW(L"MyGame", L"MyGame",  WS_POPUP/*WS_OVERLAPPEDWINDOW*/, CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
+    HWND hWnd = CreateWindowW(L"MyGame", L"MyGame",  WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
+
 
     // 윈도우 생성 실패 시 프로그램 종료
     if (!hWnd)
@@ -130,9 +104,18 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     UpdateWindow(hWnd);
 
 
+    // 내 모니터 해상도 얻어옴
+    //UINT width = GetSystemMetrics(SM_CXSCREEN);
+    //UINT hegit = GetSystemMetrics(SM_CYSCREEN);
     // 윈도우 크기 및 위치 변경
-    SetWindowPos(hWnd, nullptr, 0, 0, 200, 200, 0);
+    //SetWindowPos(hWnd, nullptr, 0, 0, xsize, ysize, 0);
+    SetWindowPos(hWnd, nullptr, 0, 0, 1600, 900, 0);
 
+    // 검은색으로 모든 pixel 채우기 cpu 방식
+    HDC dc = GetDC(hWnd); // 입력으로 넣어준 윈도우에 그림을 그릴수 있게 해주는 도구
+    HBRUSH hBrush = CreateSolidBrush(RGB(0, 0, 0)); // 검은색 브러쉬 생성
+    SelectObject(dc, hBrush); // dc 에 검은색 Brush 를 전달
+    Rectangle(dc, 0, 0, 1600, 900); // dc 를 이용해서 윈도우에 검은색 사각형 그리기
 
     // 프로세스는 여러개의 윈도우를 가질 수도, 하나도 가지지 않을 수도 있다.
     // 게임 화면을 출력시킬 윈도우가 반드시 필요한 프로그램
@@ -203,10 +186,10 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         else
         {
             // Game Start
+            //Engine::GetInst->Progres();
         }
     }
 
-    //Engine::Destroy();
     return (int) msg.wParam;
 }
 

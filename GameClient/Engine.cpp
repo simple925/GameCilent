@@ -1,40 +1,21 @@
 #include "Engine.h"
+#include <Windows.h>
 
-// 정적맴버변수 초기화
-//Engine* Engine::m_This = nullptr;
-//
-// 장점
-// - 런타임 중에 필요하지 않으면 Destroy 를 호출해서 객체를 삭제할 수 있다.
-// 단점
-// - 프로그램 종료전에 반드시 Destroy 함수를 호출 해야함
-//Engine* Engine::GetEngine()
-//{
-//	// GetEngine 함수는 정적 '맴버' 함수이기 때문에
-//	// Engine 클래스의 private 기능에 접근이 가능
-//	if (nullptr == m_This) {
-//		m_This = new Engine;
-//	}
-//	return m_This;
-//}
-//
-//void Engine::Destroy()
-//{
-//	if (nullptr != m_This) {
-//		delete m_This;
-//		m_This = nullptr;
-//	}
-//}
-
-// 장점
-// - 객체 소멸 신경 쓸 필요 없음
-// 단점
-// - 런타임 시 객체 삭제 불가능
-Engine* Engine::GetEngine()
+void Engine::Progres()
 {
-	// singleton 으로 객체의 개수를 1개로 줄임
-	// 데이터 영역에 정적변수로 Engine 객체를 생성
-	static Engine engine;
-	//engine.Engine::Engine(); // 컴파일 타임에 생기지롱
-	// 그 주소를 준다.
-	return &engine;
+	// 화면을 검은색으로 색칠한다.
+	// 화면에 랜더링
+	// 1600*900=144만개 의 픽셀을 0,0,0,0
+
+	// CPU를 이용
+	// Window 에서 제공하는 GDI 함수를 사용
+	// 
+
+	// GPU를 이용
+	// Directx API(함수) 를 이용해서 GPU를 컨트롤하고 명령해야함
+
+	// Pixel 1개당 4byte RGBA  r256 * g256 * b256 = 16,777,216
+
+
+	
 }

@@ -16,6 +16,7 @@
     <ClInclude Include="Engine.h">
       <Filter>Engine</Filter>
     </ClInclude>
+    <ClInclude Include="single.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="GameClient.ico">

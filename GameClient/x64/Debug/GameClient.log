@@ -1,8 +1,8 @@
 ﻿  Engine.cpp
   main.cpp
   코드를 생성하고 있습니다...
-C:\Users\141245124\Documents\cpp\GameClient\GameClient\main.cpp(149,5): warning C4091: '': 변수를 선언하지 않으면 'HPEN__ *' 왼쪽은 무시됩니다.
-C:\Users\141245124\Documents\cpp\GameClient\GameClient\main.cpp(150,5): warning C4091: '': 변수를 선언하지 않으면 'HBRUSH__ *' 왼쪽은 무시됩니다.
-C:\Users\141245124\Documents\cpp\GameClient\GameClient\main.cpp(151,5): warning C4091: '': 변수를 선언하지 않으면 'HDC__ *' 왼쪽은 무시됩니다.
-C:\Users\141245124\Documents\cpp\GameClient\GameClient\main.cpp(152,5): warning C4091: '': 변수를 선언하지 않으면 'void *' 왼쪽은 무시됩니다.
+C:\Users\141245124\Documents\cpp\GameClient\GameClient\main.cpp(131,5): warning C4091: '': 변수를 선언하지 않으면 'HPEN__ *' 왼쪽은 무시됩니다.
+C:\Users\141245124\Documents\cpp\GameClient\GameClient\main.cpp(132,5): warning C4091: '': 변수를 선언하지 않으면 'HBRUSH__ *' 왼쪽은 무시됩니다.
+C:\Users\141245124\Documents\cpp\GameClient\GameClient\main.cpp(133,5): warning C4091: '': 변수를 선언하지 않으면 'HDC__ *' 왼쪽은 무시됩니다.
+C:\Users\141245124\Documents\cpp\GameClient\GameClient\main.cpp(134,5): warning C4091: '': 변수를 선언하지 않으면 'void *' 왼쪽은 무시됩니다.
   GameClient.vcxproj -> C:\Users\141245124\Documents\cpp\GameClient\x64\Debug\GameClient.exe
