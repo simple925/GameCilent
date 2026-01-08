@@ -13,6 +13,9 @@
     <ClInclude Include="Resource.h">
       <Filter>Default</Filter>
     </ClInclude>
+    <ClInclude Include="Engine.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="GameClient.ico">
@@ -24,10 +27,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Engine.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Default">
       <UniqueIdentifier>{186365d9-b06f-4551-81d2-c7f05d7ccf48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{85e88444-4f70-4e50-aa62-1a7d9b3a8cd7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
