@@ -31,6 +31,8 @@ public:
 	void Present() { m_SwapChain->Present(0, 0); }
 	ComPtr<ID3D11Device> GetDevice() { return m_Device; };
 	ComPtr<ID3D11DeviceContext> GetContext() { return m_Context; };
+	HWND GetHwnd() { return m_hWnd; }
+	Vec2 GetRenderResol() { return m_RenderResol; }
 	void ClearTarget();
 private:
 	int CreateSwapChain();

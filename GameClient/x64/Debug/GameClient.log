@@ -1,4 +1,5 @@
-﻿FXC : warning X4717: Effects deprecated for D3DCompiler_47
+﻿  unity_Q3KD37FW7VC60QCX.cpp
+C:\Users\141245124\Documents\cpp\GameClient\GameClient\PathMgr.cpp(23,10): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (compiling source file '/x64/Debug/unity_Q3KD37FW7VC60QCX.cpp')
   
-  compilation object save succeeded; see C:\Users\141245124\Documents\cpp\GameClient\Game\Bin\test.cso
   GameClient.vcxproj -> C:\Users\141245124\Documents\cpp\GameClient\Game\Bin\GameClient.exe

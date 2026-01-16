@@ -22,7 +22,8 @@ enum class KEY
 	SPACE,
 	ESC,
 	HOME,
-	END,
+	END, //21
+	LBUTTON,
 	KEY_END,
 };
 

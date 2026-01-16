@@ -2,6 +2,12 @@
 
 #include "Engine.h"
 
+// 회전
+// 삼각형 합, 차 공식
+// 삼각함수(Sin, Cos, Tan)
+// 방향벡터, 스칼라
+// 오브젝트 회전
+
 INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
 
 HINSTANCE hInst;

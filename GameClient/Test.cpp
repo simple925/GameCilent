@@ -4,32 +4,21 @@
 #include "TimeMgr.h"
 #include "KeyMgr.h"
 #include "AMesh.h"
-
+#include "AGraphicShader.h"
 AMesh* g_RectMesh;
 
 // 그래픽 파이프라인 문서
 //https://learn.microsoft.com/ko-kr/windows/uwp/graphics-concepts/graphics-pipeline
 
 
+// 파이프라인
+AGraphicShader* g_Shader;
 
 // Contant Buffer(상수버퍼)
 ComPtr<ID3D11Buffer>		g_CB;
 
 
 
-// InputLayout - 하나의 정점이 어떻게 구성되어 있는지에 대한 정보
-ComPtr<ID3D11InputLayout>	g_Layout;
-
-// VertexShader
-// HLSL 로 작성한 VS 함수를 컴파일한 어셈블리코드를 저장시킬 버퍼
-ComPtr<ID3DBlob>			g_VSBlob;
-ComPtr<ID3D11VertexShader>	g_VS;
-
-
-
-// PixelShader
-ComPtr<ID3DBlob>			g_PSBlob;
-ComPtr<ID3D11PixelShader>	g_PS;
 
 struct tTransform {
 	Vec2 vOffset;   // 8byte 원의 중심 위치 (x, y)
@@ -44,18 +33,34 @@ const int TRICOUNT = 100;
 const int VTXCOUNT = TRICOUNT + 1; // 중심점 1개 + 외곽 점들
 const int IDXCOUNT = TRICOUNT * 3;
 
-Vtx arrVtx[VTXCOUNT] = {};
-UINT arrIdx[IDXCOUNT] = {};
-Vec4 g_vTargetColor = Vec4(1.f, 1.f, 1.f, 1.f);
+//Vtx arrVtx[VTXCOUNT] = {};
+//UINT arrIdx[IDXCOUNT] = {};
+//Vec4 g_vTargetColor = Vec4(1.f, 1.f, 1.f, 1.f);
 // 원의 중심 위치와 이동 속도 (NDC 좌표계 기준)
-Vec3 g_vCenterPos = Vec3(0.f, 0.f, 0.f);
-Vec2 g_vVelocity = Vec2(0.5f, 0.3f); // X축, Y축 이동 속도
-float g_vZoom = 1.f;
-float g_fRadius = 0.5f;             // 원의 반지름
+//Vec3 g_vCenterPos = Vec3(0.f, 0.f, 0.f);
+//Vec2 g_vVelocity = Vec2(0.5f, 0.3f); // X축, Y축 이동 속도
+//float g_vZoom = 1.f;
+//float g_fRadius = 0.5f;             // 원의 반지름
+
+struct Circle
+{
+	Vec2 vCenter;   // 중심 (NDC)
+	float fRadius;
+	Vec4 vColor;
+	float fZoom;
+	bool bSelected;
+};
+vector<Circle> g_vecCircle;
+int g_iSelectedCircle = -1;
 
 int TestInit()
 {
+	const int TRICOUNT = 100;
+	const int VTXCOUNT = TRICOUNT + 1;
+	const int IDXCOUNT = TRICOUNT * 3;
 
+	static Vtx arrVtx[VTXCOUNT];
+	static UINT arrIdx[IDXCOUNT];
 	// NDC 좌표계, 중심이 0,0, 위 아래 좌 우 로 +- 1 범위	
 	// 1. 원점(0,0) 기준으로 정점 딱 한 번만 만들기
 	float fRadius = 0.2f; // 원의 반지름
@@ -90,9 +95,6 @@ int TestInit()
 
 	g_RectMesh = new AMesh;
 	g_RectMesh->Create(arrVtx, sizeof(Vtx) * VTXCOUNT, arrIdx, sizeof(UINT) * IDXCOUNT);
-	
-	
-	
 
 
 	D3D11_BUFFER_DESC CBDesc = {};
@@ -115,71 +117,61 @@ int TestInit()
 	// VertexShader
 	// 컴파일할 VertexShader 함수가 작성 되어있는 파일의 절대 경로
 
-	wstring Path = PathMgr::GetInst()->GetContentPath(L"Shader\\test.fx");
+	g_Shader = new AGraphicShader;
+	g_Shader->CreateVertexShader(L"Shader\\test.fx", "VS_Test");
+	g_Shader->CreatePixelShader(L"Shader\\test.fx", "PS_Test");
 
-	// 엔트리포인트
-	if (FAILED(D3DCompileFromFile(Path.c_str(), nullptr, D3D_COMPILE_STANDARD_FILE_INCLUDE, "VS_Test", "vs_5_0", D3D10_SHADER_DEBUG, 0, g_VSBlob.GetAddressOf(), nullptr))) {
-		return E_FAIL;
-	}
+	g_vecCircle.clear();
 
-	if (FAILED(DEVICE->CreateVertexShader(g_VSBlob->GetBufferPointer(), g_VSBlob->GetBufferSize(), nullptr, g_VS.GetAddressOf()))) {
-		return E_FAIL;
-	}
-
-	if (FAILED(D3DCompileFromFile(Path.c_str(), nullptr, D3D_COMPILE_STANDARD_FILE_INCLUDE, "PS_Test", "ps_5_0", D3D10_SHADER_DEBUG, 0, g_PSBlob.GetAddressOf(), nullptr))) {
-		return E_FAIL;
-	}
-
-	// 컴파일한 Shader 코드로 PixelShader 만들기
-	if (FAILED(DEVICE->CreatePixelShader(g_PSBlob->GetBufferPointer()
-		, g_PSBlob->GetBufferSize(), nullptr
-		, g_PS.GetAddressOf())))
+	for (int i = 0; i < 3; ++i)
 	{
-		return E_FAIL;
+		Circle c = {};
+		c.vCenter = Vec2(-0.5f + i * 0.5f, 0.f);
+		c.fRadius = 0.2f;
+		c.vColor = Vec4(1.f, 1.f, 1.f, 1.f);
+		c.fZoom = 1.f;
+		c.bSelected = false;
+
+		g_vecCircle.push_back(c);
 	}
-
-	// ---12--- --8-- ---16---
-	// Position   UV     Color
-	// Input Layout 생성하기
-	D3D11_INPUT_ELEMENT_DESC InputDesc[3] = {};
-
-	InputDesc[0].SemanticName = "POSITION";
-	InputDesc[0].SemanticIndex = 0;							// Semantic 이름이 중복되는 경우, 구별하기 위한 숫자
-	InputDesc[0].AlignedByteOffset = 0;							// 메모리 시작 위치(offset)
-	InputDesc[0].Format = DXGI_FORMAT_R32G32B32_FLOAT;	// offset 으로부터 크기
-	InputDesc[0].InputSlot = 0;							// 설명하는 정점이 들어있는 buffer의 위치
-	InputDesc[0].InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA;	// 설명하는 정점이 들어있는 buffer의 위치
-	InputDesc[0].InstanceDataStepRate = 0;
-
-	InputDesc[1].SemanticName = "TEXCOORD";
-	InputDesc[1].SemanticIndex = 0;							// Semantic 이름이 중복되는 경우, 구별하기 위한 숫자
-	InputDesc[1].AlignedByteOffset = 12;							// 메모리 시작 위치(offset)
-	//InputDesc[1].Format = DXGI_FORMAT_R32G32B32_FLOAT;	// offset 으로부터 크기
-	InputDesc[1].Format = DXGI_FORMAT_R32G32_FLOAT;	// offset 으로부터 크기
-	InputDesc[1].InputSlot = 0;							// 설명하는 정점이 들어있는 buffer의 위치
-	InputDesc[1].InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA;	// 설명하는 정점이 들어있는 buffer의 위치
-	InputDesc[1].InstanceDataStepRate = 0;
-
-	InputDesc[2].SemanticName = "COLOR";
-	InputDesc[2].SemanticIndex = 0;							// Semantic 이름이 중복되는 경우, 구별하기 위한 숫자
-	InputDesc[2].AlignedByteOffset = 20;							// 메모리 시작 위치(offset)
-	//InputDesc[2].Format = DXGI_FORMAT_R32G32B32A32_FLOAT;	// offset 으로부터 크기
-	InputDesc[2].Format = DXGI_FORMAT_R32G32B32A32_FLOAT;	// offset 으로부터 크기
-	InputDesc[2].InputSlot = 0;							// 설명하는 정점이 들어있는 buffer의 위치
-	InputDesc[2].InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA;	// 설명하는 정점이 들어있는 buffer의 위치
-	InputDesc[2].InstanceDataStepRate = 0;
-
-	DEVICE->CreateInputLayout(InputDesc, 3, g_VSBlob->GetBufferPointer(), g_VSBlob->GetBufferSize(), g_Layout.GetAddressOf());
 
 	return S_OK;
 
 
 }
 
+int PickCircle(const Vec2& mouseNDC)
+{
+	for (int i = 0; i < g_vecCircle.size(); ++i)
+	{
+		Vec2 diff = mouseNDC - g_vecCircle[i].vCenter;
+		float distSq = diff.LengthSquared();
 
+		float r = g_vecCircle[i].fRadius * g_vecCircle[i].fZoom;
+
+		if (distSq <= r * r)
+			return i;
+	}
+	return -1;
+}
+Vec2 GetMouseNDC()
+{
+	POINT pt;
+	GetCursorPos(&pt);
+	ScreenToClient(Device::GetInst()->GetHwnd(), &pt);
+
+	float width = Device::GetInst()->GetRenderResol().x;
+	float height = Device::GetInst()->GetRenderResol().y;
+
+	float x = (pt.x / width) * 2.f - 1.f;
+	float y = 1.f - (pt.y / height) * 2.f;
+
+	return Vec2(x, y);
+}
 
 void TestTick()
 {
+	/*
 	//if (GetAsyncKeyState('W') & 0x8000)
 	// key event manege (Pressed, TAP, Released, None)
 	// key event state manege
@@ -242,13 +234,46 @@ void TestTick()
 		memcpy(tMapSub.pData, &tr, sizeof(tTransform));
 		CONTEXT->Unmap(g_CB.Get(), 0);
 	}
+	*/
+	static float fAccTime = 0.f;
+	fAccTime += DT;
+	float r = sinf(fAccTime * 1.5f) * 0.5f + 0.5f;
+	float g = sinf(fAccTime * 2.1f) * 0.5f + 0.5f;
+	float b = sinf(fAccTime * 0.7f) * 0.5f + 0.5f;
+	//g_vTargetColor = Vec4(r, g, b, 1.f);
+	if (KEY_TAP(KEY::LBUTTON))
+	{
+		Vec2 mouseNDC = GetMouseNDC();
+		g_iSelectedCircle = PickCircle(mouseNDC);
+
+		// 선택 상태 갱신
+		for (int i = 0; i < g_vecCircle.size(); ++i)
+			g_vecCircle[i].bSelected = (i == g_iSelectedCircle);
+	}
+
+	if (g_iSelectedCircle != -1)
+	{
+		Circle& c = g_vecCircle[g_iSelectedCircle];
+		c.vColor = Vec4(r, g, b, 1.f);
+		if (KEY_PRESSED(KEY::LEFT)) c.vCenter.x -= 1.f * DT;
+		if (KEY_PRESSED(KEY::RIGHT)) c.vCenter.x += 1.f * DT;
+		if (KEY_PRESSED(KEY::UP))    c.vCenter.y += 1.f * DT;
+		if (KEY_PRESSED(KEY::DOWN))  c.vCenter.y -= 1.f * DT;
+
+		if (KEY_PRESSED(KEY::W)) c.fZoom += 0.5f * DT;
+		if (KEY_PRESSED(KEY::S)) c.fZoom -= 0.5f * DT;
+	}
 }
+
+
 
 void TestRender()
 {
+
 	// 이전에 그려진 그림을 지운다.
 	// 랜더타겟은
 	Device::GetInst()->ClearTarget();
+	
 
 	// HLSL(High Level Shader Language) 5.0
 	// Graphic Pipeline
@@ -259,42 +284,46 @@ void TestRender()
 	// 상수버퍼설정
 	CONTEXT->VSSetConstantBuffers(0/*상수버퍼를 바인딩할 레지스터 번호*/, 1, g_CB.GetAddressOf());
 
-	// 정점으로 구성할 도형의 상태, 모양
-	// TriangList 는 점 3개를 이어서 만든 삼각형(내부까지 색을 채움)*****************************
-	CONTEXT->IASetPrimitiveTopology(D3D10_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
-	//CONTEXT->IASetPrimitiveTopology(D3D10_PRIMITIVE_TOPOLOGY_LINELIST);
+	g_Shader->Binding();
 
-	// 정점 하나 안에 들어있는 데이터를 구분해주는 정보
-	CONTEXT->IASetInputLayout(g_Layout.Get());
+	for (Circle& c : g_vecCircle)
+	{
+		// 외곽선
+		if (c.bSelected)
+		{
+			tTransform outline = {};
+			outline.vOffset = c.vCenter;
+			outline.vZoom = c.fZoom * 1.08f;   // 살짝 크게
+			outline.vColor = Vec4(1, 0, 0, 1);  // 빨간 테두리
 
-	// 랜더링에 필요한 리소스 입력
-	// 2. Vertex Shader(함수) - 정점 당 연산 수행 정점쉐이더
-	// HLSL(High Level 
-	CONTEXT->VSSetShader(g_VS.Get(), nullptr, 0);
+			D3D11_MAPPED_SUBRESOURCE sub;
+			CONTEXT->Map(g_CB.Get(), 0, D3D11_MAP_WRITE_DISCARD, 0, &sub);
+			memcpy(sub.pData, &outline, sizeof(outline));
+			CONTEXT->Unmap(g_CB.Get(), 0);
 
-	// 3. Rasterizer State - 정점 쉐이더에서 넘겨준 픽셀쉐이더를 호출할 함수를 연결
-	// 정점쉬이더에서 반환한 정점의 취치를 NDC 좌표
-	// 기준으로 들어오는 픽셀을 계산해서 픽셀 쉐이더로 연계
-	// nullptr 입력: 기본 설정 옵션으로 설정
-	// CULL_MODE : CULL_BACK
-	// FILL_MODE : SOLID
-	CONTEXT->RSSetState(nullptr);
+			g_RectMesh->Render();
+		}
 
-	// 4. Pixel Shader
-	// 레스터라이저를 거쳐서, 호출될 픽셀마다 실행되는 함수
-	// 픽셀 쉐이더에서 리턴한 값이, 렌더타겟 내에서의 해당 픽셀 위체에 색상이 출력된다.
-	CONTEXT->PSSetShader(g_PS.Get(), nullptr, 0);
+		//  본체
+		tTransform body = {};
+		body.vOffset = c.vCenter;
+		body.vZoom = c.fZoom;
+		body.vColor = c.vColor;
 
-	// OM (Output Merge State)
-	// 픽셀 쉐이더에서 리턴한 값울, OM 단계에 연결되어있는 RenderTarget, DepthStencilTarget에 기록한다.
-	// DepthStencilState - 깊이 비교	
+		D3D11_MAPPED_SUBRESOURCE sub;
+		CONTEXT->Map(g_CB.Get(), 0, D3D11_MAP_WRITE_DISCARD, 0, &sub);
+		memcpy(sub.pData, &body, sizeof(body));
+		CONTEXT->Unmap(g_CB.Get(), 0);
 
-	g_RectMesh->Render();
+		g_RectMesh->Render();
+	}
+	//g_RectMesh->Render();
 }
 
 void TestRelease()
 {
 	if (nullptr != g_RectMesh) delete g_RectMesh;
+	if (nullptr != g_Shader) delete g_Shader;
 }
 
 int TestFunc()

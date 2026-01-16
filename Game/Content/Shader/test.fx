@@ -52,4 +52,10 @@ float4 PS_Test(VS_OUT _input) : SV_Target
 	//return float4(1.f, 0.f, 0.f, 1.f);
 }
 
+// 정점에서 반환한 값이 보간(Interpolation) 되어 픽셀이 쉐이더의 입력으로 돌아온다.
+float4 PS_Test2(VS_OUT _input) : SV_Target
+{
+	return float4(1.f, 0.f, 0.f, 1.f);
+}
+
 #endif

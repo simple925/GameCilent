@@ -64,8 +64,8 @@
     <ClInclude Include="AMesh.h">
       <Filter>GameEngine\04. Asset\01. Mesh</Filter>
     </ClInclude>
-    <ClInclude Include="Shader.h">
-      <Filter>GameEngine\04. Asset\03. Shader</Filter>
+    <ClInclude Include="AGraphicShader.h">
+      <Filter>GameEngine\04. Asset\03. GraphicShader</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -112,8 +112,8 @@
     <ClCompile Include="AMesh.cpp">
       <Filter>GameEngine\04. Asset\01. Mesh</Filter>
     </ClCompile>
-    <ClCompile Include="Shader.cpp">
-      <Filter>GameEngine\04. Asset\03. Shader</Filter>
+    <ClCompile Include="AGraphicShader.cpp">
+      <Filter>GameEngine\04. Asset\03. GraphicShader</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -159,7 +159,7 @@
     <Filter Include="GameEngine\04. Asset\02. Texture">
       <UniqueIdentifier>{f84e23d6-58c1-4dc8-b284-e768f233255d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GameEngine\04. Asset\03. Shader">
+    <Filter Include="GameEngine\04. Asset\03. GraphicShader">
       <UniqueIdentifier>{b3dbbc34-41e7-4e00-bb24-4b2735f33c8a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>

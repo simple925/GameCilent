@@ -69,6 +69,7 @@ void AMesh::Render()
 
 	//CONTEXT->DrawIndexed(IDXCOUNT, 0, 0);
 	CONTEXT->DrawIndexed(1500, 0, 0);
-	//CONTEXT->DrawIndexed(m_IdxCount * 3, 0, 0);
+	//m_IdxCount = m_IdxCount / sizeof(UINT);
+	//CONTEXT->DrawIndexed(m_IdxCount, 0, 0);
 }
 

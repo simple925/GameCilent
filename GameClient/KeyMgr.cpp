@@ -23,7 +23,8 @@ UINT g_KeyIndex[(UINT)KEY::KEY_END] =
 	VK_SPACE,
 	VK_ESCAPE,
 	VK_HOME,
-	VK_END
+	VK_END,
+	VK_LBUTTON,
 };
 
 KeyMgr::KeyMgr()
@@ -44,7 +45,9 @@ void KeyMgr::Tick()
 {
 	for (int i = 0; i < (UINT)KEY::KEY_END; ++i)
 	{
-		if (GetAsyncKeyState(g_KeyIndex[i]))
+		SHORT sKey = GetAsyncKeyState(g_KeyIndex[i]);
+		bool bDown = (sKey & 0x8000) != 0;
+		if (bDown)
 		{
 			// 이전에도 눌려있었다.
 			if (m_vecKeys[i].Pressed)

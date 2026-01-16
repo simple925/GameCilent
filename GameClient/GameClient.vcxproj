@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AGraphicShader.h" />
     <ClInclude Include="AMesh.h" />
     <ClInclude Include="Asset.h" />
     <ClInclude Include="ATexture.h" />
@@ -155,7 +156,6 @@
     <ClInclude Include="PathMgr.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
-    <ClInclude Include="Shader.h" />
     <ClInclude Include="SimpleMath.h" />
     <ClInclude Include="struct.h" />
     <ClInclude Include="targetver.h" />
@@ -163,6 +163,7 @@
     <ClInclude Include="TimeMgr.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AGraphicShader.cpp" />
     <ClCompile Include="AMesh.cpp" />
     <ClCompile Include="Asset.cpp" />
     <ClCompile Include="ATexture.cpp" />
@@ -176,7 +177,6 @@
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="TimeMgr.cpp" />
   </ItemGroup>
