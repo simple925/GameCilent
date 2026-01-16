@@ -21,8 +21,12 @@ void PathMgr::Init()
 	//SetWindowText(Engine::GetInst()->GetMainWinHandle(), m_ContentPath);
 
 	int Len = wcslen(m_ContentPath);
-	for (int i = Len - 1; 0 <= i; i--) {
-		if ('\\' == m_ContentPath[i]) {
+
+
+	for (int i = Len - 1; 0 <= i; --i)
+	{
+		if ('\\' == m_ContentPath[i])
+		{
 			m_ContentPath[i] = '\0';
 			break;
 		}

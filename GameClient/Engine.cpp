@@ -3,6 +3,10 @@
 #include "Device.h"
 #include "TimeMgr.h"
 #include "KeyMgr.h"
+
+int TestFunc();
+void TestRelease();
+
 Engine::Engine()
 	: m_hInst(nullptr)
 	, m_hWnd(nullptr)
@@ -12,8 +16,9 @@ Engine::Engine()
 
 Engine::~Engine()
 {
+	TestRelease();
 }
-int TestFunc();
+
 int Engine::Progress()
 {
 	TimeMgr::GetInst()->Tick();

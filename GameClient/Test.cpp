@@ -3,15 +3,14 @@
 #include "PathMgr.h"
 #include "TimeMgr.h"
 #include "KeyMgr.h"
+#include "AMesh.h"
+
+AMesh* g_RectMesh;
+
 // 그래픽 파이프라인 문서
 //https://learn.microsoft.com/ko-kr/windows/uwp/graphics-concepts/graphics-pipeline
 
-// 정점(vertex) 버퍼 점 세개로 하나의 면
-// 정점을 저장하는 버퍼(3개의 정점을 저장시킬 예정, 삼각형을 표현하기 위해서)
-ComPtr<ID3D11Buffer>		g_VB;
 
-// IndexBuffer
-ComPtr<ID3D11Buffer>		g_IB;
 
 // Contant Buffer(상수버퍼)
 ComPtr<ID3D11Buffer>		g_CB;
@@ -36,16 +35,24 @@ struct tTransform {
 	Vec2 vOffset;   // 8byte 원의 중심 위치 (x, y)
 	Vec2 vPadding;  // 8byte 16바이트 정렬을 위한 패딩
 	Vec4 vColor;	// 16byte 추가
+	float vZoom;
+	float vDummy[3];// 12 (여기까지 48) -> 16의 배수 OK!
 };
 
 //Vtx arrVtx[6] = {};
-const int TRICOUNT = 500;
+const int TRICOUNT = 100;
 const int VTXCOUNT = TRICOUNT + 1; // 중심점 1개 + 외곽 점들
 const int IDXCOUNT = TRICOUNT * 3;
 
 Vtx arrVtx[VTXCOUNT] = {};
 UINT arrIdx[IDXCOUNT] = {};
 Vec4 g_vTargetColor = Vec4(1.f, 1.f, 1.f, 1.f);
+// 원의 중심 위치와 이동 속도 (NDC 좌표계 기준)
+Vec3 g_vCenterPos = Vec3(0.f, 0.f, 0.f);
+Vec2 g_vVelocity = Vec2(0.5f, 0.3f); // X축, Y축 이동 속도
+float g_vZoom = 1.f;
+float g_fRadius = 0.5f;             // 원의 반지름
+
 int TestInit()
 {
 
@@ -101,54 +108,11 @@ int TestInit()
 			arrIdx[i * 3 + 2] = 1;
 	}
 
+	g_RectMesh = new AMesh;
+	g_RectMesh->Create(arrVtx, sizeof(Vtx) * VTXCOUNT, arrIdx, sizeof(UINT) * IDXCOUNT);
 	
-
 	
-	D3D11_BUFFER_DESC VBDesc = {}; // 정점 버터 생성
-	VBDesc.ByteWidth = sizeof(Vtx) * VTXCOUNT; // 버퍼 크기
-	// cpu를 통해서 버퍼의 내용을 쓰거나, 읽을 수 있는지
-	// D3D11_USAGE_DYNAMIC + D3D11_CPU_ACCESS_WRITE ==> 버퍼를 생성한 이후에도, cpu를 통해서 버퍼의 내용을 수정할 수 있다.
-	VBDesc.Usage = D3D11_USAGE_DEFAULT;
-	VBDesc.CPUAccessFlags = 0;
-	// 버퍼용도
-	VBDesc.BindFlags = D3D11_BIND_VERTEX_BUFFER;
-
-
-	// 처음 버퍼 생성할때 전달시킬 데이터의 시작주소를 Sub 구조체에 담아서 CreateBuffer 함수에 넣어준다.
-	D3D11_SUBRESOURCE_DATA tSub = {};
-	tSub.pSysMem = arrVtx;
-	if (FAILED(DEVICE->CreateBuffer(&VBDesc, &tSub, g_VB.GetAddressOf()))) {
-		return E_FAIL;
-	}
-
-	// 인덱스
-	// 0 -- 1
-	// |  \ |
-	// 3 -- 2
-	/*
-	UINT arrIdx[6] = { 0, 2, 3, 0, 1, 2 };
-	// Index Buffer 생성
-	D3D11_BUFFER_DESC IBDesc = {};
-	// 버퍼의 크기
-	IBDesc.ByteWidth = sizeof(UINT) * 6;
-	*/
-	D3D11_BUFFER_DESC IBDesc = {};
-	IBDesc.ByteWidth = sizeof(UINT) * IDXCOUNT;
-	// cpu를 통해서 버퍼의 내용을 쓰거나, 읽을 수 있는지
-	// D3D11_USAGE_DEFAULT + 0
-	// 버퍼를 생성한 이후에 수정할 수 없다.
-	IBDesc.Usage = D3D11_USAGE_DEFAULT;
-	IBDesc.CPUAccessFlags = 0;
-	// 버퍼용도
-	IBDesc.BindFlags = D3D11_BIND_INDEX_BUFFER;
-
-	// 처음 버퍼 생성할때 전달시킬 데이터의 시작주소를 Sub 구조체에 담아서 CreateBuffer 함수에 넣어준다.
-	tSub = {}; // 초기화
-	tSub.pSysMem = arrIdx; // 명시적으로 주소 대입
-	//tSub.pSysMem = arrIdx;
-	if (FAILED(DEVICE->CreateBuffer(&IBDesc, &tSub, g_IB.GetAddressOf()))) {
-		return E_FAIL;
-	}
+	
 
 
 	D3D11_BUFFER_DESC CBDesc = {};
@@ -232,10 +196,7 @@ int TestInit()
 
 }
 
-// 원의 중심 위치와 이동 속도 (NDC 좌표계 기준)
-Vec3 g_vCenterPos = Vec3(0.f, 0.f, 0.f);
-Vec2 g_vVelocity = Vec2(0.5f, 0.3f); // X축, Y축 이동 속도
-float g_fRadius = 0.5f;             // 원의 반지름
+
 
 void TestTick()
 {
@@ -259,26 +220,34 @@ void TestTick()
 	//if (GetAsyncKeyState('W') & 0x8000)
 	// key event manege (Pressed, TAP, Released, None)
 	// key event state manege
-	if (KEY_TAP(KEY::RIGHT))
+	if (KEY_PRESSED(KEY::RIGHT))
 	{
-		g_vCenterPos.x += 0.1f;
+		g_vCenterPos.x += 0.1f * DT;
 	}
 
-	if (KEY_TAP(KEY::LEFT))
+	if (KEY_PRESSED(KEY::LEFT))
 	{
-		g_vCenterPos.x -= 0.1f;
+		g_vCenterPos.x -= 0.1f * DT;
 	}
 
-	if (KEY_TAP(KEY::UP))
+	if (KEY_PRESSED(KEY::UP))
 	{
-		g_vCenterPos.y += 0.1f;
+		g_vCenterPos.y += 0.1f * DT;
 	}
 
-	if (KEY_TAP(KEY::DOWN))
+	if (KEY_PRESSED(KEY::DOWN))
 	{
-		g_vCenterPos.y -= 0.1f;
+		g_vCenterPos.y -= 0.1f * DT;
 	}
 
+	if (KEY_PRESSED(KEY::W))
+	{
+		g_vZoom += 0.1f * DT;
+	}
+	if (KEY_PRESSED(KEY::S))
+	{
+		g_vZoom -= 0.1f * DT;
+	}
 	// 1. 위치 업데이트 (기존 로직)
 	//g_vCenterPos.x += g_vVelocity.x * DT;
 	//g_vCenterPos.y += g_vVelocity.y * DT;
@@ -311,6 +280,7 @@ void TestRender()
 	tTransform tr = {};
 	tr.vOffset = Vec2(g_vCenterPos.x, g_vCenterPos.y);
 	tr.vColor = g_vTargetColor;
+	tr.vZoom = g_vZoom;
 	D3D11_MAPPED_SUBRESOURCE tMapSub = {};
 	// g_VB가 아니라 g_CB를 Map 합니다!
 	if (SUCCEEDED(CONTEXT->Map(g_CB.Get(), 0, D3D11_MAP_WRITE_DISCARD, 0, &tMapSub))) {
@@ -322,13 +292,7 @@ void TestRender()
 	// Graphic Pipeline
 	// 1. IA(Input Assembler)
 	// 정점을 프로그래머가 설계하기 때문에, 전달 한 버텍스 버퍼안에서, 하나의 정점의 단위크기를 알려줘야 한다.
-	UINT Stride = sizeof(Vtx);
-	UINT Offset = 0; // 어떤 기준위치 시작을 할지 시작점 변경값
-	CONTEXT->IASetVertexBuffers(0, 1, g_VB.GetAddressOf(), &Stride, &Offset);
-
-	// Index buffer setting, 정점 버퍼안에 있는 정점을 가리키는 인덱스 정보,
-	// 인덱스 숫자 
-	CONTEXT->IASetIndexBuffer(g_IB.Get(), DXGI_FORMAT_R32_UINT, 0);
+	
 
 	// 상수버퍼설정
 	CONTEXT->VSSetConstantBuffers(0/*상수버퍼를 바인딩할 레지스터 번호*/, 1, g_CB.GetAddressOf());
@@ -363,13 +327,12 @@ void TestRender()
 	// 픽셀 쉐이더에서 리턴한 값울, OM 단계에 연결되어있는 RenderTarget, DepthStencilTarget에 기록한다.
 	// DepthStencilState - 깊이 비교	
 
-	// 랜더링 파이프라인 시작
-	// Draw 가 호출되기 전까지 설정해놓은 세팅을 기반으로 실제 렌더링 파이프라인이 실행됨
-	// 그 이전까지는 각 단계별로 실행할 옵션을 설정
-	//CONTEXT->Draw(6, 0); // vertex buffer 의 정점을 그려줌
+	g_RectMesh->Render();
+}
 
-	//CONTEXT->DrawIndexed(6, 0, 0);
-	CONTEXT->DrawIndexed(IDXCOUNT, 0, 0);
+void TestRelease()
+{
+	if (nullptr != g_RectMesh) delete g_RectMesh;
 }
 
 int TestFunc()

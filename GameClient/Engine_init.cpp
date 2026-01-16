@@ -66,14 +66,20 @@ int Engine::Init(HINSTANCE _hInst, UINT _Width, UINT _Height)
     //SelectObject(dc, hBrush); // dc 에 검은색 Brush 를 전달
     //Rectangle(dc, 0, 0, m_Resolution.x, m_Resolution.y); // dc 를 이용해서 윈도우에 검은색 사각형 그리기
 
-
+    // GPU를 제허할 수 있는 Directx11 함수를 사용하기 위한 매니저
+    // ID3D11DDevice, ID3D11DeviceContext
     if (FAILED(Device::GetInst()->Init(m_hWnd, m_Resolution)))
     {
         return E_FAIL;
     }
 
-    PathMgr::GetInst();
+    // 실행파일과 같이 있는 Context 폴더의 경로를 찾아내기 위함
+    PathMgr::GetInst()->Init();
+
+    // 1프레임 동작하는데 걸리는 시간(DT) 계산
     TimeMgr::GetInst()->Init();
+
+    // 각각의 키의 상태를 계산
     KeyMgr::GetInst()->Init();
     return S_OK;
 }

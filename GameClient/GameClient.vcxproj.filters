@@ -52,6 +52,21 @@
     <ClInclude Include="KeyMgr.h">
       <Filter>GameEngine\03. Manager\03. KeyMgr</Filter>
     </ClInclude>
+    <ClInclude Include="Asset.h">
+      <Filter>GameEngine\04. Asset</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>GameEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="ATexture.h">
+      <Filter>GameEngine\04. Asset\02. Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="AMesh.h">
+      <Filter>GameEngine\04. Asset\01. Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>GameEngine\04. Asset\03. Shader</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="GameClient.ico">
@@ -84,6 +99,21 @@
     </ClCompile>
     <ClCompile Include="KeyMgr.cpp">
       <Filter>GameEngine\03. Manager\03. KeyMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="Asset.cpp">
+      <Filter>GameEngine\04. Asset</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>GameEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="ATexture.cpp">
+      <Filter>GameEngine\04. Asset\02. Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="AMesh.cpp">
+      <Filter>GameEngine\04. Asset\01. Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>GameEngine\04. Asset\03. Shader</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -119,6 +149,18 @@
     </Filter>
     <Filter Include="GameEngine\03. Manager\03. KeyMgr">
       <UniqueIdentifier>{1df60f23-6e84-478b-8868-c531676168df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\04. Asset">
+      <UniqueIdentifier>{cb2f77c7-c1c1-44d6-8e6a-c10749df2fa2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\04. Asset\01. Mesh">
+      <UniqueIdentifier>{6b875515-64e8-4a92-89fc-b388a75624e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\04. Asset\02. Texture">
+      <UniqueIdentifier>{f84e23d6-58c1-4dc8-b284-e768f233255d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\04. Asset\03. Shader">
+      <UniqueIdentifier>{b3dbbc34-41e7-4e00-bb24-4b2735f33c8a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

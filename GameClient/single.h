@@ -31,6 +31,7 @@ public:
 protected:
 	singleton()
 	{
+		// 프로그램 종료될때, 등록시킨 함수들을 호출시켜주는 기능
 		atexit(Destroy);
 	}
 };

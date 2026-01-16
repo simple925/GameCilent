@@ -22,18 +22,21 @@ cbuffer TRANSFORM : register(b1) // 바인딩 될 상수 레지스터 번호 (b0)
 	float4 g_ObjectPos;
 }
 */
-cbuffer TRANSFORM_DATA : register(b0)
+cbuffer TRANSFORM_DATA : register(b0) // 16byte의 배수로 구성 되어야함 꼭!!!
 {
 	float2 g_vOffset;
 	float2 g_vPadding;
 	float4 g_vColor; // 원의 색상정보 16byte
+	float g_vZoom; // 4
+	float3 g_vDummy2; // 12 (C++의 vDummy[3]와 대응)
 };
 VS_OUT VS_Test(VS_IN _input)
 {
 	VS_OUT output		= (VS_OUT) 0.f;
 	
 	// 원점 기준 정점 좌표(_input.vPos.xy)에 이동량(g_vOffset)을 더합니다.
-	float2 vFinalPos = _input.vPos.xy + g_vOffset;
+	float2 vFinalPos1 = _input.vPos.xy * g_vZoom;
+	float2 vFinalPos = vFinalPos1 + g_vOffset;
     
 	output.vPosition = float4(vFinalPos, _input.vPos.z, 1.0f);
 	output.vUV			= _input.vUV;

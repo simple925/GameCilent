@@ -6,17 +6,14 @@ enum class KEY
 	S,
 	A,
 	D,
-
 	Z,
 	X,
 	C,
 	V,
-
 	LEFT,
 	RIGHT,
 	UP,
 	DOWN,
-
 	ENTER,
 	ALT,
 	CTRL,
@@ -26,7 +23,6 @@ enum class KEY
 	ESC,
 	HOME,
 	END,
-
 	KEY_END,
 };
 

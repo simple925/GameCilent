@@ -43,7 +43,7 @@ void TimeMgr::Tick()
 		wchar_t buff[255] = {};
 		swprintf_s(buff, 255, L"DeltaTime : %f", m_DeltaTime);
 		SetWindowText(Engine::GetInst()->GetMainWinHandle(), buff);
-		m_Time = 0.f;
+		m_Time -= 1.f;
 	}
 
 }

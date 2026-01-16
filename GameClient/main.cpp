@@ -6,7 +6,22 @@ INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
 
 HINSTANCE hInst;
 
+class cTest {
 
+private:
+	const int m_i;
+public:
+	//cTest& operator = (const cTest& _test) {
+		//m_i = _test.m_i;
+		//return *this;
+	//}
+	cTest()
+		: m_i(0)
+	{
+
+	}
+	cTest(const int& a) = delete; // 해당 생성자를 자동으로 구현하지 않게 만듬
+};
 
 
 
@@ -17,13 +32,15 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 	_In_ LPWSTR    lpCmdLine,
 	_In_ int       nCmdShow)
 {
+	// CRT new, delete 디버깅 모드에서 메모리 누수 추적, 출력창에 알림
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
-	//_CrtSetBreakAlloc(150);
+	//_CrtSetBreakAlloc(150); // 누수 발생지점 중단점 걸어주는 기능
 	//int* a = new int;
 
 	hInst = hInstance;
 
-	// Engine 초기화    
+	// Engine 초기화
+	// 최상위 관리자
 	if (FAILED(Engine::GetInst()->Init(hInstance, 1600, 900)))
 	{
 		return 0;
