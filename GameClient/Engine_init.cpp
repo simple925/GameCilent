@@ -5,6 +5,7 @@
 #include "PathMgr.h"
 #include "TimeMgr.h"
 #include "KeyMgr.h"
+#include "AssetMgr.h"
 LRESULT CALLBACK  WndProc(HWND, UINT, WPARAM, LPARAM);
 
 int Engine::Init(HINSTANCE _hInst, UINT _Width, UINT _Height)
@@ -81,5 +82,7 @@ int Engine::Init(HINSTANCE _hInst, UINT _Width, UINT _Height)
 
     // 각각의 키의 상태를 계산
     KeyMgr::GetInst()->Init();
+    AssetMgr::GetInst()->Init();
+
     return S_OK;
 }

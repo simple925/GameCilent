@@ -95,6 +95,9 @@ int Device::Init(HWND _hwnd, Vec2 _Resolution)
 	// ShaderResourceView
 	// UnorderedAccessView	
 
+	// 앞으로 사용할 상수버퍼 미리 생성	
+	m_TransformCB = new ConstBuffer;
+	m_TransformCB->Create(CB_TYPE::TRANSFORM, sizeof(Transform));
 	return S_OK;
 }
 

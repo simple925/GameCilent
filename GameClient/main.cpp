@@ -2,6 +2,17 @@
 
 #include "Engine.h"
 
+class CThis
+{
+private:
+	int m_i;
+public:
+	void setInt(int i) { m_i = i; }
+public:
+	CThis() {}
+	~CThis() {}
+};
+
 // 회전
 // 삼각형 합, 차 공식
 // 삼각함수(Sin, Cos, Tan)

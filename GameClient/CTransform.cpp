@@ -3,6 +3,7 @@
 #include "Device.h"
 CTransform::CTransform()
 	: Component(COMPONENT_TYPE::TRANSFORM)
+	, m_Scale(Vec3(1.f, 1.f, 1.f))
 {
 }
 
@@ -21,5 +22,7 @@ void CTransform::Binding()
 	Trans.Scale = m_Scale;
 	Trans.Rot = m_Rotation;
 
-	Device::GetInst()->GetConstBuffer();
+	// 전역변수에 들어있는 오브젝트 위치 정보를 상수버퍼로 복사
+	Device::GetInst()->GetTransformBuffer()->SetData(&Trans);
+	Device::GetInst()->GetTransformBuffer()->Binding();
 }

@@ -39,6 +39,8 @@ typedef SimpleMath::Matrix		Matrix;
 #pragma comment(lib, "d3dcompiler")
 #pragma comment(lib, "dxguid")
 
+// C++ 타입 정보기능
+#include <typeinfo>
 
 // STL 자료구조
 #include <vector>

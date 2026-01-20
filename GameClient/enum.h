@@ -2,6 +2,7 @@
 enum class CB_TYPE
 {
 	TRANSFORM,
+	END,
 };
 
 enum class ASSET_TYPE
@@ -24,4 +25,6 @@ enum class COMPONENT_TYPE
 	LIGHT,
 	TILE_RENDER,
 	END,
+
+	SCRIPT, // 여러가지 스크립트를 가지게 하기 위해서 END 뒤에 선언
 };

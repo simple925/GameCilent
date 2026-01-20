@@ -82,6 +82,19 @@
     <ClInclude Include="CMeshRender.h">
       <Filter>GameEngine\06. Component\02. MeshRender</Filter>
     </ClInclude>
+    <ClInclude Include="ConstBuffer.h" />
+    <ClInclude Include="TempMesh.h">
+      <Filter>GameEngine\04. Asset\01. Mesh\TempMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="CScript.h">
+      <Filter>GameEngine\06. Component\03. Script</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlayerScript.h">
+      <Filter>GameEngine\06. Component\03. Script</Filter>
+    </ClInclude>
+    <ClInclude Include="AssetMgr.h">
+      <Filter>GameEngine\03. Manager\04. AssetMgr</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="GameClient.ico">
@@ -142,6 +155,19 @@
     <ClCompile Include="CMeshRender.cpp">
       <Filter>GameEngine\06. Component\02. MeshRender</Filter>
     </ClCompile>
+    <ClCompile Include="ConstBuffer.cpp" />
+    <ClCompile Include="TempMesh.cpp">
+      <Filter>GameEngine\04. Asset\01. Mesh\TempMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="CScript.cpp">
+      <Filter>GameEngine\06. Component\03. Script</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayerScript.cpp">
+      <Filter>GameEngine\06. Component\03. Script</Filter>
+    </ClCompile>
+    <ClCompile Include="AssetMgr.cpp">
+      <Filter>GameEngine\03. Manager\04. AssetMgr</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Default">
@@ -198,14 +224,23 @@
     <Filter Include="GameEngine\06. Component\01. Transform">
       <UniqueIdentifier>{8486a2f8-5243-4769-9928-9400c76796fc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GameEngine\06. Component\03. Anymation">
-      <UniqueIdentifier>{6a26beeb-140e-4931-b8a2-6c4d86571b5c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="GameEngine\06. Component\02. MeshRender">
       <UniqueIdentifier>{d79c2502-1ec2-4a78-ac11-ff7969ae962d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GameEngine\06. Component\04. Collider">
+    <Filter Include="GameEngine\04. Asset\01. Mesh\TempMesh">
+      <UniqueIdentifier>{c195b317-07ba-41a0-9970-7222bcb0865b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\06. Component\03. Script">
+      <UniqueIdentifier>{4f2fcd7d-abca-4834-a364-5c4d59acdb90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\06. Component\04. Anymation">
+      <UniqueIdentifier>{6a26beeb-140e-4931-b8a2-6c4d86571b5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\06. Component\05. Collider">
       <UniqueIdentifier>{612b3bb4-69ce-4921-bae1-8be5f7c38076}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\03. Manager\04. AssetMgr">
+      <UniqueIdentifier>{98637d0e-a71b-446e-aac8-d2b773eef69f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
