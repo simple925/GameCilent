@@ -13,6 +13,7 @@ private:
 public:
     // 매 프레임마다 할 일
     void Tick();
+    void FinalTick();
     void Render();
 public:
     void AddComponent(Ptr<Component> _Com);

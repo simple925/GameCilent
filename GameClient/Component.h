@@ -12,6 +12,8 @@ private:
 public:
 	COMPONENT_TYPE GetType() { return m_Type; }
 	GameObject* GetOwner() { return m_Owner; }
+
+	virtual void FinalTick() = 0;
 public:
 	Component(COMPONENT_TYPE _Type);
 	virtual ~Component();

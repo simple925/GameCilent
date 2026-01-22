@@ -58,7 +58,14 @@ VS_OUT VS_Test2(VS_IN _input)
 {
 	VS_OUT output = (VS_OUT) 0.f;
 	
-	output.vPosition = mul(float4(_input.vPos, 1.f), g_matWorld);
+	/* 
+		(x, y, z, 동차좌표)  X   ( scale.x		0		 0		 0	 )
+								(	0		  scale.y	 0		 0	 )
+								(	0			0	   scale.z	 0	 )
+								(  pos.x	   pos.y    pos.z	 0	 )
+	*/
+	// 동차좌표 0으로 설정하면 이동 정보를 무시함
+	output.vPosition = mul(float4(_input.vPos, 1.f/*동차좌표*/), g_matWorld);
 	output.vUV = _input.vUV;
 	output.vColor = _input.vColor;
     

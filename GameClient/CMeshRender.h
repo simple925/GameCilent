@@ -16,6 +16,7 @@ public:
     void SetShader(Ptr<AGraphicShader> _Shader) { m_Shader = _Shader; }
     void SetTexture(Ptr<ATexture> _Tex) { m_Tex = _Tex; }
 public:
+    virtual void FinalTick() override;
     void Render();
 public:
     CMeshRender();

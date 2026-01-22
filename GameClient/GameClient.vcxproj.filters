@@ -92,6 +92,15 @@
     <ClInclude Include="AssetMgr.h">
       <Filter>GameEngine\03. Manager\04. AssetMgr</Filter>
     </ClInclude>
+    <ClInclude Include="LevelMgr.h">
+      <Filter>GameEngine\03. Manager\05. LevelMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="ALevel.h">
+      <Filter>GameEngine\04. Asset\04. Level</Filter>
+    </ClInclude>
+    <ClInclude Include="Layer.h">
+      <Filter>GameEngine\04. Asset\04. Level\Layer</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="GameClient.ico">
@@ -161,6 +170,15 @@
     </ClCompile>
     <ClCompile Include="AssetMgr.cpp">
       <Filter>GameEngine\03. Manager\04. AssetMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelMgr.cpp">
+      <Filter>GameEngine\03. Manager\05. LevelMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="ALevel.cpp">
+      <Filter>GameEngine\04. Asset\04. Level</Filter>
+    </ClCompile>
+    <ClCompile Include="Layer.cpp">
+      <Filter>GameEngine\04. Asset\04. Level\Layer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -232,6 +250,15 @@
     </Filter>
     <Filter Include="GameEngine\03. Manager\04. AssetMgr">
       <UniqueIdentifier>{98637d0e-a71b-446e-aac8-d2b773eef69f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\03. Manager\05. LevelMgr">
+      <UniqueIdentifier>{f60282de-a7f9-4ec8-9eca-a07adb2c777a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\04. Asset\04. Level">
+      <UniqueIdentifier>{e9cce762-f751-4f45-9ae7-7a021daf6888}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\04. Asset\04. Level\Layer">
+      <UniqueIdentifier>{91e24c47-5f2b-4a63-87a6-114234284012}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

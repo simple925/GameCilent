@@ -39,6 +39,15 @@ void GameObject::Tick()
 	Transform()->FinalTick();
 }
 
+void GameObject::FinalTick()
+{
+	for (UINT i = 0; i < (UINT)COMPONENT_TYPE::END;++i) {
+		if (nullptr != m_Com[i]) {
+			m_Com[i]->FinalTick();
+		}
+	}
+}
+
 void GameObject::Render()
 {
 	// 렌더링 관련 기능을 보유한 컴포넌트가 없으면 GameObject는 Rendering 될 수 없다.

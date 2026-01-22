@@ -3,8 +3,8 @@
 #include "Device.h"
 #include "TimeMgr.h"
 #include "KeyMgr.h"
-
-int TestFunc();
+#include "LevelMgr.h"
+//int TestFunc();
 
 Engine::Engine()
 	: m_hInst(nullptr)
@@ -33,9 +33,11 @@ int Engine::Progress()
 
 	// Pixel 1개당 4byte RGBA  r256 * g256 * b256 = 16,777,216
 
-	if (FAILED(TestFunc())) {
-		return E_FAIL;
-	}
+	//if (FAILED(TestFunc())) {
+		//return E_FAIL;
+	//}
+
+	LevelMgr::GetInst()->Progress();
 
 	// 랜더타겟에 그려진 그림을, 윈도우 비트맵으로 복사
 	Device::GetInst()->Present();

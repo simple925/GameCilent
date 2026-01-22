@@ -6,6 +6,7 @@
 #include "TimeMgr.h"
 #include "KeyMgr.h"
 #include "AssetMgr.h"
+#include "LevelMgr.h"
 LRESULT CALLBACK  WndProc(HWND, UINT, WPARAM, LPARAM);
 
 int Engine::Init(HINSTANCE _hInst, UINT _Width, UINT _Height)
@@ -84,5 +85,7 @@ int Engine::Init(HINSTANCE _hInst, UINT _Width, UINT _Height)
     KeyMgr::GetInst()->Init();
     AssetMgr::GetInst()->Init();
 
+    // 레벨 매니저 초기화
+    LevelMgr::GetInst()->Init();
     return S_OK;
 }

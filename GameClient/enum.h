@@ -19,6 +19,7 @@ enum class ASSET_TYPE
 	TEXTURE,
 	SOUND,
 	GRAPHICSHADER,
+	LEVEL,
 
 	END,
 };

@@ -144,6 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AGraphicShader.h" />
+    <ClInclude Include="ALevel.h" />
     <ClInclude Include="AMesh.h" />
     <ClInclude Include="Asset.h" />
     <ClInclude Include="AssetMgr.h" />
@@ -165,6 +166,8 @@
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="global.h" />
     <ClInclude Include="KeyMgr.h" />
+    <ClInclude Include="Layer.h" />
+    <ClInclude Include="LevelMgr.h" />
     <ClInclude Include="PathMgr.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
@@ -177,6 +180,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AGraphicShader.cpp" />
+    <ClCompile Include="ALevel.cpp" />
     <ClCompile Include="AMesh.cpp" />
     <ClCompile Include="Asset.cpp" />
     <ClCompile Include="AssetMgr.cpp" />
@@ -193,12 +197,16 @@
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="KeyMgr.cpp" />
+    <ClCompile Include="Layer.cpp" />
+    <ClCompile Include="LevelMgr.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PathMgr.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Test.cpp" />
+    <ClCompile Include="Test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="TimeMgr.cpp" />
   </ItemGroup>
   <ItemGroup>
