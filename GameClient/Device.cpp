@@ -92,6 +92,10 @@ int Device::Init(HWND _hwnd, Vec2 _Resolution)
 	m_TransformCB = new ConstBuffer;
 	m_TransformCB->Create(CB_TYPE::TRANSFORM, sizeof(Transform));
 
+	// 기본 샘플러 생성
+	if (FAILED(CreateSampler())) {
+		return E_FAIL;
+	}
 	// 앞으로 사용할 BlendState
 	if (FAILED(CreateBlendState())) {
 		return E_FAIL;
@@ -246,6 +250,43 @@ int Device::CreateBlendState()
 	Desc.RenderTarget[0].SrcBlendAlpha = D3D11_BLEND_ONE;
 	Desc.RenderTarget[0].DestBlendAlpha = D3D11_BLEND_ZERO;
 	DEVICE->CreateBlendState(&Desc, m_BSState[(UINT)BS_TYPE::ONE_ONE].GetAddressOf());
+	return S_OK;
+}
+
+int Device::CreateSampler()
+{
+	// 이방성 필터링 + 랩 모드
+	D3D11_SAMPLER_DESC Desc = {};
+
+	Desc.Filter			= D3D11_FILTER_ANISOTROPIC; // 3D에서 자주 사용됨
+	// Adress Mode 입력된 소수짐으로 랩핑됨
+	Desc.AddressU = D3D11_TEXTURE_ADDRESS_WRAP; // MIRROR, 
+	Desc.AddressV = D3D11_TEXTURE_ADDRESS_WRAP;
+	Desc.AddressW = D3D11_TEXTURE_ADDRESS_WRAP; // 3차원 만들때 쓰임 게임에서는 거의 안씀 확인은 필요
+
+	DEVICE->CreateSamplerState(&Desc, m_arrSam[0].GetAddressOf());
+
+	CONTEXT->VSSetSamplers(0, 1, m_arrSam[0].GetAddressOf());
+	CONTEXT->HSSetSamplers(0, 1, m_arrSam[0].GetAddressOf());
+	CONTEXT->DSSetSamplers(0, 1, m_arrSam[0].GetAddressOf());
+	CONTEXT->GSSetSamplers(0, 1, m_arrSam[0].GetAddressOf());
+	CONTEXT->PSSetSamplers(0, 1, m_arrSam[0].GetAddressOf());
+
+
+	// POINT 필터링 + 랩 모드
+	Desc.Filter = D3D11_FILTER_MIN_MAG_MIP_POINT; // 2D에서 자주 사용됨
+	// Adress Mode 입력된 소수짐으로 랩핑됨
+	Desc.AddressU = D3D11_TEXTURE_ADDRESS_WRAP; // MIRROR, 
+	Desc.AddressV = D3D11_TEXTURE_ADDRESS_WRAP;
+	Desc.AddressW = D3D11_TEXTURE_ADDRESS_WRAP; // 3차원 만들때 쓰임 게임에서는 거의 안씀 확인은 필요
+
+	DEVICE->CreateSamplerState(&Desc, m_arrSam[1].GetAddressOf());
+
+	CONTEXT->VSSetSamplers(1, 1, m_arrSam[1].GetAddressOf());
+	CONTEXT->HSSetSamplers(1, 1, m_arrSam[1].GetAddressOf());
+	CONTEXT->DSSetSamplers(1, 1, m_arrSam[1].GetAddressOf());
+	CONTEXT->GSSetSamplers(1, 1, m_arrSam[1].GetAddressOf());
+	CONTEXT->PSSetSamplers(1, 1, m_arrSam[1].GetAddressOf());
 	return S_OK;
 }
 

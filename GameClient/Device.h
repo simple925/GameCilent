@@ -18,9 +18,9 @@ private:
 	ComPtr<ID3D11RenderTargetView>	m_RTV;
 	ComPtr<ID3D11DepthStencilView>	m_DSV;
 
+	ComPtr<ID3D11SamplerState>		m_arrSam[2];
 	ComPtr<ID3D11BlendState>			m_BSState[(UINT)BS_TYPE::END];
 
-	//ComPtr<ID3D11SamplerState>		m_arrSampler[2];
 	//ComPtr<ID3D11RasterizerState>		m_RSState;
 	//ComPtr<ID3D11DepthStencilState>	m_DSState;
 
@@ -41,6 +41,7 @@ private:
 	int CreateSwapChain();
 	int CreateBuffer();
 	int CreateBlendState();
+	int CreateSampler();
 };
 
 #define DEVICE Device::GetInst()->GetDevice().Get()

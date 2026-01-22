@@ -38,15 +38,15 @@ void AssetMgr::Init()
 	arrVtx[0].vColor = Vec4(1.f, 0.f, 0.f, 0.f);
 
 	arrVtx[1].vPos = Vec3(0.5f, 0.5f, 0.f);
-	arrVtx[1].vUV = Vec2(1.f, 0.f);
+	arrVtx[1].vUV = Vec2(2.f, 0.f);
 	arrVtx[1].vColor = Vec4(0.f, 0.f, 1.f, 0.f);
 
 	arrVtx[2].vPos = Vec3(0.5f, -0.5f, 0.f);
-	arrVtx[2].vUV = Vec2(1.f, 1.f);
+	arrVtx[2].vUV = Vec2(2.f, 2.f);
 	arrVtx[2].vColor = Vec4(0.f, 1.f, 0.f, 0.f);
 
 	arrVtx[3].vPos = Vec3(-0.5f, -0.5f, 0.f);
-	arrVtx[3].vUV = Vec2(0.f, 1.f);
+	arrVtx[3].vUV = Vec2(0.f, 2.f);
 	arrVtx[3].vColor = Vec4(1.f, 0.f, 0.f, 0.f);
 	UINT arrIdx[6] = { 0, 2, 3, 0, 1, 2 };
 	// 사각형 메쉬 생성
@@ -127,8 +127,13 @@ void AssetMgr::Init()
 	pTex = new ATexture;
 	wstring FilePath = CONTENT_PATH;
 	FilePath += L"Texture\\Character.png";
-
 	pTex->Load(FilePath);
-
 	AddAsset(L"PlayerImage", pTex.Get());
+
+	pTex = nullptr;
+	pTex = new ATexture;
+	FilePath = CONTENT_PATH;
+	FilePath += L"Texture\\Fighter.png";
+	pTex->Load(FilePath);
+	AddAsset(L"Fighter", pTex.Get());
 }

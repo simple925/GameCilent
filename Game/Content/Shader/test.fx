@@ -95,6 +95,7 @@ float4 PS_Test2(VS_OUT _input) : SV_Target
 
 Texture2D g_tex_0 : register(t0);
 SamplerState g_sam_0 : register(s0); // texture 추출 도구
+SamplerState g_sam_1 : register(s1); // texture 추출 도구
 // 입력된 텍스쳐를 사용해서 픽셀쉐이더의 출력 색상으로 지정한다.
 // 텍스쳐 코디네이션, UV 좌표계
 float4 PS_Test3(VS_OUT _input) : SV_Target
@@ -103,7 +104,7 @@ float4 PS_Test3(VS_OUT _input) : SV_Target
 	// 깊이 텍스쳐에 흔적이 남는다
 	
 	// texture 추출 도구 필요
-	float4 vColor = g_tex_0.Sample(g_sam_0, _input.vUV);
-	return vColor;
+	// 입력 UV는 정점에서 반환한 값을 보간 받아서 픽셀쉐이더에 입력됨
+	return g_tex_0.Sample(g_sam_0, _input.vUV);
 }
 #endif
