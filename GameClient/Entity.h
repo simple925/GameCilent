@@ -11,9 +11,9 @@ private:
 	void AddRef() { ++m_RefCount; }
 	void Release() { --m_RefCount; if (m_RefCount <= 0) delete this; }
 public:
-	UINT getId() { return m_InstID; }
+	UINT GetId() { return m_InstID; }
 	void SetName(const wstring& _Name) { m_Name = _Name; }
-	const wstring& getName() { return m_Name; }
+	const wstring& GetName() { return m_Name; }
 
 public:
 	Entity();

@@ -72,6 +72,7 @@ void CCamera::Render()
 			continue;
 		}
 		Layer* pLayer = pCurLevel->GetLayer(i);
+		//Layer* pLayer = LevelMgr::GetInst()->GetLevel()->GetLayer(i);
 		pLayer->Render();
 	}
 }

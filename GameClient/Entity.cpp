@@ -6,7 +6,7 @@ UINT Entity::g_NextID = 0;
 
 Entity::Entity()
 	: m_InstID(g_NextID++)
-	, m_Name()
+	, m_RefCount()
 {
 }
 

@@ -37,7 +37,7 @@ public:
 		return *this;
 	}
 
-	T* operator ->() { return m_Ptr; }
+	T* operator->() const { return m_Ptr; }
 
 	bool operator == (T* _Ptr) const { return m_Ptr == _Ptr; }
 	bool operator == (const Ptr<T>& _Ptr) const { return m_Ptr == _Ptr.m_Ptr; }
@@ -70,12 +70,12 @@ public:
 
 // p == ptr객체 를 비교하기 위해 생성
 template<typename T>
-bool operator == (void* _Pointer, const Ptr<T> _Ptr)
+bool operator == (void* _Pointer, const Ptr<T>& _Ptr)
 {
 	return _Pointer == _Ptr.Get();
 }
 template<typename T>
-bool operator != (void* _Pointer, const Ptr<T> _Ptr)
+bool operator != (void* _Pointer, const Ptr<T>& _Ptr)
 {
 	return _Pointer != _Ptr.Get();
 }
