@@ -107,6 +107,38 @@ void AssetMgr::Init()
 	//m_mapAsset.insert(make_pair(L"t", pMesh.Get()));
 	AddAsset(L"t", pMesh.Get());
 
+	// ===================
+	// Cube (3D 정육면체)
+	// ===================
+	Vtx cubeVtx[8] = {};
+
+	// 앞면 (Z = -0.5f)
+	cubeVtx[0].vPos = Vec3(-0.5f, 0.5f, -0.5f); cubeVtx[0].vColor = Vec4(1.f, 0.f, 0.f, 1.f); cubeVtx[0].vUV = Vec2(0.f, 0.f);
+	cubeVtx[1].vPos = Vec3(0.5f, 0.5f, -0.5f); cubeVtx[1].vColor = Vec4(0.f, 1.f, 0.f, 1.f); cubeVtx[1].vUV = Vec2(1.f, 0.f);
+	cubeVtx[2].vPos = Vec3(0.5f, -0.5f, -0.5f); cubeVtx[2].vColor = Vec4(0.f, 0.f, 1.f, 1.f); cubeVtx[2].vUV = Vec2(1.f, 1.f);
+	cubeVtx[3].vPos = Vec3(-0.5f, -0.5f, -0.5f); cubeVtx[3].vColor = Vec4(1.f, 1.f, 1.f, 1.f); cubeVtx[3].vUV = Vec2(0.f, 1.f);
+
+	// 뒷면 (Z = 0.5f)
+	cubeVtx[4].vPos = Vec3(-0.5f, 0.5f, 0.5f); cubeVtx[4].vColor = Vec4(1.f, 0.f, 1.f, 1.f); cubeVtx[4].vUV = Vec2(0.f, 0.f);
+	cubeVtx[5].vPos = Vec3(0.5f, 0.5f, 0.5f); cubeVtx[5].vColor = Vec4(1.f, 1.f, 0.f, 1.f); cubeVtx[5].vUV = Vec2(1.f, 0.f);
+	cubeVtx[6].vPos = Vec3(0.5f, -0.5f, 0.5f); cubeVtx[6].vColor = Vec4(0.f, 1.f, 1.f, 1.f); cubeVtx[6].vUV = Vec2(1.f, 1.f);
+	cubeVtx[7].vPos = Vec3(-0.5f, -0.5f, 0.5f); cubeVtx[7].vColor = Vec4(0.f, 0.f, 0.f, 1.f); cubeVtx[7].vUV = Vec2(0.f, 1.f);
+
+	// 인덱스 (삼각형 12개, 시계 방향)
+	UINT cubeIdx[36] = {
+		0, 1, 2, 0, 2, 3, // 앞
+		4, 6, 5, 4, 7, 6, // 뒤
+		4, 5, 1, 4, 1, 0, // 위
+		3, 2, 6, 3, 6, 7, // 아래
+		4, 0, 3, 4, 3, 7, // 왼쪽
+		1, 5, 6, 1, 6, 2  // 오른쪽
+	};
+
+	pMesh = new AMesh;
+	pMesh->Create(cubeVtx, 8, cubeIdx, 36);
+	AddAsset(L"CubeMesh", pMesh.Get());
+
+
 	pShader = new AGraphicShader;
 	pShader->CreateVertexShader(L"Shader\\test.fx", "VS_Test");
 	pShader->CreatePixelShader(L"Shader\\test.fx", "PS_Test");
@@ -114,17 +146,10 @@ void AssetMgr::Init()
 	AddAsset(L"shader1", pShader.Get());
 
 	pShader = new AGraphicShader;
-	pShader->CreateVertexShader(L"Shader\\test.fx", "VS_Test2");
+	pShader->CreateVertexShader(L"Shader\\test.fx", "VS_Test");
 	pShader->CreatePixelShader(L"Shader\\test.fx", "PS_Test2");
 	//m_mapAsset.insert(make_pair(L"shader2", pShader.Get()));
 	AddAsset(L"shader2", pShader.Get());
-
-	pShader = new AGraphicShader;
-	pShader->CreateVertexShader(L"Shader\\test.fx", "VS_Test2");
-	pShader->CreatePixelShader(L"Shader\\test.fx", "PS_Test3");
-	//m_mapAsset.insert(make_pair(L"shader2", pShader.Get()));
-	pShader->SetBSType(BS_TYPE::ALPHABLEND);
-	AddAsset(L"shader3", pShader.Get());
 
 	Ptr<ATexture> pTex = nullptr;
 	pTex = new ATexture;

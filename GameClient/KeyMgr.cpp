@@ -3,10 +3,14 @@
 
 UINT g_KeyIndex[(UINT)KEY::KEY_END] =
 {
+	'Q',
 	'W',
-	'S',
+	'E',
+	'R',
 	'A',
+	'S',
 	'D',
+	'F',
 	'Z',
 	'X',
 	'C',
@@ -25,6 +29,10 @@ UINT g_KeyIndex[(UINT)KEY::KEY_END] =
 	VK_HOME,
 	VK_END,
 	VK_LBUTTON,
+	VK_RBUTTON,
+	VK_MBUTTON,
+	VK_XBUTTON1,
+	VK_XBUTTON2,
 };
 
 KeyMgr::KeyMgr()

@@ -29,8 +29,8 @@ void LevelMgr::Init()
 	pObject->Camera()->LayerCheckAll(); 
 	//pObject->Camera()->LayerCheck(31); // 31 -> UI 레이어
 
-	pObject->Camera()->SetProjType(PROJ_TYPE::ORTHOGRAPHIC);
-	pObject->Camera()->SetFar(1000.f);
+	pObject->Camera()->SetProjType(PROJ_TYPE::PERSPECTIVE);
+	pObject->Camera()->SetFar(10000.f);
 	pObject->Camera()->SetFOV(90.f);
 	pObject->Camera()->SetOrthoScale(1.f);
 
@@ -40,54 +40,55 @@ void LevelMgr::Init()
 
 	m_CurLevel->AddObject(0, pObject);
 
+	pObject = new GameObject;
+	//pObject->SetName(L"Monster");
+	pObject->SetName(L"몬스터");
+	pObject->AddComponent(new CTransform);
+	pObject->AddComponent(new CMeshRender);
+	pObject->AddComponent(new CPlayerScript);
+	// 1. 위치 조정: 카메라가 바라보는 방향(Z+)으로 충분히 밀어줍니다.
+	pObject->Transform()->SetPos(Vec3(0.f, 0.f, 500.f));
+
+	// 2. 크기 조정: 2D 사각형(100, 100)과 비슷하게 보이려면 Z축도 값을 줍니다.
+	pObject->Transform()->SetScale(Vec3(100.f, 100.f, 80.f));
+
+	pObject->MeshRender()->SetMesh(AssetMgr::GetInst()->FindAsset<AMesh>(L"CubeMesh").Get());
+	pObject->MeshRender()->SetShader(AssetMgr::GetInst()->FindAsset<AGraphicShader>(L"shader2").Get());
+	//pObject->MeshRender()->SetTexture(AssetMgr::GetInst()->FindAsset<ATexture>(L"m").Get());
+	m_CurLevel->AddObject(0, pObject);
+
 	// 오브젝트 생성
 	pObject = new GameObject;
 	//pObject->SetName(L"Player");
 	pObject->SetName(L"플레이어");
 	pObject->AddComponent(new CTransform);
 	pObject->AddComponent(new CMeshRender);
-	pObject->AddComponent(new CPlayerScript);
+	//pObject->AddComponent(new CPlayerScript);
 
-	pObject->Transform()->SetPos(Vec3(0.f, 0.f, 20.f));
-	pObject->Transform()->SetScale(Vec3(100.f,100.f, 1.f));
+	pObject->Transform()->SetPos(Vec3(0.f, 0.f, 300.f));
+	pObject->Transform()->SetScale(Vec3(100.f,100.f, 100.f));
 
 	pObject->MeshRender()->SetMesh(AssetMgr::GetInst()->FindAsset<AMesh>(L"q").Get());
-	pObject->MeshRender()->SetShader(AssetMgr::GetInst()->FindAsset<AGraphicShader>(L"shader3").Get());
+	pObject->MeshRender()->SetShader(AssetMgr::GetInst()->FindAsset<AGraphicShader>(L"shader1").Get());
 	pObject->MeshRender()->SetTexture(AssetMgr::GetInst()->FindAsset<ATexture>(L"p").Get());
 	//pObject->MeshRender()->SetTexture(AssetMgr::GetInst()->FindAsset<ATexture>(L"PlayerImage").Get());
 	m_CurLevel->AddObject(0, pObject);
-	/*
-	pObject = new GameObject;
-	//pObject->SetName(L"Monster");
-	pObject->SetName(L"몬스터");
-	pObject->AddComponent(new CTransform);
-	pObject->AddComponent(new CMeshRender);
-
-	pObject->Transform()->SetPos(Vec3(0.5f, 0.f, 0.f));
-	pObject->Transform()->SetScale(Vec3(0.2f, 0.2f, 1.f));
-
-	pObject->MeshRender()->SetMesh(AssetMgr::GetInst()->FindAsset<AMesh>(L"t").Get());
-	pObject->MeshRender()->SetShader(AssetMgr::GetInst()->FindAsset<AGraphicShader>(L"shader3").Get());
-	pObject->MeshRender()->SetTexture(AssetMgr::GetInst()->FindAsset<ATexture>(L"m").Get());
-	//pObject->MeshRender()->SetTexture(AssetMgr::GetInst()->FindAsset<ATexture>(L"PlayerImage").Get());
-	m_CurLevel->AddObject(0, pObject);
-	*/
-
-	
 
 	pObject = new GameObject;
 	pObject->SetName(L"배경");
 	pObject->AddComponent(new CTransform);
 	pObject->AddComponent(new CMeshRender);
 	//pObject->AddComponent(new CPlayerScript);
-	pObject->Transform()->SetPos(Vec3(0.f, 0.f, 20.f));
-	pObject->Transform()->SetScale(Vec3(1600.0f, 900.f, 1.f));
+	pObject->Transform()->SetPos(Vec3(0.f, 0.f, 700.f));
+	pObject->Transform()->SetScale(Vec3(1600.0f, 900.f, 100.f));
 
 	pObject->MeshRender()->SetMesh(AssetMgr::GetInst()->FindAsset<AMesh>(L"q").Get());
-	pObject->MeshRender()->SetShader(AssetMgr::GetInst()->FindAsset<AGraphicShader>(L"shader3").Get());
+	pObject->MeshRender()->SetShader(AssetMgr::GetInst()->FindAsset<AGraphicShader>(L"shader1").Get());
 	pObject->MeshRender()->SetTexture(AssetMgr::GetInst()->FindAsset<ATexture>(L"back_1").Get());
 
 	m_CurLevel->AddObject(2, pObject);
+	/*
+	*/
 	
 	/*
 	// 3. GameObject 생성 (3개)

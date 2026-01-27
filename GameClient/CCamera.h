@@ -25,8 +25,13 @@ public:
 	GET_SET(float, Far);
 	GET_SET(float, Width);
 	GET_SET(float, AspectRatio);
-	GET_SET(float, FOV);
+	
 	GET_SET(float, OrthoScale);
+
+	float GetFOV() { return m_FOV * (180 / XM_PI); }
+	// _Degree 60분법
+	// 라디안으로 보정
+	void SetFOV(float _Degree) { m_FOV = _Degree* (XM_PI / 180.f); }
 
 public:
 	virtual void Begin() override;

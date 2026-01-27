@@ -2,10 +2,14 @@
 #include "single.h"
 enum class KEY
 {
+	Q,
 	W,
-	S,
+	E,
+	R,
 	A,
+	S,
 	D,
+	F,
 	Z,
 	X,
 	C,
@@ -23,7 +27,11 @@ enum class KEY
 	ESC,
 	HOME,
 	END, //21
-	LBUTTON,
+	M_LBUTTON,
+	M_RBUTTON,
+	M_MBUTTON,  // ÈÙ Å¬¸¯
+	M_XBUTTON1, // ÈÙ ¾÷
+	M_XBUTTON2, // ÈÙ ´Ù¿î
 	KEY_END,
 };
 

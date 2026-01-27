@@ -45,18 +45,8 @@ cbuffer TRANSFORM : register(b0)
 	row_major matrix g_matView;			// World -> Camera(View) Space
 	row_major matrix g_matProj;			// Camera(View) Space ->
 }
+
 VS_OUT VS_Test(VS_IN _input)
-{
-	VS_OUT output		= (VS_OUT) 0.f;
-	
-	// 원점 기준 정점 좌표(_input.vPos.xy)에 이동량(g_vOffset)을 더합니다.
-	output.vPosition = float4(_input.vPos.xy * g_vZoom + g_vOffset, _input.vPos.z, 1.0f);
-	output.vUV			= _input.vUV;
-	output.vColor		= g_vColor;
-	
-	return output;
-}
-VS_OUT VS_Test2(VS_IN _input)
 {
 		/*
 	// z 회전
@@ -96,18 +86,25 @@ VS_OUT VS_Test2(VS_IN _input)
 	float4 vView = mul(vWorld, g_matView);
 	// View -> Proj
 	float4 vProj = mul(vView, g_matProj);
+	
+	// Viewz 값으로 나눈다.
+	// 투영행렬 특성상, 정확한 NDC 좌표를 얻기 위해서
+	// 투영행렬을 곱할 View 좌표의 z 값으로 나누는 작업이 행렬안에 있어야하는데 이것이 불가능하기 때문에
+	// 연산 결과의 w(4열) 자리에 View 좌표의 z가 출력 되도록 한다.
+	
+	// 투영행렬을 곱하고 얻은 결과값의 x,y,z 를 w 로 나눠야 최종 NDC 좌표를 얻을 수 있다.
+	// (VX, VY, VZ, 1.f) * ProjMat == (PX*VZ, PY*VZ, PZ*VZ, VZ:나눌값) 레스터라이져가 해줌
+	// vProj.xyz /= vProj.w; 이 작업을 해야 NDC 좌표계로 값이 옮겨짐
+	
+	
 	// 동차좌표 0으로 설정하면 이동 정보를 무시함
+	// x,y,z, 를 w 로 나누는 작업을 Rasterizer 에서 진행하기 때문에,
+	// 수동으로 나누는 코드를 작성할 필요는 없다.
 	output.vPosition = vProj; // 월드행렬을 방향벡터에 곱할땐 이동정보를 무시해야되기 때문에 동차좌표가 0.f 들어가야함
 	output.vUV = _input.vUV;
 	output.vColor = _input.vColor;
     
 	return output;
-}
-// 정점에서 반환한 값이 보간(Interpolation) 되어 픽셀이 쉐이더의 입력으로 돌아온다.
-float4 PS_Test(VS_OUT _input) : SV_Target
-{
-	//return _input.vColor;
-	return float4(1.f, 0.f, 0.f, 1.f);
 }
 
 // 정점에서 반환한 값이 보간(Interpolation) 되어 픽셀이 쉐이더의 입력으로 돌아온다.
@@ -122,7 +119,7 @@ SamplerState g_sam_0 : register(s0); // texture 추출 도구
 SamplerState g_sam_1 : register(s1); // texture 추출 도구
 // 입력된 텍스쳐를 사용해서 픽셀쉐이더의 출력 색상으로 지정한다.
 // 텍스쳐 코디네이션, UV 좌표계
-float4 PS_Test3(VS_OUT _input) : SV_Target
+float4 PS_Test(VS_OUT _input) : SV_Target
 {
 	
 	float4 vColor = g_tex_0.Sample(g_sam_1, _input.vUV);
