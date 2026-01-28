@@ -78,6 +78,6 @@ void CTransform::Binding()
 	g_Trans.matWorld = m_matWorld;
 
 	// 전역변수에 들어있는 오브젝트 위치 정보를 상수버퍼로 복사
-	Device::GetInst()->GetTransformBuffer()->SetData(&g_Trans);
-	Device::GetInst()->GetTransformBuffer()->Binding();
+	Device::GetInst()->GetCB(CB_TYPE::TRANSFORM)->SetData(&g_Trans);
+	Device::GetInst()->GetCB(CB_TYPE::TRANSFORM)->Binding();
 }

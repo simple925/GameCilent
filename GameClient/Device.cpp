@@ -88,9 +88,7 @@ int Device::Init(HWND _hwnd, Vec2 _Resolution)
 	// ShaderResourceView
 	// UnorderedAccessView	
 
-	// 앞으로 사용할 상수버퍼 미리 생성	
-	m_TransformCB = new ConstBuffer;
-	m_TransformCB->Create(CB_TYPE::TRANSFORM, sizeof(TransformMatrix));
+	CreateConstBuffer();
 
 	// 기본 샘플러 생성
 	if (FAILED(CreateSampler()))
@@ -255,6 +253,16 @@ int Device::CreateBlendState()
 	Desc.RenderTarget[0].DestBlendAlpha = D3D11_BLEND_ZERO;
 	DEVICE->CreateBlendState(&Desc, m_BSState[(UINT)BS_TYPE::ONE_ONE].GetAddressOf());
 	return S_OK;
+}
+
+void Device::CreateConstBuffer()
+{
+	// 앞으로 사용할 상수버퍼 미리 생성	
+	m_CB[(UINT)CB_TYPE::TRANSFORM] = new ConstBuffer;
+	m_CB[(UINT)CB_TYPE::TRANSFORM]->Create(CB_TYPE::TRANSFORM, sizeof(TransformMatrix));
+
+	m_CB[(UINT)CB_TYPE::MATERIAL] = new ConstBuffer;
+	m_CB[(UINT)CB_TYPE::MATERIAL]->Create(CB_TYPE::MATERIAL, sizeof(MtrlConst));
 }
 
 int Device::CreateSampler()

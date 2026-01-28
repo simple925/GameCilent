@@ -25,13 +25,31 @@ cbuffer TRANSFORM : register(b1) // 바인딩 될 상수 레지스터 번호 (b0)
 }
 */
 // 꼭 버퍼가 같아야함
-cbuffer TRANSFORM_DATA : register(b1) // 16byte의 배수로 구성 되어야함 꼭!!!
+cbuffer MATERIAL : register(b1) // 16byte의 배수로 구성 되어야함 꼭!!!
 {
-	float2 g_vOffset;
-	float2 g_vPadding;
-	float4 g_vColor; // 원의 색상정보 16byte
-	float g_vZoom; // 4
-	float3 g_vDummy2; // 12 (C++의 vDummy[3]와 대응)
+	//int iArr[4]; // 16으로 봐서 16 * 4 메모리 공간임
+	int g_int_0;
+	int g_int_1;
+	int g_int_2;
+	int g_int_3;
+	
+	float g_float_0;
+	float g_float_1;
+	float g_float_2;
+	float g_float_3;
+	
+	float2 g_vec2_0;
+	float2 g_vec2_1;
+	float2 g_vec2_2;
+	float2 g_vec2_3;
+	
+	float4 g_vec4_0;
+	float4 g_vec4_1;
+	float4 g_vec4_2;
+	float4 g_vec4_3;
+	
+	Matrix mat_1;
+	Matrix mat_2;
 };
 cbuffer TRANSFORM : register(b0)
 {
@@ -127,11 +145,16 @@ float4 PS_Test(VS_OUT _input) : SV_Target
 	{
 		discard; // 픽셀쉐이더는 키워드를 만나면 픽셀쉐이더가 종료됨
 	}
+	if (g_int_0 == 1)
+	{
+		vColor.r *= 2.f;
+	}
+	
 	// 알파블렌딩의 핵심 기본 배경을 출력함!!!!!! 블렌드 쉐이프
 	// 깊이 텍스쳐에 흔적이 남는다
 	
 	// texture 추출 도구 필요
 	// 입력 UV는 정점에서 반환한 값을 보간 받아서 픽셀쉐이더에 입력됨
-	return vColor;
+		return vColor;
 }
 #endif

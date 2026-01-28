@@ -26,7 +26,8 @@ private:
 
 	HWND							m_hWnd;		   // 출력 윈도우
 	Vec2							m_RenderResol; // 렌더타겟 해상도
-	Ptr<ConstBuffer>				m_TransformCB;
+
+	Ptr<ConstBuffer>				m_CB[(UINT)CB_TYPE::END];	// 상수버퍼 배열
 public:
 	int Init(HWND _hwnd, Vec2 _Resolution);
 	void ClearTarget();
@@ -35,7 +36,7 @@ public:
 	Vec2 GetRenderResol() { return m_RenderResol; }
 	ComPtr<ID3D11Device> GetDevice() { return m_Device; };
 	ComPtr<ID3D11DeviceContext> GetContext() { return m_Context; };
-	Ptr<ConstBuffer> GetTransformBuffer() { return m_TransformCB; }
+	Ptr<ConstBuffer> GetCB(CB_TYPE _Type) { return m_CB[(UINT)_Type]; }
 
 	ComPtr<ID3D11RasterizerState> GetRSState(RS_TYPE _Type) { return m_RSState[(UINT)_Type]; }
 	ComPtr<ID3D11BlendState> GetBSState(BS_TYPE _Type) { return m_BSState[(UINT)_Type]; }
@@ -45,6 +46,7 @@ private:
 	int CreateSampler();
 	int CreateRasterizerState();
 	int CreateBlendState();
+	void CreateConstBuffer();
 };
 
 #define DEVICE Device::GetInst()->GetDevice().Get()

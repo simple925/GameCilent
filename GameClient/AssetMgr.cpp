@@ -208,5 +208,7 @@ void AssetMgr::Init()
 	pMtrl->SetName(L"Std2DMtrl");
 	pMtrl->SetShader(pShader);
 	pMtrl->SetTexture(TEX_0, Find<ATexture>(L"Fighter"));
+	Vec4 vData = Vec4(0.f, 0.f, 11.11f, 0.f);
+
 	AddAsset(pMtrl->GetName(), pMtrl.Get());
 }

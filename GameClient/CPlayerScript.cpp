@@ -134,4 +134,15 @@ void CPlayerScript::Tick()
 	Move();
 
 	Shoot();
+
+	if (KEY_PRESSED(KEY::X))
+	{
+		int i = 1;
+		MeshRender()->GetMaterial()->SetScalar(INT_0, &i);
+	}
+	else
+	{
+		int i = 0;
+		MeshRender()->GetMaterial()->SetScalar(INT_0, &i);
+	}
 }

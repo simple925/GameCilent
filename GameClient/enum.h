@@ -1,7 +1,8 @@
 #pragma once
 enum class CB_TYPE
 {
-	TRANSFORM,
+	TRANSFORM,	// b0
+	MATERIAL,	// b1
 	END,
 };
 
@@ -69,4 +70,30 @@ enum TEX_PARAM
 	TEX_5,
 
 	TEX_END,
+};
+
+enum SCALR_PARAM
+{
+	INT_0,
+	INT_1,
+	INT_2,
+	INT_3,
+
+	FLOAT_0,
+	FLOAT_1,
+	FLOAT_2,
+	FLOAT_3,
+
+	VEC2_0,
+	VEC2_1,
+	VEC2_2,
+	VEC2_3,
+
+	VEC4_0,
+	VEC4_1,
+	VEC4_2,
+	VEC4_3,
+
+	MAT_0,
+	MAT_1,
 };
