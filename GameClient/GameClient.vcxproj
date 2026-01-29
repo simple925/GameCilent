@@ -217,9 +217,6 @@
     </ClCompile>
     <ClCompile Include="CPlayerProjectile.cpp" />
     <ClCompile Include="RenderMgr.cpp" />
-    <ClCompile Include="Test.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="TimeMgr.cpp" />
   </ItemGroup>
   <ItemGroup>

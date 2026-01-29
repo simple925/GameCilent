@@ -145,7 +145,6 @@
     <ClCompile Include="pch.cpp">
       <Filter>Default</Filter>
     </ClCompile>
-    <ClCompile Include="Test.cpp" />
     <ClCompile Include="PathMgr.cpp">
       <Filter>GameEngine\03. Manager\01. PathMgr</Filter>
     </ClCompile>

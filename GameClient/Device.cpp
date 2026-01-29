@@ -40,7 +40,6 @@ int Device::Init(HWND _hwnd, Vec2 _Resolution)
 	{
 		return E_FAIL;
 	}
-	CreateSwapChain();
 
 	// SwapChain
 	// 윈도우에서 이미지를 표시하기 위해, 비트맵 데이터를 SystemMemory 영역에 가지고 있다.
@@ -101,6 +100,9 @@ int Device::Init(HWND _hwnd, Vec2 _Resolution)
 	// 앞으로 사용할 BlendState 제작
 	if (FAILED(CreateBlendState()))
 		return E_FAIL;
+
+	// 각 b 레지스터 번호별로 대응하는 상수버퍼 제작
+	CreateConstBuffer();
 
 	return S_OK;
 }
