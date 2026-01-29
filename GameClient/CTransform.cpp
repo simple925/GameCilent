@@ -32,16 +32,16 @@ void CTransform::FinalTick()
 	// 크(크기, 배율) -> 자(회전, 자전) -> 이(이동) -> 공(회전, 공전)
 	// 크기 > 자전 > 이동 > 공전
 
-	Matrix matScale = XMMatrixIdentity(); // 단위행열로 초기화
-	matScale._11 = m_Scale.x;
-	matScale._22 = m_Scale.y;
-	matScale._33 = m_Scale.z;
-
 
 	Matrix matTrans = XMMatrixIdentity(); // 단위행열로 초기화
 	matTrans._41 = m_Pos.x;
 	matTrans._42 = m_Pos.y;
 	matTrans._43 = m_Pos.z;
+
+	Matrix matScale = XMMatrixIdentity(); // 단위행열로 초기화
+	matScale._11 = m_Scale.x;
+	matScale._22 = m_Scale.y;
+	matScale._33 = m_Scale.z;
 
 	Matrix matRot = XMMatrixRotationX(m_Rotation.x) 
 				  * XMMatrixRotationY(m_Rotation.y) 

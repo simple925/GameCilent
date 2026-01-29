@@ -72,7 +72,7 @@ void CCamera::FinalTick()
 	Vec3 vF = Transform()->GetDir(DIR::FRONT);
 	Matrix matRot = XMMatrixIdentity();
 
-	matRot._11 = vR.x;  matRot._11 = vU.x;  matRot._13 = vF.x;
+	matRot._11 = vR.x;  matRot._12 = vU.x;  matRot._13 = vF.x;
 	matRot._21 = vR.y; 	matRot._22 = vU.y; 	matRot._23 = vF.y;
 	matRot._31 = vR.z; 	matRot._32 = vU.z; 	matRot._33 = vF.z;
 
