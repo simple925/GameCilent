@@ -80,7 +80,7 @@
       <Filter>GameEngine\06. Component\01. Transform</Filter>
     </ClInclude>
     <ClInclude Include="CMeshRender.h">
-      <Filter>GameEngine\06. Component\02. MeshRender</Filter>
+      <Filter>GameEngine\06. Component\RenderComponent\01. MeshRender</Filter>
     </ClInclude>
     <ClInclude Include="ConstBuffer.h" />
     <ClInclude Include="CScript.h">
@@ -124,6 +124,12 @@
     </ClInclude>
     <ClInclude Include="CPlanetControllerScript.h">
       <Filter>GameEngine\06. Component\Script\PlanetController</Filter>
+    </ClInclude>
+    <ClInclude Include="CRenderComponent.h">
+      <Filter>GameEngine\06. Component\RenderComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="CBillboardRender.h">
+      <Filter>GameEngine\06. Component\RenderComponent\02. BillboardComponent</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -182,7 +188,7 @@
       <Filter>GameEngine\06. Component\01. Transform</Filter>
     </ClCompile>
     <ClCompile Include="CMeshRender.cpp">
-      <Filter>GameEngine\06. Component\02. MeshRender</Filter>
+      <Filter>GameEngine\06. Component\RenderComponent\01. MeshRender</Filter>
     </ClCompile>
     <ClCompile Include="ConstBuffer.cpp" />
     <ClCompile Include="CScript.cpp">
@@ -226,6 +232,12 @@
     </ClCompile>
     <ClCompile Include="AsserMgr_Init.cpp">
       <Filter>GameEngine\03. Manager\04. AssetMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CRenderComponent.cpp">
+      <Filter>GameEngine\06. Component\RenderComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="CBillboardRender.cpp">
+      <Filter>GameEngine\06. Component\RenderComponent\02. BillboardComponent</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -283,9 +295,6 @@
     <Filter Include="GameEngine\06. Component\01. Transform">
       <UniqueIdentifier>{8486a2f8-5243-4769-9928-9400c76796fc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GameEngine\06. Component\02. MeshRender">
-      <UniqueIdentifier>{d79c2502-1ec2-4a78-ac11-ff7969ae962d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="GameEngine\06. Component\04. Anymation">
       <UniqueIdentifier>{6a26beeb-140e-4931-b8a2-6c4d86571b5c}</UniqueIdentifier>
     </Filter>
@@ -334,6 +343,15 @@
     <Filter Include="HSL\2. 2D">
       <UniqueIdentifier>{cdbc0d95-5888-430d-9dd2-72792a33584d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameEngine\06. Component\RenderComponent">
+      <UniqueIdentifier>{1b86c204-2cda-40ef-b6bc-0b1f72d46b03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\06. Component\RenderComponent\02. BillboardComponent">
+      <UniqueIdentifier>{3c0ef214-9e81-4081-9757-26e9a402efa6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\06. Component\RenderComponent\01. MeshRender">
+      <UniqueIdentifier>{d79c2502-1ec2-4a78-ac11-ff7969ae962d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameClient.rc">
@@ -350,6 +368,9 @@
       <Filter>HSL\1. Header</Filter>
     </FxCompile>
     <FxCompile Include="std2d.fx">
+      <Filter>HSL\2. 2D</Filter>
+    </FxCompile>
+    <FxCompile Include="billboard.fx">
       <Filter>HSL\2. 2D</Filter>
     </FxCompile>
   </ItemGroup>

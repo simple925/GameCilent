@@ -29,7 +29,7 @@ void CCamera::FinalTick()
 	// 월드좌표 -> 뷰 행렬 좌표를 카메라가 계산해서 줌
 	// 뷰(View) 행렬 계산
 
-	Vec3 vPos = Transform()->GetPos();
+	Vec3 vPos = Transform()->GetRelativePos();
 
 	// 카메라의 위치
 	Matrix matTrans = XMMatrixIdentity();

@@ -1,22 +1,14 @@
 #pragma once
-#include "Component.h"
+#include "CRenderComponent.h"
 #include "asserts.h"
 
 class CMeshRender :
-    public Component
+    public CRenderComponent
 {
-private:
-    Ptr<AMesh>  m_Mesh;
-    Ptr<AMaterial> m_Material;
-public:
-    void SetMesh(Ptr<AMesh> _Mesh) { m_Mesh = _Mesh; }
-    void SetMaterial(Ptr<AMaterial> _Material) { m_Material = _Material; }
-
-    Ptr<AMesh>  GetMesh() { return m_Mesh; }
-    Ptr<AMaterial> GetMaterial() { return m_Material; }
 public:
     virtual void FinalTick() override;
-    void Render();
+    virtual void Render() override;
+    virtual void CreateMaterial() override {}
 public:
     CMeshRender();
     virtual ~CMeshRender();

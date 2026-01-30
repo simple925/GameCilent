@@ -47,63 +47,81 @@ void LevelMgr::Init()
 	pObject->AddComponent(new CMeshRender);
 	//pObject->AddComponent(new CPlayerScript);
 	// 1. 위치 조정: 카메라가 바라보는 방향(Z+)으로 충분히 밀어줍니다.
-	pObject->Transform()->SetPos(Vec3(0.f, 0.f, 500.f));
+	pObject->Transform()->SetRelativePos(Vec3(0.f, 0.f, 500.f));
 
 	// 2. 크기 조정: 2D 사각형(100, 100)과 비슷하게 보이려면 Z축도 값을 줍니다.
-	pObject->Transform()->SetScale(Vec3(100.f, 100.f, 80.f));
+	pObject->Transform()->SetRelativeScale(Vec3(100.f, 100.f, 80.f));
 
 	pObject->MeshRender()->SetMesh(AssetMgr::GetInst()->Find<AMesh>(L"CubeMesh").Get());
-	pObject->MeshRender()->SetMaterial(AssetMgr::GetInst()->Find<AMaterial>(L"Std2DMtrl"));
+	pObject->MeshRender()->SetMtrl(AssetMgr::GetInst()->Find<AMaterial>(L"Std2DMtrl"));
 	m_CurLevel->AddObject(0, pObject);
 	*/
 
+	pObject = new GameObject;
+	pObject->SetName(L"Player");
+	pObject->AddComponent(new CTransform);
+	pObject->AddComponent(new CMeshRender);
+	pObject->AddComponent(new CPlayerScript);
+	pObject->Transform()->SetRelativePos(Vec3(0.f, 0.f, 300.f));
+	pObject->Transform()->SetRelativeScale(Vec3(200.f, 200.f, 1.f));
+	pObject->MeshRender()->SetMesh(AssetMgr::GetInst()->Find<AMesh>(L"q"));
+	pObject->MeshRender()->SetMtrl(AssetMgr::GetInst()->Find<AMaterial>(L"Std2DMtrl"));
+
+	Ptr<GameObject> pChild = new GameObject;
+	pChild->SetName(L"Child");
+	pChild->AddComponent(new CTransform);
+	pChild->AddComponent(new CMeshRender);
+
+	pChild->Transform()->SetRelativePos(Vec3(-200.f, 0.f, 0.f));
+	pChild->Transform()->SetRelativeScale(Vec3(100.f, 100.f, 1.f));
+	pChild->Transform()->SetIndependentScale(true);
+
+	pChild->MeshRender()->SetMesh(AssetMgr::GetInst()->Find<AMesh>(L"q"));
+	pChild->MeshRender()->SetMtrl(AssetMgr::GetInst()->Find<AMaterial>(L"Std2DMtrl"));
+	// Player 와 Child 부모자식 연결
+	pObject->AddChild(pChild);
+	m_CurLevel->AddObject(0, pObject);
+
+
+	/*
 	// 오브젝트 생성
 	pObject = new GameObject;
 	//pObject->SetName(L"Player");
 	pObject->SetName(L"sola");
 	pObject->AddComponent(new CTransform);
-	pObject->AddComponent(new CMeshRender);
+	pObject->AddComponent(new CBillboardRender);
 	pObject->AddComponent(new CPlayerScript);
-
-	pObject->Transform()->SetPos(Vec3(0.f, 0.f, 300.f));
-	pObject->Transform()->SetScale(Vec3(10.f,500.f,500.f));
-
-	pObject->MeshRender()->SetMesh(AssetMgr::GetInst()->Find<AMesh>(L"q").Get());
-	pObject->MeshRender()->SetMaterial(AssetMgr::GetInst()->Find<AMaterial>(L"m_sola"));
+	pObject->Transform()->SetRelativePos(Vec3(0.f, 0.f, 300.f));
+	pObject->BillboardRender()->SetBillboardScale(Vec2(500.f, 500.f));
+	pObject->BillboardRender()->SetTexture(AssetMgr::GetInst()->Find<ATexture>(L"sola"));
 	m_CurLevel->AddObject(0, pObject);
-
 	pObject = new GameObject;
 	pObject->SetName(L"mercury");
 	pObject->AddComponent(new CTransform);
-	pObject->AddComponent(new CMeshRender);
+	pObject->AddComponent(new CBillboardRender);
 	pObject->AddComponent(new CPlanetControllerScript);
-	pObject->Transform()->SetPos(Vec3(100.f, 0.f, 300.f));
-	pObject->Transform()->SetScale(Vec3(100.f,100.f,100.f));
-	pObject->MeshRender()->SetMesh(AssetMgr::GetInst()->Find<AMesh>(L"q").Get());
-	pObject->MeshRender()->SetMaterial(AssetMgr::GetInst()->Find<AMaterial>(L"m_mercury"));
+	pObject->Transform()->SetRelativePos(Vec3(100.f, 0.f, 300.f));
+	pObject->BillboardRender()->SetBillboardScale(Vec2(200.f, 200.f));
 	m_CurLevel->AddObject(0, pObject);
 
 	pObject = new GameObject;
 	pObject->SetName(L"earth");
 	pObject->AddComponent(new CTransform);
-	pObject->AddComponent(new CMeshRender);
+	pObject->AddComponent(new CBillboardRender);
 	pObject->AddComponent(new CPlanetControllerScript);
-	pObject->Transform()->SetPos(Vec3(200.f, 0.f, 300.f));
-	pObject->Transform()->SetScale(Vec3(100.f,100.f, 100.f));
-	pObject->MeshRender()->SetMesh(AssetMgr::GetInst()->Find<AMesh>(L"q").Get());
-	pObject->MeshRender()->SetMaterial(AssetMgr::GetInst()->Find<AMaterial>(L"m_earth"));
+	pObject->Transform()->SetRelativePos(Vec3(200.f, 0.f, 300.f));
+	pObject->BillboardRender()->SetBillboardScale(Vec2(200.f, 200.f));
 	m_CurLevel->AddObject(0, pObject);
 
 	pObject = new GameObject;
 	pObject->SetName(L"venus");
 	pObject->AddComponent(new CTransform);
-	pObject->AddComponent(new CMeshRender);
+	pObject->AddComponent(new CBillboardRender);
 	pObject->AddComponent(new CPlanetControllerScript);
-	pObject->Transform()->SetPos(Vec3(300.f, 0.f, 300.f));
-	pObject->Transform()->SetScale(Vec3(100.f,100.f,100.f));
-	pObject->MeshRender()->SetMesh(AssetMgr::GetInst()->Find<AMesh>(L"q").Get());
-	pObject->MeshRender()->SetMaterial(AssetMgr::GetInst()->Find<AMaterial>(L"m_venus"));
+	pObject->Transform()->SetRelativePos(Vec3(300.f, 0.f, 300.f));
+	pObject->BillboardRender()->SetBillboardScale(Vec2(200.f, 200.f));
 	m_CurLevel->AddObject(0, pObject);
+	*/
 
 
 
@@ -112,11 +130,11 @@ void LevelMgr::Init()
 	pObject->SetName(L"배경");
 	pObject->AddComponent(new CTransform);
 	pObject->AddComponent(new CMeshRender);
-	pObject->Transform()->SetPos(Vec3(0.f, 0.f, 1000.f));
-	pObject->Transform()->SetScale(Vec3(1600.0f, 900.f, 100.f));
+	pObject->Transform()->SetRelativePos(Vec3(0.f, 0.f, 1000.f));
+	pObject->Transform()->SetRelativeScale(Vec3(1600.0f, 900.f, 100.f));
 
 	pObject->MeshRender()->SetMesh(AssetMgr::GetInst()->Find<AMesh>(L"q").Get());
-	pObject->MeshRender()->SetMaterial(AssetMgr::GetInst()->Find<AMaterial>(L"m_univers"));
+	pObject->MeshRender()->SetMtrl(AssetMgr::GetInst()->Find<AMaterial>(L"m_univers"));
 
 	m_CurLevel->AddObject(2, pObject);
 	
@@ -127,8 +145,8 @@ void LevelMgr::Init()
 	g_Object3->AddComponent(new CMeshRender);
 	//g_Object3->AddComponent(new CPlayerScript);
 
-	g_Object3->Transform()->SetPos(Vec3(-0.5f, 0.f, 0.f));
-	g_Object3->Transform()->SetScale(Vec3(0.2f, 0.2f, 1.f)); // 반지름 역할
+	g_Object3->Transform()->SetRelativePos(Vec3(-0.5f, 0.f, 0.f));
+	g_Object3->Transform()->SetRelativeScale(Vec3(0.2f, 0.2f, 1.f)); // 반지름 역할
 
 	g_Object3->MeshRender()->SetMesh((AMesh*)AssetMgr::GetInst()->Find<AMesh>(L"c").Get());
 	g_Object3->MeshRender()->SetShader((AGraphicShader*)AssetMgr::GetInst()->Find<AGraphicShader>(L"shader2").Get());

@@ -2,7 +2,7 @@
 #include "CMeshRender.h"
 
 CMeshRender::CMeshRender()
-	: Component(COMPONENT_TYPE::MESHRENDER)
+	: CRenderComponent(COMPONENT_TYPE::MESHRENDER)
 {
 }
 
@@ -14,9 +14,11 @@ void CMeshRender::FinalTick()
 }
 void CMeshRender::Render()
 {
-	// Mesh Shader 미등록 시
-	if (nullptr == m_Mesh || nullptr == m_Material)
+	// Mesh or Shader 가 미설정 상태
+	if (nullptr == GetMesh() || GetMtrl() == nullptr)
 		return;
-	m_Material->Binding();
-	m_Mesh->Render();
+
+	GetMtrl()->Binding();
+	GetMesh()->Render();
+	GetMtrl()->Clear();
 }

@@ -12,6 +12,7 @@ private:
 
 public:
 	void RegisterCamera(Ptr<CCamera> _Cam) { m_MainCam = _Cam; }
+	Ptr<CCamera> GetPOVCamera() { return m_MainCam; }
 
 public:
 	void Init();

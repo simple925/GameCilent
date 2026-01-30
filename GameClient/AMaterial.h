@@ -13,6 +13,7 @@ private:
 public:
     void SetTexture(TEX_PARAM _Param, Ptr<ATexture> _Texture) { m_Tex[_Param] = _Texture; }
     void Binding();
+	void Clear();
     void SetShader(Ptr<AGraphicShader> _Shader) { m_Shader = _Shader; }
 
 

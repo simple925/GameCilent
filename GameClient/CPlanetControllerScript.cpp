@@ -20,11 +20,11 @@ void CPlanetControllerScript::Tick()
     // 1. 태양(부모) 위치 가져오기
     // 인덱스 1번이 태양이라고 가정하신 로직 유지
     Ptr<GameObject> sola = LevelMgr::GetInst()->GetLevel()->GetLayer(0)->GetVecObject()[1];
-    Vec3 solaPos = sola->Transform()->GetPos();
+    Vec3 solaPos = sola->Transform()->GetRelativePos();
 
     if (!m_bInitialized)
     {
-        Vec3 myPos = Transform()->GetPos();
+        Vec3 myPos = Transform()->GetRelativePos();
         Vec3 diff = myPos - solaPos;
 
         // 현재 배치된 곳까지의 거리를 궤도 반지름으로 설정
@@ -53,14 +53,14 @@ void CPlanetControllerScript::Tick()
     m_fSelfRotationAngle += DT * m_fRotationSpeed;
 
     // 2. 위치 설정
-    Transform()->SetPos(vNewPos);
+    Transform()->SetRelativePos(vNewPos);
 
     // 3. 회전 설정 (Y축 중심으로 자전)
     // 기존의 회전값에 자전 각도를 적용합니다.
-    Vec3 vRot = Transform()->GetRotation();
+    Vec3 vRot = Transform()->GetRelativeRot();
     vRot.y = m_fSelfRotationAngle;
 
     // 4. 최종 위치 설정
-    Transform()->SetRotation(vRot);
-    Transform()->SetPos(vNewPos);
+    Transform()->SetRelativeRot(vRot);
+    Transform()->SetRelativePos(vNewPos);
 }

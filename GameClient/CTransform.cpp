@@ -1,10 +1,12 @@
 #include "pch.h"
 #include "CTransform.h"
 #include "Device.h"
+
 CTransform::CTransform()
 	: Component(COMPONENT_TYPE::TRANSFORM)
-	, m_Scale(Vec3(1.f, 1.f, 1.f))
+	, m_RelativeScale(Vec3(1.f, 1.f, 1.f))
 	, m_Dir{}
+	, m_IndependentScale(false)
 {
 	m_Dir[(UINT)DIR::RIGHT] = Vec3(1.f, 0.f, 0.f);
 	m_Dir[(UINT)DIR::UP]	= Vec3(0.f, 1.f, 0.f);
@@ -13,6 +15,25 @@ CTransform::CTransform()
 
 CTransform::~CTransform()
 {
+}
+
+Vec3 CTransform::GetWorldScale()
+{
+	Vec3 vWorldScale = m_RelativeScale;
+
+	if (m_IndependentScale) return vWorldScale;
+
+	Ptr<GameObject> pParent = GetOwner()->GetParent();
+	while (nullptr != pParent)
+	{
+
+		vWorldScale *= pParent->Transform()->GetRelativeScale();
+
+		if (pParent->Transform()->m_IndependentScale) break;
+
+		pParent = pParent->GetParent();
+	}
+	return vWorldScale;
 }
 
 void CTransform::FinalTick()
@@ -34,18 +55,18 @@ void CTransform::FinalTick()
 
 
 	Matrix matTrans = XMMatrixIdentity(); // 단위행열로 초기화
-	matTrans._41 = m_Pos.x;
-	matTrans._42 = m_Pos.y;
-	matTrans._43 = m_Pos.z;
+	matTrans._41 = m_RelativePos.x;
+	matTrans._42 = m_RelativePos.y;
+	matTrans._43 = m_RelativePos.z;
 
 	Matrix matScale = XMMatrixIdentity(); // 단위행열로 초기화
-	matScale._11 = m_Scale.x;
-	matScale._22 = m_Scale.y;
-	matScale._33 = m_Scale.z;
+	matScale._11 = m_RelativeScale.x;
+	matScale._22 = m_RelativeScale.y;
+	matScale._33 = m_RelativeScale.z;
 
-	Matrix matRot = XMMatrixRotationX(m_Rotation.x) 
-				  * XMMatrixRotationY(m_Rotation.y) 
-				  * XMMatrixRotationZ(m_Rotation.z);
+	Matrix matRot = XMMatrixRotationX(m_RelativeRot.x) 
+				  * XMMatrixRotationY(m_RelativeRot.y) 
+				  * XMMatrixRotationZ(m_RelativeRot.z);
 
 
 	// 방향벡터 계산 초기값으로
@@ -68,9 +89,23 @@ void CTransform::FinalTick()
 	// 월드행렬 계산 ( 크기 x 회전 x 이동 )
 	m_matWorld = matScale * matRot * matTrans;
 
+	// 부모 오브젝트가 있었다면
+	if (nullptr != GetOwner()->GetParent())
+	{
+		// 부모 오브젝트의 크기에 영향을 받지 않는다.
+		if (m_IndependentScale)
+		{
+			Vec3 ParentScale = GetOwner()->GetParent()->Transform()->GetWorldScale();
+			Matrix matParentScale = XMMatrixScaling(ParentScale.x, ParentScale.y, ParentScale.z);
+			// 역행열 구하는법
+			Matrix matParentScaleInv = XMMatrixInverse(nullptr, matParentScale);
 
-
-
+			m_matWorld = m_matWorld * matParentScaleInv * GetOwner()->GetParent()->Transform()->GetWorldMat();
+		}
+		// 부모 오브젝트의 크기에 영향을 받지 않는다.
+		else
+			m_matWorld *= GetOwner()->GetParent()->Transform()->GetWorldMat();
+	}
 }
 
 void CTransform::Binding()
@@ -81,3 +116,4 @@ void CTransform::Binding()
 	Device::GetInst()->GetCB(CB_TYPE::TRANSFORM)->SetData(&g_Trans);
 	Device::GetInst()->GetCB(CB_TYPE::TRANSFORM)->Binding();
 }
+

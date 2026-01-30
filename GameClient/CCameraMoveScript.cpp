@@ -13,8 +13,8 @@ CCamraMoveScript::~CCamraMoveScript()
 
 void CCamraMoveScript::Tick()
 {
-	Vec3 vPos = Transform()->GetPos();
-	Vec3 vRot = Transform()->GetRotation();
+	Vec3 vPos = Transform()->GetRelativePos();
+	Vec3 vRot = Transform()->GetRelativeRot();
 	
 
 	Vec3 vFront = Transform()->GetDir(DIR::FRONT);
@@ -50,8 +50,8 @@ void CCamraMoveScript::Tick()
 
 	}
 	
-	Transform()->SetPos(vPos);
-	Transform()->SetRotation(vRot);
+	Transform()->SetRelativePos(vPos);
+	Transform()->SetRelativeRot(vRot);
 }
 
 // 정점쉐이더 버텍스쉐이더

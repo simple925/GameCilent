@@ -3,6 +3,8 @@
 #include "Device.h"
 ATexture::ATexture()
 	: Asset(ASSET_TYPE::TEXTURE)
+	, m_Desc{}
+	, m_RecentNum(-1)
 {
 }
 
@@ -75,9 +77,27 @@ int ATexture::Load(const wstring& _strFilePath)
 
 void ATexture::Binding(UINT _RegisterNum)
 {
-	CONTEXT->VSSetShaderResources(_RegisterNum, 1, m_SRV.GetAddressOf());
-	CONTEXT->GSSetShaderResources(_RegisterNum, 1, m_SRV.GetAddressOf());
-	CONTEXT->HSSetShaderResources(_RegisterNum, 1, m_SRV.GetAddressOf());
-	CONTEXT->DSSetShaderResources(_RegisterNum, 1, m_SRV.GetAddressOf());
-	CONTEXT->PSSetShaderResources(_RegisterNum, 1, m_SRV.GetAddressOf());
+	m_RecentNum = _RegisterNum;
+
+	CONTEXT->VSSetShaderResources(m_RecentNum, 1, m_SRV.GetAddressOf());
+	CONTEXT->GSSetShaderResources(m_RecentNum, 1, m_SRV.GetAddressOf());
+	CONTEXT->HSSetShaderResources(m_RecentNum, 1, m_SRV.GetAddressOf());
+	CONTEXT->DSSetShaderResources(m_RecentNum, 1, m_SRV.GetAddressOf());
+	CONTEXT->PSSetShaderResources(m_RecentNum, 1, m_SRV.GetAddressOf());
+}
+
+void ATexture::Clear()
+{
+	if (-1 == m_RecentNum)
+	{
+		return;
+	}
+	ID3D11ShaderResourceView* pSRV = nullptr;
+	CONTEXT->VSSetShaderResources(m_RecentNum, 1, &pSRV);
+	CONTEXT->GSSetShaderResources(m_RecentNum, 1, &pSRV);
+	CONTEXT->HSSetShaderResources(m_RecentNum, 1, &pSRV);
+	CONTEXT->DSSetShaderResources(m_RecentNum, 1, &pSRV);
+	CONTEXT->PSSetShaderResources(m_RecentNum, 1, &pSRV);
+
+	m_RecentNum = -1;
 }

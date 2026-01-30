@@ -19,9 +19,11 @@ AGraphicShader::~AGraphicShader()
 int AGraphicShader::CreateVertexShader(const wstring& _RelativeFilePath, const string& _FuncName)
 {
 	wstring Path = PathMgr::GetInst()->GetContentPath(_RelativeFilePath);
-
+	ComPtr<ID3DBlob> Err;
 	// 엔트리포인트
 	if (FAILED(D3DCompileFromFile(Path.c_str(), nullptr, D3D_COMPILE_STANDARD_FILE_INCLUDE, _FuncName.c_str(), "vs_5_0", D3D10_SHADER_DEBUG, 0, m_VSBlob.GetAddressOf(), nullptr))) {
+		const char* pErrMsg = (const char*)Err->GetBufferPointer();
+		MessageBoxA(nullptr, pErrMsg, "쉐이더 생성 실패", MB_OK);
 		return E_FAIL;
 	}
 
@@ -77,7 +79,13 @@ int AGraphicShader::CreateVertexShader(const wstring& _RelativeFilePath, const s
 int AGraphicShader::CreatePixelShader(const wstring& _RelativeFilePath, const string& _FuncName)
 {
 	wstring Path = PathMgr::GetInst()->GetContentPath(_RelativeFilePath);
+
+
+	// PixelShader
+	ComPtr<ID3DBlob> Err;
 	if (FAILED(D3DCompileFromFile(Path.c_str(), nullptr, D3D_COMPILE_STANDARD_FILE_INCLUDE, _FuncName.c_str(), "ps_5_0", D3D10_SHADER_DEBUG, 0, m_PSBlob.GetAddressOf(), nullptr))) {
+		const char* pErrMsg = (const char*)Err->GetBufferPointer();
+		MessageBoxA(nullptr, pErrMsg, "쉐이더 생성 실패", MB_OK);
 		return E_FAIL;
 	}
 

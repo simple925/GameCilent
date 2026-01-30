@@ -28,3 +28,12 @@ void AMaterial::Binding()
 	Device::GetInst()->GetCB(CB_TYPE::MATERIAL)->SetData(&m_Const);
 	Device::GetInst()->GetCB(CB_TYPE::MATERIAL)->Binding();
 }
+
+void AMaterial::Clear()
+{
+	for (int i = 0; i < TEX_END; ++i)
+	{
+		if (nullptr == m_Tex[i]) continue;
+		m_Tex[i]->Clear();
+	}
+}

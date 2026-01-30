@@ -10,9 +10,12 @@ private:
     ComPtr<ID3D11RenderTargetView>      m_RTV;
     ComPtr<ID3D11DepthStencilView>      m_DSV;
     ComPtr<ID3D11ShaderResourceView>    m_SRV;
+
+    int                                 m_RecentNum;
 public:
     int Load(const wstring& _strFilePath);
     void Binding(UINT _RegisterNum);
+    void Clear();
 public:
     ATexture();
     virtual ~ATexture();

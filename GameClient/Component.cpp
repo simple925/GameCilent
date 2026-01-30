@@ -5,6 +5,7 @@
 
 Component::Component(COMPONENT_TYPE _Type)
 	: m_Type(_Type)
+	, m_Owner(nullptr)
 {
 }
 
@@ -15,3 +16,4 @@ Component::~Component()
 GET_OTHER_COMPONENT_BODY(Transform);
 GET_OTHER_COMPONENT_BODY(Camera);
 GET_OTHER_COMPONENT_BODY(MeshRender);
+GET_OTHER_COMPONENT_BODY(BillboardRender);

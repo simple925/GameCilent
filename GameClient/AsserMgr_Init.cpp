@@ -127,11 +127,6 @@ void AssetMgr::CreateEngineShader()
 	pShader->CreatePixelShader(L"Shader\\std2d.fx", "PS_Std2D");
 	pShader->SetRSType(RS_TYPE::CULL_NONE);
 	AddAsset(L"Std2DShader", pShader.Get());
-	pShader = new AGraphicShader;
-	pShader->CreateVertexShader(L"Shader\\std2d.fx", "VS_Std2D2");
-	pShader->CreatePixelShader(L"Shader\\std2d.fx", "PS_Std2D");
-	pShader->SetRSType(RS_TYPE::CULL_NONE);
-	AddAsset(L"billboard-shader", pShader.Get());
 }
 
 void AssetMgr::CreateEngineTexture()
@@ -173,6 +168,7 @@ void AssetMgr::CreateEngineTexture()
 
 	pTex = nullptr;
 	pTex = new ATexture;
+	pTex->SetName(L"怕剧");
 	FilePath = CONTENT_PATH;
 	FilePath += L"Texture\\sola.png";
 	pTex->Load(FilePath);
@@ -180,18 +176,23 @@ void AssetMgr::CreateEngineTexture()
 
 	pTex = nullptr;
 	pTex = new ATexture;
+	pTex->SetName(L"瘤备");
 	FilePath = CONTENT_PATH;
 	FilePath += L"Texture\\earth.png";
 	pTex->Load(FilePath);
 	AddAsset(L"earth", pTex.Get());
+
 	pTex = nullptr;
 	pTex = new ATexture;
+	pTex->SetName(L"荐己");
 	FilePath = CONTENT_PATH;
 	FilePath += L"Texture\\mercury.png";
 	pTex->Load(FilePath);
 	AddAsset(L"mercury", pTex.Get());
+
 	pTex = nullptr;
 	pTex = new ATexture;
+	pTex->SetName(L"陛己");
 	FilePath = CONTENT_PATH;
 	FilePath += L"Texture\\venus.png";
 	pTex->Load(FilePath);
@@ -199,6 +200,7 @@ void AssetMgr::CreateEngineTexture()
 
 	pTex = nullptr;
 	pTex = new ATexture;
+	pTex->SetName(L"快林");
 	FilePath = CONTENT_PATH;
 	FilePath += L"Texture\\univers.jpeg";
 	pTex->Load(FilePath);
@@ -214,26 +216,22 @@ void AssetMgr::CreateEngineMaterial()
 	pMtrl->SetName(L"Std2DMtrl");
 	pMtrl->SetShader(Find<AGraphicShader>(L"Std2DShader"));
 	pMtrl->SetTexture(TEX_0, Find<ATexture>(L"Fighter"));
-	Vec4 vData = Vec4(0.f, 0.f, 11.11f, 0.f);
+	AddAsset(pMtrl->GetName(), pMtrl.Get());
 
 	pMtrl = new AMaterial;
 	pMtrl->SetName(L"m_sola");
-	pMtrl->SetShader(Find<AGraphicShader>(L"billboard-shader"));
 	pMtrl->SetTexture(TEX_0, Find<ATexture>(L"sola"));
 	AddAsset(pMtrl->GetName(), pMtrl.Get());
 	pMtrl = new AMaterial;
 	pMtrl->SetName(L"m_earth");
-	pMtrl->SetShader(Find<AGraphicShader>(L"billboard-shader"));
 	pMtrl->SetTexture(TEX_0, Find<ATexture>(L"earth"));
 	AddAsset(pMtrl->GetName(), pMtrl.Get());
 	pMtrl = new AMaterial;
 	pMtrl->SetName(L"m_mercury");
-	pMtrl->SetShader(Find<AGraphicShader>(L"billboard-shader"));
 	pMtrl->SetTexture(TEX_0, Find<ATexture>(L"mercury"));
 	AddAsset(pMtrl->GetName(), pMtrl.Get());
 	pMtrl = new AMaterial;
 	pMtrl->SetName(L"m_venus");
-	pMtrl->SetShader(Find<AGraphicShader>(L"billboard-shader"));
 	pMtrl->SetTexture(TEX_0, Find<ATexture>(L"venus"));
 	AddAsset(pMtrl->GetName(), pMtrl.Get());
 
@@ -241,6 +239,5 @@ void AssetMgr::CreateEngineMaterial()
 	pMtrl->SetName(L"m_univers");
 	pMtrl->SetShader(Find<AGraphicShader>(L"Std2DShader"));
 	pMtrl->SetTexture(TEX_0, Find<ATexture>(L"univers"));
-	pMtrl->SetScalar(INT_0, 100);
 	AddAsset(pMtrl->GetName(), pMtrl.Get());
 }

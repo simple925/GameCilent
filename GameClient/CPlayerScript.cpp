@@ -27,8 +27,8 @@ bool CPlayerScript::IsMouseOver()
 
 	// 2. 자신의 Transform 정보 가져오기
 	Ptr<CTransform> trans = GetOwner()->Transform();
-	Vec3 vPos = trans->GetPos();
-	Vec3 vScale = trans->GetScale();
+	Vec3 vPos = trans->GetRelativePos();
+	Vec3 vScale = trans->GetRelativeScale();
 
 	// 3. 충돌 판정 (AABB 기준)
 	// 좀 더 정밀하게 하고 싶다면 여기서 m_pMesh 정보를 받아와 메쉬 타입별로 계산 가능
@@ -65,9 +65,9 @@ void CPlayerScript::Move()
 	//pTrans = dynamic_cast<CTransform*>(m_Com[(UINT)COMPONENT_TYPE::TRANSFORM].Get());
 
 	//CTransform* trans = pTrans.Get();
-	Vec3 vPos = Transform()->GetPos();
-	Vec3 vScale = Transform()->GetScale();
-	Vec3 vRotation = Transform()->GetRotation();
+	Vec3 vPos = Transform()->GetRelativePos();
+	Vec3 vScale = Transform()->GetRelativeScale();
+	Vec3 vRotation = Transform()->GetRelativeRot();
 
 	Vec3 vUp = Transform()->GetDir(DIR::UP);
 	Vec3 vDown = -vUp;
@@ -82,9 +82,9 @@ void CPlayerScript::Move()
 	if (KEY_PRESSED(KEY::LEFT))
 		vRotation.z += XM_PI * DT;
 
-	Transform()->SetPos(vPos);
-	Transform()->SetScale(vScale);
-	Transform()->SetRotation(vRotation);
+	Transform()->SetRelativePos(vPos);
+	Transform()->SetRelativeScale(vScale);
+	Transform()->SetRelativeRot(vRotation);
 }
 
 void CPlayerScript::Shoot()
@@ -94,11 +94,11 @@ void CPlayerScript::Shoot()
 
 		for (const auto& pObj : vecObj) {
 			if (pObj.Get()->IsHidden()) {
-				pObj.Get()->Transform()->SetPos(Transform()->GetPos()
-											  + Transform()->GetScale()
+				pObj.Get()->Transform()->SetRelativePos(Transform()->GetRelativePos()
+											  + Transform()->GetRelativeScale()
 											  * 0.5f
 											  * Transform()->GetDir(DIR::UP)); // 발사 위치 설정 비행기 몸체 보다 살짝 앞으로 위치 값을 넘김
-				pObj.Get()->Transform()->SetRotation(Transform()->GetRotation());
+				pObj.Get()->Transform()->SetRelativeRot(Transform()->GetRelativeRot());
 				pObj.Get()->Show();                  // 이제부터 Tick과 Render가 돌아감
 				break;                         // 하나만 발사하고 루프 탈출
 			}
@@ -114,10 +114,15 @@ void CPlayerScript::Tick()
 	Shoot();
 	if (KEY_PRESSED(KEY::X))
 	{
-		MeshRender()->GetMaterial()->SetScalar(INT_0, 1);
+		MeshRender()->GetMtrl()->SetScalar(INT_0, 1);
 	}
 	else
 	{
-		MeshRender()->GetMaterial()->SetScalar(INT_0, 0);
+		MeshRender()->GetMtrl()->SetScalar(INT_0, 0);
 	}
+
+	Ptr<GameObject> pChild = GetOwner()->GetChild(0);
+
+	Vec3 vRelativePos = pChild->Transform()->GetRelativePos();
+	Vec3 vWorldPos = pChild->Transform()->GetWorldPos();
 }
