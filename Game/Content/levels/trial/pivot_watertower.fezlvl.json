@@ -1,0 +1,5465 @@
+{
+  "Name": "PIVOT_WATERTOWER",
+  "NodeType": "Lesser",
+  "Size": [
+    32,
+    68,
+    30
+  ],
+  "StartingPosition": {
+    "Id": [20, 13, 11],
+    "Face": "Right"
+  },
+  "Flat": false,
+  "Quantum": false,
+  "Descending": false,
+  "Loops": false,
+  "Rainy": false,
+  "BaseDiffuse": 1,
+  "BaseAmbient": 0.349999994,
+  "SkyName": "INDUST_CAVE",
+  "SkipPostProcess": true,
+  "GomezHaloName": "",
+  "HaloFiltering": true,
+  "BlinkingAlpha": false,
+  "WaterHeight": 0,
+  "WaterType": "None",
+  "SongName": "Cycle",
+  "MutedLoops": [],
+  "AmbienceTracks": [
+    {
+      "Name": "Ambience ^ metal_indoors",
+      "Day": true,
+      "Dusk": true,
+      "Night": true,
+      "Dawn": true
+    }
+  ],
+  "SequenceSamplesPath": "",
+  "LowPass": false,
+  "FAPFadeOutStart": 0,
+  "FAPFadeOutLength": 0,
+  "TrileSetName": "INDUSTRIAL",
+  "Triles": [
+    {
+      "Emplacement": [16, 13, 9],
+      "Position": [
+        16,
+        13,
+        9
+      ],
+      "Phi": 0,
+      "Id": 371,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 12, 11],
+      "Position": [
+        18,
+        12,
+        11
+      ],
+      "Phi": 1,
+      "Id": 45,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 14, 11],
+      "Position": [
+        18,
+        14,
+        11
+      ],
+      "Phi": 3,
+      "Id": 45,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 17, 11],
+      "Position": [
+        18,
+        17,
+        11
+      ],
+      "Phi": 0,
+      "Id": 45,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 20, 10],
+      "Position": [
+        18,
+        20,
+        10
+      ],
+      "Phi": 0,
+      "Id": 358,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 19, 16],
+      "Position": [
+        16,
+        19,
+        16
+      ],
+      "Phi": 1,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [13, 26, 11],
+      "Position": [
+        13,
+        26,
+        11
+      ],
+      "Phi": 0,
+      "Id": 53,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 20, 12],
+      "Position": [
+        19,
+        20,
+        12
+      ],
+      "Phi": 2,
+      "Id": 361,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 12, 12],
+      "Position": [
+        18,
+        12,
+        12
+      ],
+      "Phi": 1,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 14, 12],
+      "Position": [
+        18,
+        14,
+        12
+      ],
+      "Phi": 0,
+      "Id": 365,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 17, 11],
+      "Position": [
+        17,
+        17,
+        11
+      ],
+      "Phi": 1,
+      "Id": 369,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 19, 8],
+      "Position": [
+        17,
+        19,
+        8
+      ],
+      "Phi": 3,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 20, 11],
+      "Position": [
+        19,
+        20,
+        11
+      ],
+      "Phi": 3,
+      "Id": 358,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 12, 10],
+      "Position": [
+        17,
+        12,
+        10
+      ],
+      "Phi": 3,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 14, 10],
+      "Position": [
+        17,
+        14,
+        10
+      ],
+      "Phi": 2,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 17, 12],
+      "Position": [
+        19,
+        17,
+        12
+      ],
+      "Phi": 1,
+      "Id": 367,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 12, 10],
+      "Position": [
+        18,
+        12,
+        10
+      ],
+      "Phi": 0,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 14, 10],
+      "Position": [
+        18,
+        14,
+        10
+      ],
+      "Phi": 3,
+      "Id": 365,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 17, 11],
+      "Position": [
+        19,
+        17,
+        11
+      ],
+      "Phi": 3,
+      "Id": 369,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 20, 10],
+      "Position": [
+        19,
+        20,
+        10
+      ],
+      "Phi": 3,
+      "Id": 361,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [13, 29, 11],
+      "Position": [
+        13,
+        29,
+        11
+      ],
+      "Phi": 0,
+      "Id": 54,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [15, 19, 16],
+      "Position": [
+        15,
+        19,
+        16
+      ],
+      "Phi": 0,
+      "Id": 325,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 20, 11],
+      "Position": [
+        20,
+        20,
+        11
+      ],
+      "Phi": 2,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 27, 10],
+      "Position": [
+        16,
+        27,
+        10
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 12, 10],
+      "Position": [
+        19,
+        12,
+        10
+      ],
+      "Phi": 2,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 14, 10],
+      "Position": [
+        19,
+        14,
+        10
+      ],
+      "Phi": 0,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 17, 10],
+      "Position": [
+        17,
+        17,
+        10
+      ],
+      "Phi": 3,
+      "Id": 367,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 28, 14],
+      "Position": [
+        18,
+        28,
+        14
+      ],
+      "Phi": 1,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 13, 13],
+      "Position": [
+        17,
+        13,
+        13
+      ],
+      "Phi": 2,
+      "Id": 372,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 13, 12],
+      "Position": [
+        19,
+        13,
+        12
+      ],
+      "Phi": 3,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 15, 10],
+      "Position": [
+        17,
+        15,
+        10
+      ],
+      "Phi": 0,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [15, 19, 15],
+      "Position": [
+        15,
+        19,
+        15
+      ],
+      "Phi": 0,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 28, 14],
+      "Position": [
+        20,
+        28,
+        14
+      ],
+      "Phi": 1,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 13, 9],
+      "Position": [
+        20,
+        13,
+        9
+      ],
+      "Phi": 3,
+      "Id": 371,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 14, 11],
+      "Position": [
+        17,
+        14,
+        11
+      ],
+      "Phi": 2,
+      "Id": 365,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 17, 12],
+      "Position": [
+        17,
+        17,
+        12
+      ],
+      "Phi": 3,
+      "Id": 367,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 14, 12],
+      "Position": [
+        19,
+        14,
+        12
+      ],
+      "Phi": 3,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 12, 11],
+      "Position": [
+        19,
+        12,
+        11
+      ],
+      "Phi": 3,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 13, 13],
+      "Position": [
+        20,
+        13,
+        13
+      ],
+      "Phi": 2,
+      "Id": 371,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [15, 19, 14],
+      "Position": [
+        15,
+        19,
+        14
+      ],
+      "Phi": 0,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 15, 12],
+      "Position": [
+        17,
+        15,
+        12
+      ],
+      "Phi": 0,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 13, 13],
+      "Position": [
+        18,
+        13,
+        13
+      ],
+      "Phi": 2,
+      "Id": 372,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 20, 13],
+      "Position": [
+        17,
+        20,
+        13
+      ],
+      "Phi": 1,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [21, 19, 15],
+      "Position": [
+        21,
+        19,
+        15
+      ],
+      "Phi": 2,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 13, 12],
+      "Position": [
+        18,
+        13,
+        12
+      ],
+      "Phi": 3,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 13, 11],
+      "Position": [
+        20,
+        13,
+        11
+      ],
+      "Phi": 3,
+      "Id": 372,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 20, 9],
+      "Position": [
+        19,
+        20,
+        9
+      ],
+      "Phi": 3,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 15, 12],
+      "Position": [
+        18,
+        15,
+        12
+      ],
+      "Phi": 0,
+      "Id": 365,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 18, 13],
+      "Position": [
+        19,
+        18,
+        13
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 12, 11],
+      "Position": [
+        17,
+        12,
+        11
+      ],
+      "Phi": 0,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 14, 12],
+      "Position": [
+        17,
+        14,
+        12
+      ],
+      "Phi": 3,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 17, 10],
+      "Position": [
+        19,
+        17,
+        10
+      ],
+      "Phi": 1,
+      "Id": 367,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 14, 11],
+      "Position": [
+        19,
+        14,
+        11
+      ],
+      "Phi": 2,
+      "Id": 102,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 18, 14],
+      "Position": [
+        20,
+        18,
+        14
+      ],
+      "Phi": 2,
+      "Id": 331,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 27, 11],
+      "Position": [
+        16,
+        27,
+        11
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [21, 19, 16],
+      "Position": [
+        21,
+        19,
+        16
+      ],
+      "Phi": 1,
+      "Id": 325,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 13, 11],
+      "Position": [
+        19,
+        13,
+        11
+      ],
+      "Phi": 3,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 13, 13],
+      "Position": [
+        19,
+        13,
+        13
+      ],
+      "Phi": 2,
+      "Id": 372,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 19, 14],
+      "Position": [
+        18,
+        19,
+        14
+      ],
+      "Phi": 3,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 15, 10],
+      "Position": [
+        18,
+        15,
+        10
+      ],
+      "Phi": 0,
+      "Id": 365,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 13, 11],
+      "Position": [
+        18,
+        13,
+        11
+      ],
+      "Phi": 1,
+      "Id": 45,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 13, 12],
+      "Position": [
+        16,
+        13,
+        12
+      ],
+      "Phi": 1,
+      "Id": 372,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 28, 14],
+      "Position": [
+        19,
+        28,
+        14
+      ],
+      "Phi": 1,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 15, 10],
+      "Position": [
+        19,
+        15,
+        10
+      ],
+      "Phi": 3,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 19, 14],
+      "Position": [
+        19,
+        19,
+        14
+      ],
+      "Phi": 3,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 12, 12],
+      "Position": [
+        17,
+        12,
+        12
+      ],
+      "Phi": 2,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 17, 12],
+      "Position": [
+        18,
+        17,
+        12
+      ],
+      "Phi": 0,
+      "Id": 369,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 17, 10],
+      "Position": [
+        18,
+        17,
+        10
+      ],
+      "Phi": 0,
+      "Id": 369,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 12, 12],
+      "Position": [
+        19,
+        12,
+        12
+      ],
+      "Phi": 3,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 19, 13],
+      "Position": [
+        20,
+        19,
+        13
+      ],
+      "Phi": 0,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 19, 13],
+      "Position": [
+        17,
+        19,
+        13
+      ],
+      "Phi": 3,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 15, 11],
+      "Position": [
+        17,
+        15,
+        11
+      ],
+      "Phi": 3,
+      "Id": 365,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 13, 10],
+      "Position": [
+        19,
+        13,
+        10
+      ],
+      "Phi": 3,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 13, 13],
+      "Position": [
+        16,
+        13,
+        13
+      ],
+      "Phi": 1,
+      "Id": 371,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [15, 28, 13],
+      "Position": [
+        15,
+        28,
+        13
+      ],
+      "Phi": 1,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 15, 11],
+      "Position": [
+        18,
+        15,
+        11
+      ],
+      "Phi": 3,
+      "Id": 45,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 13, 12],
+      "Position": [
+        20,
+        13,
+        12
+      ],
+      "Phi": 3,
+      "Id": 372,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 18, 13],
+      "Position": [
+        16,
+        18,
+        13
+      ],
+      "Phi": 1,
+      "Id": 331,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 19, 16],
+      "Position": [
+        20,
+        19,
+        16
+      ],
+      "Phi": 1,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 13, 10],
+      "Position": [
+        18,
+        13,
+        10
+      ],
+      "Phi": 0,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 13, 12],
+      "Position": [
+        17,
+        13,
+        12
+      ],
+      "Phi": 0,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 13, 9],
+      "Position": [
+        19,
+        13,
+        9
+      ],
+      "Phi": 0,
+      "Id": 372,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 18, 13],
+      "Position": [
+        20,
+        18,
+        13
+      ],
+      "Phi": 2,
+      "Id": 331,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [15, 28, 12],
+      "Position": [
+        15,
+        28,
+        12
+      ],
+      "Phi": 3,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 15, 11],
+      "Position": [
+        19,
+        15,
+        11
+      ],
+      "Phi": 3,
+      "Id": 102,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 13, 11],
+      "Position": [
+        17,
+        13,
+        11
+      ],
+      "Phi": 3,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 13, 9],
+      "Position": [
+        18,
+        13,
+        9
+      ],
+      "Phi": 0,
+      "Id": 372,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 13, 10],
+      "Position": [
+        16,
+        13,
+        10
+      ],
+      "Phi": 1,
+      "Id": 372,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [15, 27, 9],
+      "Position": [
+        15,
+        27,
+        9
+      ],
+      "Phi": 1,
+      "Id": 331,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [15, 19, 13],
+      "Position": [
+        15,
+        19,
+        13
+      ],
+      "Phi": 0,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 22, 11],
+      "Position": [
+        18,
+        22,
+        11
+      ],
+      "Phi": 2,
+      "Id": 112,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 19, 12],
+      "Position": [
+        18,
+        19,
+        12
+      ],
+      "Phi": 2,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 19, 13],
+      "Position": [
+        18,
+        19,
+        13
+      ],
+      "Phi": 3,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 19, 14],
+      "Position": [
+        16,
+        19,
+        14
+      ],
+      "Phi": 0,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 20, 9],
+      "Position": [
+        17,
+        20,
+        9
+      ],
+      "Phi": 3,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 13, 10],
+      "Position": [
+        20,
+        13,
+        10
+      ],
+      "Phi": 3,
+      "Id": 372,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 13, 11],
+      "Position": [
+        16,
+        13,
+        11
+      ],
+      "Phi": 1,
+      "Id": 372,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 20, 11],
+      "Position": [
+        18,
+        20,
+        11
+      ],
+      "Phi": 1,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [15, 19, 12],
+      "Position": [
+        15,
+        19,
+        12
+      ],
+      "Phi": 0,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 15, 12],
+      "Position": [
+        19,
+        15,
+        12
+      ],
+      "Phi": 3,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 13, 10],
+      "Position": [
+        17,
+        13,
+        10
+      ],
+      "Phi": 3,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 13, 9],
+      "Position": [
+        17,
+        13,
+        9
+      ],
+      "Phi": 0,
+      "Id": 372,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [15, 27, 10],
+      "Position": [
+        15,
+        27,
+        10
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [15, 27, 12],
+      "Position": [
+        15,
+        27,
+        12
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 21, 11],
+      "Position": [
+        18,
+        21,
+        11
+      ],
+      "Phi": 2,
+      "Id": 112,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 19, 16],
+      "Position": [
+        18,
+        19,
+        16
+      ],
+      "Phi": 1,
+      "Id": 53,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 19, 13],
+      "Position": [
+        19,
+        19,
+        13
+      ],
+      "Phi": 3,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 18, 14],
+      "Position": [
+        17,
+        18,
+        14
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 19, 13],
+      "Position": [
+        16,
+        19,
+        13
+      ],
+      "Phi": 1,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [15, 27, 11],
+      "Position": [
+        15,
+        27,
+        11
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 25, 12],
+      "Position": [
+        17,
+        25,
+        12
+      ],
+      "Phi": 1,
+      "Id": 365,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 25, 11],
+      "Position": [
+        17,
+        25,
+        11
+      ],
+      "Phi": 1,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 22, 11],
+      "Position": [
+        20,
+        22,
+        11
+      ],
+      "Phi": 2,
+      "Id": 51,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 23, 10],
+      "Position": [
+        19,
+        23,
+        10
+      ],
+      "Phi": 3,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 25, 12],
+      "Position": [
+        18,
+        25,
+        12
+      ],
+      "Phi": 1,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 25, 11],
+      "Position": [
+        20,
+        25,
+        11
+      ],
+      "Phi": 2,
+      "Id": 53,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 25, 11],
+      "Position": [
+        18,
+        25,
+        11
+      ],
+      "Phi": 1,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 25, 12],
+      "Position": [
+        19,
+        25,
+        12
+      ],
+      "Phi": 0,
+      "Id": 365,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 23, 10],
+      "Position": [
+        17,
+        23,
+        10
+      ],
+      "Phi": 2,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 23, 10],
+      "Position": [
+        18,
+        23,
+        10
+      ],
+      "Phi": 3,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 25, 11],
+      "Position": [
+        19,
+        25,
+        11
+      ],
+      "Phi": 0,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 23, 11],
+      "Position": [
+        20,
+        23,
+        11
+      ],
+      "Phi": 2,
+      "Id": 53,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 23, 11],
+      "Position": [
+        19,
+        23,
+        11
+      ],
+      "Phi": 3,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 23, 12],
+      "Position": [
+        18,
+        23,
+        12
+      ],
+      "Phi": 3,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 25, 10],
+      "Position": [
+        18,
+        25,
+        10
+      ],
+      "Phi": 1,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 23, 11],
+      "Position": [
+        17,
+        23,
+        11
+      ],
+      "Phi": 2,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 24, 10],
+      "Position": [
+        18,
+        24,
+        10
+      ],
+      "Phi": 0,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 24, 12],
+      "Position": [
+        19,
+        24,
+        12
+      ],
+      "Phi": 2,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 24, 12],
+      "Position": [
+        17,
+        24,
+        12
+      ],
+      "Phi": 3,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 24, 10],
+      "Position": [
+        19,
+        24,
+        10
+      ],
+      "Phi": 2,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 30, 12],
+      "Position": [
+        18,
+        30,
+        12
+      ],
+      "Phi": 0,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [15, 27, 13],
+      "Position": [
+        15,
+        27,
+        13
+      ],
+      "Phi": 1,
+      "Id": 331,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 23, 12],
+      "Position": [
+        19,
+        23,
+        12
+      ],
+      "Phi": 3,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 25, 10],
+      "Position": [
+        17,
+        25,
+        10
+      ],
+      "Phi": 1,
+      "Id": 365,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 23, 11],
+      "Position": [
+        18,
+        23,
+        11
+      ],
+      "Phi": 3,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 23, 12],
+      "Position": [
+        17,
+        23,
+        12
+      ],
+      "Phi": 2,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 25, 10],
+      "Position": [
+        19,
+        25,
+        10
+      ],
+      "Phi": 0,
+      "Id": 365,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [15, 28, 14],
+      "Position": [
+        15,
+        28,
+        14
+      ],
+      "Phi": 1,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 24, 11],
+      "Position": [
+        20,
+        24,
+        11
+      ],
+      "Phi": 2,
+      "Id": 53,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 24, 11],
+      "Position": [
+        19,
+        24,
+        11
+      ],
+      "Phi": 2,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 24, 12],
+      "Position": [
+        18,
+        24,
+        12
+      ],
+      "Phi": 0,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 27, 9],
+      "Position": [
+        16,
+        27,
+        9
+      ],
+      "Phi": 1,
+      "Id": 331,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 24, 10],
+      "Position": [
+        17,
+        24,
+        10
+      ],
+      "Phi": 3,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 24, 11],
+      "Position": [
+        18,
+        24,
+        11
+      ],
+      "Phi": 0,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 24, 11],
+      "Position": [
+        17,
+        24,
+        11
+      ],
+      "Phi": 3,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [15, 19, 9],
+      "Position": [
+        15,
+        19,
+        9
+      ],
+      "Phi": 0,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 19, 8],
+      "Position": [
+        18,
+        19,
+        8
+      ],
+      "Phi": 3,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 19, 8],
+      "Position": [
+        19,
+        19,
+        8
+      ],
+      "Phi": 3,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 19, 8],
+      "Position": [
+        20,
+        19,
+        8
+      ],
+      "Phi": 3,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [21, 19, 8],
+      "Position": [
+        21,
+        19,
+        8
+      ],
+      "Phi": 2,
+      "Id": 325,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 19, 16],
+      "Position": [
+        19,
+        19,
+        16
+      ],
+      "Phi": 1,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 19, 16],
+      "Position": [
+        17,
+        19,
+        16
+      ],
+      "Phi": 1,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 16, 10],
+      "Position": [
+        18,
+        16,
+        10
+      ],
+      "Phi": 3,
+      "Id": 365,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 16, 11],
+      "Position": [
+        18,
+        16,
+        11
+      ],
+      "Phi": 1,
+      "Id": 45,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 16, 12],
+      "Position": [
+        18,
+        16,
+        12
+      ],
+      "Phi": 0,
+      "Id": 365,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 16, 10],
+      "Position": [
+        19,
+        16,
+        10
+      ],
+      "Phi": 0,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 16, 11],
+      "Position": [
+        19,
+        16,
+        11
+      ],
+      "Phi": 2,
+      "Id": 365,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 16, 12],
+      "Position": [
+        19,
+        16,
+        12
+      ],
+      "Phi": 2,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [21, 19, 9],
+      "Position": [
+        21,
+        19,
+        9
+      ],
+      "Phi": 2,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [21, 19, 10],
+      "Position": [
+        21,
+        19,
+        10
+      ],
+      "Phi": 2,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [21, 19, 11],
+      "Position": [
+        21,
+        19,
+        11
+      ],
+      "Phi": 2,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [21, 19, 12],
+      "Position": [
+        21,
+        19,
+        12
+      ],
+      "Phi": 2,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 16, 10],
+      "Position": [
+        17,
+        16,
+        10
+      ],
+      "Phi": 0,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 16, 11],
+      "Position": [
+        17,
+        16,
+        11
+      ],
+      "Phi": 1,
+      "Id": 365,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 16, 12],
+      "Position": [
+        17,
+        16,
+        12
+      ],
+      "Phi": 3,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [21, 19, 13],
+      "Position": [
+        21,
+        19,
+        13
+      ],
+      "Phi": 2,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [21, 19, 14],
+      "Position": [
+        21,
+        19,
+        14
+      ],
+      "Phi": 2,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 28, 14],
+      "Position": [
+        16,
+        28,
+        14
+      ],
+      "Phi": 1,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 18, 14],
+      "Position": [
+        16,
+        18,
+        14
+      ],
+      "Phi": 0,
+      "Id": 331,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 18, 13],
+      "Position": [
+        17,
+        18,
+        13
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 19, 14],
+      "Position": [
+        17,
+        19,
+        14
+      ],
+      "Phi": 3,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 20, 16],
+      "Position": [
+        18,
+        20,
+        16
+      ],
+      "Phi": 1,
+      "Id": 54,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 29, 10],
+      "Position": [
+        17,
+        29,
+        10
+      ],
+      "Phi": 1,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 29, 12],
+      "Position": [
+        18,
+        29,
+        12
+      ],
+      "Phi": 1,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 19, 14],
+      "Position": [
+        20,
+        19,
+        14
+      ],
+      "Phi": 2,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 18, 14],
+      "Position": [
+        18,
+        18,
+        14
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 18, 16],
+      "Position": [
+        18,
+        18,
+        16
+      ],
+      "Phi": 1,
+      "Id": 53,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 18, 13],
+      "Position": [
+        18,
+        18,
+        13
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 18, 14],
+      "Position": [
+        19,
+        18,
+        14
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 18, 15],
+      "Position": [
+        18,
+        18,
+        15
+      ],
+      "Phi": 0,
+      "Id": 331,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 18, 15],
+      "Position": [
+        19,
+        18,
+        15
+      ],
+      "Phi": 3,
+      "Id": 331,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 18, 10],
+      "Position": [
+        20,
+        18,
+        10
+      ],
+      "Phi": 0,
+      "Id": 331,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 18, 12],
+      "Position": [
+        19,
+        18,
+        12
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 18, 12],
+      "Position": [
+        18,
+        18,
+        12
+      ],
+      "Phi": 2,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 18, 12],
+      "Position": [
+        20,
+        18,
+        12
+      ],
+      "Phi": 1,
+      "Id": 331,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 18, 10],
+      "Position": [
+        17,
+        18,
+        10
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 18, 11],
+      "Position": [
+        17,
+        18,
+        11
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 18, 11],
+      "Position": [
+        18,
+        18,
+        11
+      ],
+      "Phi": 3,
+      "Id": 20,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 18, 15],
+      "Position": [
+        17,
+        18,
+        15
+      ],
+      "Phi": 2,
+      "Id": 331,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 18, 9],
+      "Position": [
+        16,
+        18,
+        9
+      ],
+      "Phi": 0,
+      "Id": 328,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 18, 9],
+      "Position": [
+        17,
+        18,
+        9
+      ],
+      "Phi": 3,
+      "Id": 331,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 18, 11],
+      "Position": [
+        16,
+        18,
+        11
+      ],
+      "Phi": 1,
+      "Id": 331,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 18, 15],
+      "Position": [
+        16,
+        18,
+        15
+      ],
+      "Phi": 3,
+      "Id": 328,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 18, 10],
+      "Position": [
+        18,
+        18,
+        10
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 18, 10],
+      "Position": [
+        19,
+        18,
+        10
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 18, 11],
+      "Position": [
+        19,
+        18,
+        11
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 18, 9],
+      "Position": [
+        19,
+        18,
+        9
+      ],
+      "Phi": 1,
+      "Id": 331,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 18, 9],
+      "Position": [
+        20,
+        18,
+        9
+      ],
+      "Phi": 3,
+      "Id": 328,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 18, 15],
+      "Position": [
+        20,
+        18,
+        15
+      ],
+      "Phi": 2,
+      "Id": 328,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 31, 11],
+      "Position": [
+        19,
+        31,
+        11
+      ],
+      "Phi": 2,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [15, 19, 10],
+      "Position": [
+        15,
+        19,
+        10
+      ],
+      "Phi": 0,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 18, 11],
+      "Position": [
+        20,
+        18,
+        11
+      ],
+      "Phi": 3,
+      "Id": 331,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 32, 9],
+      "Position": [
+        17,
+        32,
+        9
+      ],
+      "Phi": 3,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 18, 10],
+      "Position": [
+        16,
+        18,
+        10
+      ],
+      "Phi": 3,
+      "Id": 331,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 18, 12],
+      "Position": [
+        16,
+        18,
+        12
+      ],
+      "Phi": 3,
+      "Id": 331,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 18, 12],
+      "Position": [
+        17,
+        18,
+        12
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 32, 9],
+      "Position": [
+        18,
+        32,
+        9
+      ],
+      "Phi": 3,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 18, 9],
+      "Position": [
+        18,
+        18,
+        9
+      ],
+      "Phi": 3,
+      "Id": 331,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 27, 11],
+      "Position": [
+        19,
+        27,
+        11
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 27, 9],
+      "Position": [
+        19,
+        27,
+        9
+      ],
+      "Phi": 0,
+      "Id": 331,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 32, 9],
+      "Position": [
+        19,
+        32,
+        9
+      ],
+      "Phi": 3,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 27, 9],
+      "Position": [
+        20,
+        27,
+        9
+      ],
+      "Phi": 3,
+      "Id": 328,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 20, 12],
+      "Position": [
+        18,
+        20,
+        12
+      ],
+      "Phi": 3,
+      "Id": 358,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 19, 10],
+      "Position": [
+        17,
+        19,
+        10
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 19, 10],
+      "Position": [
+        19,
+        19,
+        10
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 19, 11],
+      "Position": [
+        18,
+        19,
+        11
+      ],
+      "Phi": 3,
+      "Id": 20,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 19, 12],
+      "Position": [
+        17,
+        19,
+        12
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 19, 12],
+      "Position": [
+        19,
+        19,
+        12
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 19, 10],
+      "Position": [
+        18,
+        19,
+        10
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 20, 9],
+      "Position": [
+        18,
+        20,
+        9
+      ],
+      "Phi": 3,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 19, 11],
+      "Position": [
+        17,
+        19,
+        11
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 19, 11],
+      "Position": [
+        19,
+        19,
+        11
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 19, 15],
+      "Position": [
+        20,
+        19,
+        15
+      ],
+      "Phi": 0,
+      "Id": 329,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 30, 12],
+      "Position": [
+        17,
+        30,
+        12
+      ],
+      "Phi": 3,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 19, 15],
+      "Position": [
+        18,
+        19,
+        15
+      ],
+      "Phi": 1,
+      "Id": 331,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 19, 12],
+      "Position": [
+        16,
+        19,
+        12
+      ],
+      "Phi": 1,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 19, 11],
+      "Position": [
+        16,
+        19,
+        11
+      ],
+      "Phi": 2,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 19, 9],
+      "Position": [
+        20,
+        19,
+        9
+      ],
+      "Phi": 3,
+      "Id": 329,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 19, 15],
+      "Position": [
+        17,
+        19,
+        15
+      ],
+      "Phi": 2,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 19, 11],
+      "Position": [
+        20,
+        19,
+        11
+      ],
+      "Phi": 1,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 19, 12],
+      "Position": [
+        20,
+        19,
+        12
+      ],
+      "Phi": 1,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 19, 10],
+      "Position": [
+        20,
+        19,
+        10
+      ],
+      "Phi": 3,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [15, 19, 11],
+      "Position": [
+        15,
+        19,
+        11
+      ],
+      "Phi": 0,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 19, 15],
+      "Position": [
+        19,
+        19,
+        15
+      ],
+      "Phi": 2,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 19, 15],
+      "Position": [
+        16,
+        19,
+        15
+      ],
+      "Phi": 1,
+      "Id": 329,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 19, 9],
+      "Position": [
+        17,
+        19,
+        9
+      ],
+      "Phi": 1,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 19, 9],
+      "Position": [
+        18,
+        19,
+        9
+      ],
+      "Phi": 2,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 19, 10],
+      "Position": [
+        16,
+        19,
+        10
+      ],
+      "Phi": 1,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 19, 9],
+      "Position": [
+        16,
+        19,
+        9
+      ],
+      "Phi": 2,
+      "Id": 329,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 19, 9],
+      "Position": [
+        19,
+        19,
+        9
+      ],
+      "Phi": 2,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 32, 13],
+      "Position": [
+        17,
+        32,
+        13
+      ],
+      "Phi": 1,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 29, 11],
+      "Position": [
+        17,
+        29,
+        11
+      ],
+      "Phi": 0,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 29, 12],
+      "Position": [
+        17,
+        29,
+        12
+      ],
+      "Phi": 3,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 29, 10],
+      "Position": [
+        18,
+        29,
+        10
+      ],
+      "Phi": 3,
+      "Id": 102,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 31, 11],
+      "Position": [
+        18,
+        31,
+        11
+      ],
+      "Phi": 3,
+      "Id": 215,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 27, 10],
+      "Position": [
+        18,
+        27,
+        10
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 30, 10],
+      "Position": [
+        17,
+        30,
+        10
+      ],
+      "Phi": 1,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 30, 11],
+      "Position": [
+        17,
+        30,
+        11
+      ],
+      "Phi": 1,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 30, 12],
+      "Position": [
+        19,
+        30,
+        12
+      ],
+      "Phi": 2,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 27, 10],
+      "Position": [
+        19,
+        27,
+        10
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 29, 10],
+      "Position": [
+        19,
+        29,
+        10
+      ],
+      "Phi": 3,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 27, 12],
+      "Position": [
+        18,
+        27,
+        12
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 29, 12],
+      "Position": [
+        19,
+        29,
+        12
+      ],
+      "Phi": 0,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 27, 12],
+      "Position": [
+        17,
+        27,
+        12
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 27, 9],
+      "Position": [
+        18,
+        27,
+        9
+      ],
+      "Phi": 0,
+      "Id": 331,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [15, 19, 8],
+      "Position": [
+        15,
+        19,
+        8
+      ],
+      "Phi": 3,
+      "Id": 325,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 27, 13],
+      "Position": [
+        19,
+        27,
+        13
+      ],
+      "Phi": 1,
+      "Id": 331,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 27, 11],
+      "Position": [
+        20,
+        27,
+        11
+      ],
+      "Phi": 3,
+      "Id": 331,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [14, 27, 10],
+      "Position": [
+        14,
+        27,
+        10
+      ],
+      "Phi": 1,
+      "Id": 331,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [14, 27, 12],
+      "Position": [
+        14,
+        27,
+        12
+      ],
+      "Phi": 3,
+      "Id": 331,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 27, 13],
+      "Position": [
+        18,
+        27,
+        13
+      ],
+      "Phi": 2,
+      "Id": 331,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 27, 13],
+      "Position": [
+        17,
+        27,
+        13
+      ],
+      "Phi": 1,
+      "Id": 331,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [14, 27, 13],
+      "Position": [
+        14,
+        27,
+        13
+      ],
+      "Phi": 3,
+      "Id": 328,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 27, 13],
+      "Position": [
+        20,
+        27,
+        13
+      ],
+      "Phi": 2,
+      "Id": 328,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 27, 11],
+      "Position": [
+        18,
+        27,
+        11
+      ],
+      "Phi": 3,
+      "Id": 20,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 19, 8],
+      "Position": [
+        16,
+        19,
+        8
+      ],
+      "Phi": 3,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [14, 27, 11],
+      "Position": [
+        14,
+        27,
+        11
+      ],
+      "Phi": 0,
+      "Id": 331,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 30, 10],
+      "Position": [
+        18,
+        30,
+        10
+      ],
+      "Phi": 0,
+      "Id": 102,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 32, 11],
+      "Position": [
+        20,
+        32,
+        11
+      ],
+      "Phi": 2,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 32, 10],
+      "Position": [
+        19,
+        32,
+        10
+      ],
+      "Phi": 3,
+      "Id": 364,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 32, 11],
+      "Position": [
+        19,
+        32,
+        11
+      ],
+      "Phi": 3,
+      "Id": 364,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 32, 12],
+      "Position": [
+        19,
+        32,
+        12
+      ],
+      "Phi": 2,
+      "Id": 364,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 32, 10],
+      "Position": [
+        18,
+        32,
+        10
+      ],
+      "Phi": 0,
+      "Id": 364,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 32, 11],
+      "Position": [
+        18,
+        32,
+        11
+      ],
+      "Phi": 1,
+      "Id": 364,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 32, 12],
+      "Position": [
+        18,
+        32,
+        12
+      ],
+      "Phi": 3,
+      "Id": 364,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 32, 10],
+      "Position": [
+        17,
+        32,
+        10
+      ],
+      "Phi": 1,
+      "Id": 364,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 32, 11],
+      "Position": [
+        17,
+        32,
+        11
+      ],
+      "Phi": 1,
+      "Id": 364,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 32, 12],
+      "Position": [
+        17,
+        32,
+        12
+      ],
+      "Phi": 3,
+      "Id": 364,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 32, 12],
+      "Position": [
+        16,
+        32,
+        12
+      ],
+      "Phi": 0,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 31, 12],
+      "Position": [
+        19,
+        31,
+        12
+      ],
+      "Phi": 2,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 27, 9],
+      "Position": [
+        17,
+        27,
+        9
+      ],
+      "Phi": 1,
+      "Id": 331,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 30, 10],
+      "Position": [
+        19,
+        30,
+        10
+      ],
+      "Phi": 2,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 32, 13],
+      "Position": [
+        20,
+        32,
+        13
+      ],
+      "Phi": 1,
+      "Id": 325,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 31, 10],
+      "Position": [
+        18,
+        31,
+        10
+      ],
+      "Phi": 3,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 32, 10],
+      "Position": [
+        20,
+        32,
+        10
+      ],
+      "Phi": 2,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 30, 11],
+      "Position": [
+        19,
+        30,
+        11
+      ],
+      "Phi": 2,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 31, 10],
+      "Position": [
+        17,
+        31,
+        10
+      ],
+      "Phi": 1,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 31, 12],
+      "Position": [
+        17,
+        31,
+        12
+      ],
+      "Phi": 0,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 33, 13],
+      "Position": [
+        18,
+        33,
+        13
+      ],
+      "Phi": 1,
+      "Id": 54,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [14, 27, 9],
+      "Position": [
+        14,
+        27,
+        9
+      ],
+      "Phi": 2,
+      "Id": 328,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 32, 13],
+      "Position": [
+        19,
+        32,
+        13
+      ],
+      "Phi": 1,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 32, 9],
+      "Position": [
+        20,
+        32,
+        9
+      ],
+      "Phi": 2,
+      "Id": 325,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 32, 13],
+      "Position": [
+        16,
+        32,
+        13
+      ],
+      "Phi": 0,
+      "Id": 325,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 32, 12],
+      "Position": [
+        20,
+        32,
+        12
+      ],
+      "Phi": 2,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 27, 10],
+      "Position": [
+        20,
+        27,
+        10
+      ],
+      "Phi": 1,
+      "Id": 331,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 31, 10],
+      "Position": [
+        19,
+        31,
+        10
+      ],
+      "Phi": 1,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 27, 12],
+      "Position": [
+        20,
+        27,
+        12
+      ],
+      "Phi": 1,
+      "Id": 331,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 27, 12],
+      "Position": [
+        19,
+        27,
+        12
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 31, 12],
+      "Position": [
+        18,
+        31,
+        12
+      ],
+      "Phi": 1,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 27, 10],
+      "Position": [
+        17,
+        27,
+        10
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [15, 28, 9],
+      "Position": [
+        15,
+        28,
+        9
+      ],
+      "Phi": 1,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 28, 13],
+      "Position": [
+        18,
+        28,
+        13
+      ],
+      "Phi": 1,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 28, 10],
+      "Position": [
+        20,
+        28,
+        10
+      ],
+      "Phi": 0,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 29, 11],
+      "Position": [
+        19,
+        29,
+        11
+      ],
+      "Phi": 0,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 28, 9],
+      "Position": [
+        18,
+        28,
+        9
+      ],
+      "Phi": 2,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 28, 13],
+      "Position": [
+        19,
+        28,
+        13
+      ],
+      "Phi": 3,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [14, 28, 10],
+      "Position": [
+        14,
+        28,
+        10
+      ],
+      "Phi": 1,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [14, 28, 9],
+      "Position": [
+        14,
+        28,
+        9
+      ],
+      "Phi": 2,
+      "Id": 329,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 28, 13],
+      "Position": [
+        20,
+        28,
+        13
+      ],
+      "Phi": 2,
+      "Id": 329,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 28, 9],
+      "Position": [
+        19,
+        28,
+        9
+      ],
+      "Phi": 2,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 28, 11],
+      "Position": [
+        17,
+        28,
+        11
+      ],
+      "Phi": 2,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 28, 10],
+      "Position": [
+        17,
+        28,
+        10
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 28, 13],
+      "Position": [
+        17,
+        28,
+        13
+      ],
+      "Phi": 1,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 28, 9],
+      "Position": [
+        17,
+        28,
+        9
+      ],
+      "Phi": 1,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 28, 11],
+      "Position": [
+        19,
+        28,
+        11
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 28, 12],
+      "Position": [
+        18,
+        28,
+        12
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 28, 10],
+      "Position": [
+        18,
+        28,
+        10
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 29, 11],
+      "Position": [
+        18,
+        29,
+        11
+      ],
+      "Phi": 3,
+      "Id": 45,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 28, 11],
+      "Position": [
+        18,
+        28,
+        11
+      ],
+      "Phi": 3,
+      "Id": 20,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 28, 10],
+      "Position": [
+        19,
+        28,
+        10
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 30, 11],
+      "Position": [
+        18,
+        30,
+        11
+      ],
+      "Phi": 1,
+      "Id": 212,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 28, 12],
+      "Position": [
+        19,
+        28,
+        12
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 28, 12],
+      "Position": [
+        17,
+        28,
+        12
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [14, 28, 13],
+      "Position": [
+        14,
+        28,
+        13
+      ],
+      "Phi": 1,
+      "Id": 329,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 28, 12],
+      "Position": [
+        20,
+        28,
+        12
+      ],
+      "Phi": 1,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 28, 11],
+      "Position": [
+        20,
+        28,
+        11
+      ],
+      "Phi": 1,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 28, 9],
+      "Position": [
+        20,
+        28,
+        9
+      ],
+      "Phi": 1,
+      "Id": 329,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [14, 28, 11],
+      "Position": [
+        14,
+        28,
+        11
+      ],
+      "Phi": 2,
+      "Id": 331,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [14, 28, 12],
+      "Position": [
+        14,
+        28,
+        12
+      ],
+      "Phi": 3,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 28, 11],
+      "Position": [
+        16,
+        28,
+        11
+      ],
+      "Phi": 3,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [13, 28, 14],
+      "Position": [
+        13,
+        28,
+        14
+      ],
+      "Phi": 0,
+      "Id": 325,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [13, 28, 13],
+      "Position": [
+        13,
+        28,
+        13
+      ],
+      "Phi": 0,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 28, 8],
+      "Position": [
+        20,
+        28,
+        8
+      ],
+      "Phi": 3,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 32, 10],
+      "Position": [
+        16,
+        32,
+        10
+      ],
+      "Phi": 0,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 27, 11],
+      "Position": [
+        17,
+        27,
+        11
+      ],
+      "Phi": 2,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [13, 28, 9],
+      "Position": [
+        13,
+        28,
+        9
+      ],
+      "Phi": 0,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 32, 9],
+      "Position": [
+        16,
+        32,
+        9
+      ],
+      "Phi": 3,
+      "Id": 325,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [13, 28, 8],
+      "Position": [
+        13,
+        28,
+        8
+      ],
+      "Phi": 3,
+      "Id": 325,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [14, 28, 8],
+      "Position": [
+        14,
+        28,
+        8
+      ],
+      "Phi": 3,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [13, 28, 12],
+      "Position": [
+        13,
+        28,
+        12
+      ],
+      "Phi": 0,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 31, 11],
+      "Position": [
+        17,
+        31,
+        11
+      ],
+      "Phi": 3,
+      "Id": 362,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 32, 11],
+      "Position": [
+        16,
+        32,
+        11
+      ],
+      "Phi": 0,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 20, 10],
+      "Position": [
+        17,
+        20,
+        10
+      ],
+      "Phi": 1,
+      "Id": 361,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [13, 28, 10],
+      "Position": [
+        13,
+        28,
+        10
+      ],
+      "Phi": 0,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 28, 8],
+      "Position": [
+        17,
+        28,
+        8
+      ],
+      "Phi": 3,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [14, 28, 14],
+      "Position": [
+        14,
+        28,
+        14
+      ],
+      "Phi": 1,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 28, 14],
+      "Position": [
+        17,
+        28,
+        14
+      ],
+      "Phi": 1,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 28, 8],
+      "Position": [
+        18,
+        28,
+        8
+      ],
+      "Phi": 3,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 28, 8],
+      "Position": [
+        19,
+        28,
+        8
+      ],
+      "Phi": 3,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 28, 9],
+      "Position": [
+        16,
+        28,
+        9
+      ],
+      "Phi": 1,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 28, 10],
+      "Position": [
+        16,
+        28,
+        10
+      ],
+      "Phi": 3,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 28, 8],
+      "Position": [
+        16,
+        28,
+        8
+      ],
+      "Phi": 3,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 27, 13],
+      "Position": [
+        16,
+        27,
+        13
+      ],
+      "Phi": 1,
+      "Id": 331,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [15, 28, 11],
+      "Position": [
+        15,
+        28,
+        11
+      ],
+      "Phi": 3,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [15, 28, 8],
+      "Position": [
+        15,
+        28,
+        8
+      ],
+      "Phi": 3,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 26, 10],
+      "Position": [
+        17,
+        26,
+        10
+      ],
+      "Phi": 3,
+      "Id": 360,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 20, 10],
+      "Position": [
+        20,
+        20,
+        10
+      ],
+      "Phi": 2,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 20, 12],
+      "Position": [
+        16,
+        20,
+        12
+      ],
+      "Phi": 0,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 26, 12],
+      "Position": [
+        17,
+        26,
+        12
+      ],
+      "Phi": 3,
+      "Id": 360,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 20, 12],
+      "Position": [
+        17,
+        20,
+        12
+      ],
+      "Phi": 3,
+      "Id": 361,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 20, 13],
+      "Position": [
+        20,
+        20,
+        13
+      ],
+      "Phi": 1,
+      "Id": 325,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 26, 11],
+      "Position": [
+        18,
+        26,
+        11
+      ],
+      "Phi": 3,
+      "Id": 45,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 26, 11],
+      "Position": [
+        17,
+        26,
+        11
+      ],
+      "Phi": 1,
+      "Id": 360,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 26, 11],
+      "Position": [
+        19,
+        26,
+        11
+      ],
+      "Phi": 3,
+      "Id": 360,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 26, 12],
+      "Position": [
+        19,
+        26,
+        12
+      ],
+      "Phi": 1,
+      "Id": 360,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [21, 28, 14],
+      "Position": [
+        21,
+        28,
+        14
+      ],
+      "Phi": 1,
+      "Id": 325,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [13, 28, 11],
+      "Position": [
+        13,
+        28,
+        11
+      ],
+      "Phi": 0,
+      "Id": 53,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [13, 27, 11],
+      "Position": [
+        13,
+        27,
+        11
+      ],
+      "Phi": 0,
+      "Id": 53,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [15, 28, 10],
+      "Position": [
+        15,
+        28,
+        10
+      ],
+      "Phi": 3,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [21, 28, 9],
+      "Position": [
+        21,
+        28,
+        9
+      ],
+      "Phi": 2,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 26, 10],
+      "Position": [
+        19,
+        26,
+        10
+      ],
+      "Phi": 1,
+      "Id": 360,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 20, 11],
+      "Position": [
+        17,
+        20,
+        11
+      ],
+      "Phi": 1,
+      "Id": 358,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [21, 28, 8],
+      "Position": [
+        21,
+        28,
+        8
+      ],
+      "Phi": 2,
+      "Id": 325,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 26, 10],
+      "Position": [
+        18,
+        26,
+        10
+      ],
+      "Phi": 0,
+      "Id": 360,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 26, 12],
+      "Position": [
+        18,
+        26,
+        12
+      ],
+      "Phi": 0,
+      "Id": 360,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 28, 12],
+      "Position": [
+        16,
+        28,
+        12
+      ],
+      "Phi": 3,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [21, 28, 10],
+      "Position": [
+        21,
+        28,
+        10
+      ],
+      "Phi": 2,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [21, 28, 12],
+      "Position": [
+        21,
+        28,
+        12
+      ],
+      "Phi": 2,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [21, 28, 11],
+      "Position": [
+        21,
+        28,
+        11
+      ],
+      "Phi": 2,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 27, 12],
+      "Position": [
+        16,
+        27,
+        12
+      ],
+      "Phi": 3,
+      "Id": 47,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [21, 28, 13],
+      "Position": [
+        21,
+        28,
+        13
+      ],
+      "Phi": 2,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 20, 13],
+      "Position": [
+        18,
+        20,
+        13
+      ],
+      "Phi": 1,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 28, 13],
+      "Position": [
+        16,
+        28,
+        13
+      ],
+      "Phi": 1,
+      "Id": 326,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [1, 48, 8],
+      "Position": [
+        1,
+        48,
+        8
+      ],
+      "Phi": 3,
+      "Id": 402,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [1, 44, 8],
+      "Position": [
+        1,
+        44,
+        8
+      ],
+      "Phi": 3,
+      "Id": 402,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [1, 44, 9],
+      "Position": [
+        1,
+        44,
+        9
+      ],
+      "Phi": 3,
+      "Id": 402,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [4, 46, 5],
+      "Position": [
+        4,
+        46,
+        5
+      ],
+      "Phi": 3,
+      "Id": 402,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [4, 46, 6],
+      "Position": [
+        4,
+        46,
+        6
+      ],
+      "Phi": 3,
+      "Id": 402,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 20, 13],
+      "Position": [
+        19,
+        20,
+        13
+      ],
+      "Phi": 1,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 20, 9],
+      "Position": [
+        20,
+        20,
+        9
+      ],
+      "Phi": 2,
+      "Id": 325,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 20, 13],
+      "Position": [
+        16,
+        20,
+        13
+      ],
+      "Phi": 0,
+      "Id": 325,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 20, 12],
+      "Position": [
+        20,
+        20,
+        12
+      ],
+      "Phi": 2,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 20, 11],
+      "Position": [
+        16,
+        20,
+        11
+      ],
+      "Phi": 0,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 20, 10],
+      "Position": [
+        16,
+        20,
+        10
+      ],
+      "Phi": 0,
+      "Id": 324,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 20, 9],
+      "Position": [
+        16,
+        20,
+        9
+      ],
+      "Phi": 3,
+      "Id": 325,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 29, 10],
+      "Position": [
+        20,
+        29,
+        10
+      ],
+      "Phi": 0,
+      "Id": 57,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 33, 12],
+      "Position": [
+        19,
+        33,
+        12
+      ],
+      "Phi": 2,
+      "Id": 57,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [15, 29, 10],
+      "Position": [
+        15,
+        29,
+        10
+      ],
+      "Phi": 3,
+      "Id": 57,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 20, 14],
+      "Position": [
+        20,
+        20,
+        14
+      ],
+      "Phi": 0,
+      "Id": 57,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 15, 13],
+      "Position": [
+        18,
+        15,
+        13
+      ],
+      "Phi": 1,
+      "Id": 53,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 16, 13],
+      "Position": [
+        18,
+        16,
+        13
+      ],
+      "Phi": 1,
+      "Id": 53,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 17, 16],
+      "Position": [
+        18,
+        17,
+        16
+      ],
+      "Phi": 1,
+      "Id": 53,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 14, 13],
+      "Position": [
+        18,
+        14,
+        13
+      ],
+      "Phi": 1,
+      "Id": 52,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 26, 13],
+      "Position": [
+        17,
+        26,
+        13
+      ],
+      "Phi": 1,
+      "Id": 375,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 26, 13],
+      "Position": [
+        19,
+        26,
+        13
+      ],
+      "Phi": 1,
+      "Id": 375,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 26, 12],
+      "Position": [
+        20,
+        26,
+        12
+      ],
+      "Phi": 2,
+      "Id": 375,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 26, 11],
+      "Position": [
+        20,
+        26,
+        11
+      ],
+      "Phi": 2,
+      "Id": 375,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 26, 10],
+      "Position": [
+        20,
+        26,
+        10
+      ],
+      "Phi": 2,
+      "Id": 375,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 26, 9],
+      "Position": [
+        19,
+        26,
+        9
+      ],
+      "Phi": 3,
+      "Id": 375,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 26, 9],
+      "Position": [
+        18,
+        26,
+        9
+      ],
+      "Phi": 3,
+      "Id": 375,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 17, 11],
+      "Position": [
+        20,
+        17,
+        11
+      ],
+      "Phi": 2,
+      "Id": 375,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 26, 10],
+      "Position": [
+        16,
+        26,
+        10
+      ],
+      "Phi": 0,
+      "Id": 375,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 26, 11],
+      "Position": [
+        16,
+        26,
+        11
+      ],
+      "Phi": 0,
+      "Id": 375,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 26, 12],
+      "Position": [
+        16,
+        26,
+        12
+      ],
+      "Phi": 0,
+      "Id": 375,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 17, 10],
+      "Position": [
+        20,
+        17,
+        10
+      ],
+      "Phi": 2,
+      "Id": 375,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 17, 9],
+      "Position": [
+        19,
+        17,
+        9
+      ],
+      "Phi": 3,
+      "Id": 375,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 17, 9],
+      "Position": [
+        18,
+        17,
+        9
+      ],
+      "Phi": 3,
+      "Id": 375,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 17, 9],
+      "Position": [
+        17,
+        17,
+        9
+      ],
+      "Phi": 3,
+      "Id": 375,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 17, 10],
+      "Position": [
+        16,
+        17,
+        10
+      ],
+      "Phi": 0,
+      "Id": 375,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [16, 17, 12],
+      "Position": [
+        16,
+        17,
+        12
+      ],
+      "Phi": 0,
+      "Id": 375,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [19, 17, 13],
+      "Position": [
+        19,
+        17,
+        13
+      ],
+      "Phi": 1,
+      "Id": 375,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 17, 13],
+      "Position": [
+        18,
+        17,
+        13
+      ],
+      "Phi": 1,
+      "Id": 375,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [17, 17, 13],
+      "Position": [
+        17,
+        17,
+        13
+      ],
+      "Phi": 1,
+      "Id": 375,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 14, 11],
+      "Position": [
+        20,
+        14,
+        11
+      ],
+      "Phi": 1,
+      "Id": 221,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [20, 15, 11],
+      "Position": [
+        20,
+        15,
+        11
+      ],
+      "Phi": 1,
+      "Id": 222,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 29, 9],
+      "Position": [
+        18,
+        29,
+        9
+      ],
+      "Phi": 2,
+      "Id": 221,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 30, 9],
+      "Position": [
+        18,
+        30,
+        9
+      ],
+      "Phi": 2,
+      "Id": 222,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 31, 13],
+      "Position": [
+        18,
+        31,
+        13
+      ],
+      "Phi": 1,
+      "Id": 53,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 30, 13],
+      "Position": [
+        18,
+        30,
+        13
+      ],
+      "Phi": 1,
+      "Id": 51,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 32, 13],
+      "Position": [
+        18,
+        32,
+        13
+      ],
+      "Phi": 1,
+      "Id": 53,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [18, 34, 11],
+      "Position": [
+        18,
+        34,
+        11
+      ],
+      "Phi": 1,
+      "Id": 69,
+      "ActorSettings": null
+    },
+    {
+      "Emplacement": [1, 48, 9],
+      "Position": [
+        1,
+        48,
+        9
+      ],
+      "Phi": 3,
+      "Id": 402,
+      "ActorSettings": null
+    }
+  ],
+  "Groups": {
+    "4": {
+      "Triles": [
+        [20, 20, 13],
+        [20, 20, 10],
+        [16, 20, 12],
+        [18, 20, 13],
+        [20, 20, 12],
+        [16, 20, 11],
+        [16, 20, 13],
+        [19, 20, 13],
+        [20, 20, 9],
+        [17, 20, 13],
+        [19, 20, 9],
+        [17, 20, 9],
+        [18, 20, 9],
+        [18, 20, 11],
+        [19, 20, 10],
+        [17, 20, 10],
+        [17, 20, 12],
+        [19, 20, 12],
+        [19, 20, 11],
+        [20, 20, 11],
+        [18, 20, 10],
+        [17, 20, 11],
+        [18, 20, 12]
+      ],
+      "Path": null,
+      "Heavy": false,
+      "ActorType": "None",
+      "GeyserOffset": 0,
+      "GeyserPauseFor": 0,
+      "GeyserLiftFor": 0,
+      "GeyserApexHeight": 0,
+      "SpinCenter": [
+        0,
+        0,
+        0
+      ],
+      "SpinClockwise": false,
+      "SpinFrequency": 0,
+      "SpinNeedsTriggering": false,
+      "Spin180Degrees": false,
+      "FallOnRotate": false,
+      "SpinOffset": 0,
+      "AssociatedSound": ""
+    },
+    "3": {
+      "Triles": [
+        [18, 29, 11],
+        [18, 29, 10],
+        [18, 30, 10],
+        [18, 31, 11],
+        [18, 30, 11],
+        [17, 31, 12],
+        [18, 31, 12],
+        [19, 31, 12],
+        [19, 31, 10],
+        [19, 30, 10],
+        [19, 30, 12],
+        [19, 29, 10],
+        [19, 29, 12],
+        [18, 31, 10],
+        [17, 31, 10],
+        [17, 30, 10],
+        [17, 29, 10],
+        [17, 31, 11],
+        [17, 30, 11],
+        [17, 29, 11],
+        [17, 29, 12],
+        [17, 30, 12],
+        [18, 30, 12],
+        [18, 29, 12]
+      ],
+      "Path": null,
+      "Heavy": false,
+      "ActorType": "None",
+      "GeyserOffset": 0,
+      "GeyserPauseFor": 0,
+      "GeyserLiftFor": 0,
+      "GeyserApexHeight": 0,
+      "SpinCenter": [
+        0,
+        0,
+        0
+      ],
+      "SpinClockwise": false,
+      "SpinFrequency": 0,
+      "SpinNeedsTriggering": false,
+      "Spin180Degrees": false,
+      "FallOnRotate": false,
+      "SpinOffset": 0,
+      "AssociatedSound": ""
+    },
+    "5": {
+      "Triles": [
+        [17, 25, 12],
+        [17, 25, 11],
+        [19, 23, 10],
+        [18, 25, 12],
+        [20, 25, 11],
+        [18, 25, 11],
+        [19, 25, 12],
+        [17, 23, 10],
+        [18, 23, 10],
+        [19, 25, 11],
+        [20, 23, 11],
+        [19, 23, 11],
+        [18, 23, 12],
+        [18, 25, 10],
+        [17, 23, 11],
+        [18, 24, 10],
+        [19, 24, 12],
+        [17, 24, 12],
+        [19, 24, 10],
+        [19, 23, 12],
+        [17, 25, 10],
+        [18, 23, 11],
+        [17, 23, 12],
+        [19, 25, 10],
+        [20, 24, 11],
+        [19, 24, 11],
+        [18, 24, 12],
+        [17, 24, 10],
+        [18, 24, 11],
+        [17, 24, 11],
+        [20, 22, 11]
+      ],
+      "Path": null,
+      "Heavy": false,
+      "ActorType": "None",
+      "GeyserOffset": 0,
+      "GeyserPauseFor": 0,
+      "GeyserLiftFor": 0,
+      "GeyserApexHeight": 0,
+      "SpinCenter": [
+        0,
+        0,
+        0
+      ],
+      "SpinClockwise": false,
+      "SpinFrequency": 0,
+      "SpinNeedsTriggering": false,
+      "Spin180Degrees": false,
+      "FallOnRotate": false,
+      "SpinOffset": 0,
+      "AssociatedSound": ""
+    },
+    "6": {
+      "Triles": [
+        [4, 46, 5],
+        [4, 46, 6]
+      ],
+      "Path": null,
+      "Heavy": false,
+      "ActorType": "None",
+      "GeyserOffset": 0,
+      "GeyserPauseFor": 0,
+      "GeyserLiftFor": 0,
+      "GeyserApexHeight": 0,
+      "SpinCenter": [
+        0,
+        0,
+        0
+      ],
+      "SpinClockwise": false,
+      "SpinFrequency": 0,
+      "SpinNeedsTriggering": false,
+      "Spin180Degrees": false,
+      "FallOnRotate": false,
+      "SpinOffset": 0,
+      "AssociatedSound": ""
+    },
+    "7": {
+      "Triles": [
+        [1, 44, 8],
+        [1, 44, 9]
+      ],
+      "Path": null,
+      "Heavy": false,
+      "ActorType": "None",
+      "GeyserOffset": 0,
+      "GeyserPauseFor": 0,
+      "GeyserLiftFor": 0,
+      "GeyserApexHeight": 0,
+      "SpinCenter": [
+        0,
+        0,
+        0
+      ],
+      "SpinClockwise": false,
+      "SpinFrequency": 0,
+      "SpinNeedsTriggering": false,
+      "Spin180Degrees": false,
+      "FallOnRotate": false,
+      "SpinOffset": 0,
+      "AssociatedSound": ""
+    },
+    "8": {
+      "Triles": [
+        [1, 48, 9],
+        [1, 48, 8]
+      ],
+      "Path": null,
+      "Heavy": false,
+      "ActorType": "None",
+      "GeyserOffset": 0,
+      "GeyserPauseFor": 0,
+      "GeyserLiftFor": 0,
+      "GeyserApexHeight": 0,
+      "SpinCenter": [
+        0,
+        0,
+        0
+      ],
+      "SpinClockwise": false,
+      "SpinFrequency": 0,
+      "SpinNeedsTriggering": false,
+      "Spin180Degrees": false,
+      "FallOnRotate": false,
+      "SpinOffset": 0,
+      "AssociatedSound": ""
+    }
+  },
+  "Volumes": {
+    "0": {
+      "Orientations": [
+        "Right"
+      ],
+      "From": [
+        19,
+        14,
+        11
+      ],
+      "To": [
+        20,
+        16,
+        12
+      ],
+      "ActorSettings": {
+        "FarawayPlaneOffset": [
+          0,
+          0
+        ],
+        "IsPointOfInterest": false,
+        "DotDialogue": [],
+        "WaterLocked": false,
+        "CodePattern": [],
+        "IsBlackHole": false,
+        "NeedsTrigger": false,
+        "IsSecretPassage": false
+      }
+    },
+    "1": {
+      "Orientations": [
+        "Back"
+      ],
+      "From": [
+        18,
+        29,
+        10
+      ],
+      "To": [
+        19,
+        31,
+        11
+      ],
+      "ActorSettings": {
+        "FarawayPlaneOffset": [
+          0,
+          0
+        ],
+        "IsPointOfInterest": false,
+        "DotDialogue": [],
+        "WaterLocked": false,
+        "CodePattern": [],
+        "IsBlackHole": false,
+        "NeedsTrigger": false,
+        "IsSecretPassage": false
+      }
+    },
+    "2": {
+      "Orientations": [
+        "Right",
+        "Front",
+        "Left",
+        "Back"
+      ],
+      "From": [
+        17,
+        21,
+        10
+      ],
+      "To": [
+        20,
+        23,
+        13
+      ],
+      "ActorSettings": {
+        "FarawayPlaneOffset": [
+          0,
+          0
+        ],
+        "IsPointOfInterest": true,
+        "DotDialogue": [
+          {
+            "ResourceText": "DOT_PIVOT_A",
+            "Grouped": true
+          },
+          {
+            "ResourceText": "DOT_PIVOT_B",
+            "Grouped": true
+          }
+        ],
+        "WaterLocked": false,
+        "CodePattern": [],
+        "IsBlackHole": false,
+        "NeedsTrigger": false,
+        "IsSecretPassage": false
+      }
+    },
+    "3": {
+      "Orientations": [
+        "Front",
+        "Right",
+        "Left"
+      ],
+      "From": [
+        17.5625,
+        14,
+        13
+      ],
+      "To": [
+        19.5625,
+        17,
+        15
+      ],
+      "ActorSettings": {
+        "FarawayPlaneOffset": [
+          0,
+          0
+        ],
+        "IsPointOfInterest": false,
+        "DotDialogue": [],
+        "WaterLocked": false,
+        "CodePattern": [],
+        "IsBlackHole": false,
+        "NeedsTrigger": false,
+        "IsSecretPassage": false
+      }
+    }
+  },
+  "Scripts": {
+    "0": {
+      "Name": "Untitled",
+      "Timeout": null,
+      "Triggers": [
+        "Volume[0].Enter"
+      ],
+      "Conditions": [],
+      "Actions": [
+        "Level.ChangeLevel(ARCH, True, True, False)"
+      ],
+      "OneTime": false,
+      "Triggerless": false,
+      "IgnoreEndTriggers": false,
+      "LevelWideOneTime": false,
+      "Disabled": false,
+      "IsWinCondition": false
+    },
+    "1": {
+      "Name": "Untitled",
+      "Timeout": null,
+      "Triggers": [
+        "Volume[1].Enter"
+      ],
+      "Conditions": [],
+      "Actions": [
+        "Level.ChangeLevelToVolume(INDUSTRIAL_HUB, 3, True, True, True)"
+      ],
+      "OneTime": false,
+      "Triggerless": false,
+      "IgnoreEndTriggers": false,
+      "LevelWideOneTime": false,
+      "Disabled": false,
+      "IsWinCondition": false
+    },
+    "2": {
+      "Name": "Untitled",
+      "Timeout": null,
+      "Triggers": [
+        "Volume[3].Enter"
+      ],
+      "Conditions": [],
+      "Actions": [
+        "Game.ShowScroll(TUTO_LADDER, 0, True, True)"
+      ],
+      "OneTime": false,
+      "Triggerless": false,
+      "IgnoreEndTriggers": false,
+      "LevelWideOneTime": false,
+      "Disabled": false,
+      "IsWinCondition": false
+    },
+    "3": {
+      "Name": "Untitled",
+      "Timeout": null,
+      "Triggers": [
+        "Gomez.ClimbedLadder"
+      ],
+      "Conditions": [],
+      "Actions": [
+        "#Game.Wait(1)",
+        "#Game.CloseScroll(TUTO_LADDER)"
+      ],
+      "OneTime": false,
+      "Triggerless": false,
+      "IgnoreEndTriggers": false,
+      "LevelWideOneTime": false,
+      "Disabled": false,
+      "IsWinCondition": false
+    }
+  },
+  "ArtObjects": {
+    "12": {
+      "Name": "INDUST_CAVE_METAL_DOORAO",
+      "Position": [
+        18.5,
+        31,
+        8.25
+      ],
+      "Rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "Scale": [
+        1,
+        1,
+        1
+      ],
+      "ActorSettings": {
+        "Inactive": false,
+        "ContainedTrile": "None",
+        "AttachedGroup": null,
+        "SpinView": "None",
+        "SpinEvery": 0,
+        "SpinOffset": 0,
+        "OffCenter": false,
+        "RotationCenter": [
+          0,
+          0,
+          0
+        ],
+        "VibrationPattern": [],
+        "CodePattern": [],
+        "Segment": {
+          "Destination": [
+            0,
+            0,
+            0
+          ],
+          "Duration": 1,
+          "WaitTimeOnStart": 0,
+          "WaitTimeOnFinish": 0,
+          "Acceleration": 0,
+          "Deceleration": 0,
+          "JitterFactor": 0,
+          "Orientation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "CustomData": null
+        },
+        "NextNode": null,
+        "DestinationLevel": "",
+        "TreasureMapName": "",
+        "InvisibleSides": [],
+        "TimeswitchWindBackSpeed": 0
+      }
+    },
+    "13": {
+      "Name": "INDUST_CAVE_METAL_DOORAO",
+      "Position": [
+        21.75,
+        16,
+        11.5
+      ],
+      "Rotation": [
+        0,
+        0.707107,
+        0,
+        -0.707107
+      ],
+      "Scale": [
+        1,
+        1,
+        1
+      ],
+      "ActorSettings": {
+        "Inactive": false,
+        "ContainedTrile": "None",
+        "AttachedGroup": null,
+        "SpinView": "None",
+        "SpinEvery": 0,
+        "SpinOffset": 0,
+        "OffCenter": false,
+        "RotationCenter": [
+          0,
+          0,
+          0
+        ],
+        "VibrationPattern": [],
+        "CodePattern": [],
+        "Segment": {
+          "Destination": [
+            0,
+            0,
+            0
+          ],
+          "Duration": 1,
+          "WaitTimeOnStart": 0,
+          "WaitTimeOnFinish": 0,
+          "Acceleration": 0,
+          "Deceleration": 0,
+          "JitterFactor": 0,
+          "Orientation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "CustomData": null
+        },
+        "NextNode": null,
+        "DestinationLevel": "",
+        "TreasureMapName": "",
+        "InvisibleSides": [],
+        "TimeswitchWindBackSpeed": 0
+      }
+    },
+    "10": {
+      "Name": "PIVOT_BASE_IND_CAVEAO",
+      "Position": [
+        18.5,
+        22,
+        11.5
+      ],
+      "Rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "Scale": [
+        1,
+        1,
+        1
+      ],
+      "ActorSettings": {
+        "Inactive": false,
+        "ContainedTrile": "None",
+        "AttachedGroup": null,
+        "SpinView": "None",
+        "SpinEvery": 0,
+        "SpinOffset": 0,
+        "OffCenter": false,
+        "RotationCenter": [
+          0,
+          0,
+          0
+        ],
+        "VibrationPattern": [],
+        "CodePattern": [],
+        "Segment": {
+          "Destination": [
+            0,
+            0,
+            0
+          ],
+          "Duration": 1,
+          "WaitTimeOnStart": 0,
+          "WaitTimeOnFinish": 0,
+          "Acceleration": 0,
+          "Deceleration": 0,
+          "JitterFactor": 0,
+          "Orientation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "CustomData": null
+        },
+        "NextNode": null,
+        "DestinationLevel": "",
+        "TreasureMapName": "",
+        "InvisibleSides": [],
+        "TimeswitchWindBackSpeed": 0
+      }
+    },
+    "11": {
+      "Name": "PIVOT_IND_CAVEAO",
+      "Position": [
+        18.5,
+        23,
+        11.5
+      ],
+      "Rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "Scale": [
+        1,
+        1,
+        1
+      ],
+      "ActorSettings": {
+        "Inactive": false,
+        "ContainedTrile": "None",
+        "AttachedGroup": 5,
+        "SpinView": "None",
+        "SpinEvery": 0,
+        "SpinOffset": 0,
+        "OffCenter": false,
+        "RotationCenter": [
+          0,
+          0,
+          0
+        ],
+        "VibrationPattern": [],
+        "CodePattern": [],
+        "Segment": {
+          "Destination": [
+            0,
+            0,
+            0
+          ],
+          "Duration": 1,
+          "WaitTimeOnStart": 0,
+          "WaitTimeOnFinish": 0,
+          "Acceleration": 0,
+          "Deceleration": 0,
+          "JitterFactor": 0,
+          "Orientation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "CustomData": null
+        },
+        "NextNode": null,
+        "DestinationLevel": "",
+        "TreasureMapName": "",
+        "InvisibleSides": [],
+        "TimeswitchWindBackSpeed": 0
+      }
+    }
+  },
+  "BackgroundPlanes": {},
+  "Paths": {},
+  "NonPlayerCharacters": {}
+}

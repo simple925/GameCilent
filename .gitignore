@@ -1,0 +1,36 @@
+# =========================
+# Build 결과물 (무조건 제외)
+# =========================
+[Bb]in/
+[Bb]uild/
+[Oo]ut/
+Debug/
+Release/
+x64/
+x86/
+
+.vs/
+*.pdb
+Game/Bin/
+
+*.exe
+
+# =========================
+# 임시 파일
+# =========================
+*.log
+*.tmp
+*.temp
+*.cache
+
+# =========================
+# OS 파일
+# =========================
+.DS_Store
+Thumbs.db
+
+GameClient/x64/
+GameClient/Debug/
+GameClient/Release/
+*.pch
+*.ilk

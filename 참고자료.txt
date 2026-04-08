@@ -1,0 +1,54 @@
+반사 텍스쳐
+빛내는 텍스쳐
+컬러 텍스쳐
+이미지 텍스쳐
+
+
+머테리얼 = 쉐이더 + 텍스쳐
+
+외적 내적
+스칼라 벡터 텐서
+
+
+빌보드
+
+내적 == Dot == .
+내적 공식 ax + by + cz
+
+내적을 한 경우 벡터에서 스칼라로 변환됨
+
+정규화
+방향을 유지한 채로 길이를 1로 줄임
+코사인세타 역함수 == 아크코사인세타
+
+z축을 기준으로 뷰화면을 생성한다
+
+크기 * 회전 * 이동 = 월드행렬
+
+
+
+
+윈도우 파워쉘에서 실행
+
+# 인코딩 설정 정의
+$Utf8WithBom = New-Object System.Text.UTF8Encoding($true)   # BOM 포함
+$Utf8NoBom = New-Object System.Text.UTF8Encoding($false)   # BOM 미포함
+
+Get-ChildItem -Recurse -Include *.cpp, *.h, *.fx | ForEach-Object {
+    $filePath = $_.FullName
+    $extension = $_.Extension.ToLower()
+    
+    # 한글 깨짐 방지를 위해 인코딩 자동 감지로 읽기
+    $content = [System.IO.File]::ReadAllText($filePath)
+    
+    if ($extension -eq ".fx") {
+        # .fx 파일은 BOM 없이 저장
+        [System.IO.File]::WriteAllText($filePath, $content, $Utf8NoBom)
+        Write-Host "BOM Removed (Safe): $($_.Name)" -ForegroundColor Cyan
+    }
+    else {
+        # .cpp, .h 파일은 BOM 포함 저장
+        [System.IO.File]::WriteAllText($filePath, $content, $Utf8WithBom)
+        Write-Host "BOM Added (Safe): $($_.Name)" -ForegroundColor Magenta
+    }
+}

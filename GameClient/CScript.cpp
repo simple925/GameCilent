@@ -1,0 +1,41 @@
+#include "pch.h"
+#include "CScript.h"
+#include "TaskMgr.h"
+
+CScript::CScript(int _ScriptType)
+	: Component(COMPONENT_TYPE::SCRIPT)
+	, m_ScriptType(_ScriptType)
+{
+}
+
+CScript::CScript(const CScript& _Origin)
+	: Component(_Origin)
+	, m_ScriptType(_Origin.m_ScriptType)
+{
+}
+
+CScript::~CScript()
+{
+}
+
+void CScript::Instantiate(APrefab* _Prefab, int _LayerIdx, Vec3 _WorldPos)
+{
+	if (nullptr == _Prefab)
+		return;
+
+	GameObject* pObject = _Prefab->Instantiate();
+
+	pObject->Transform()->SetRelativePos(_WorldPos);
+
+	CreateObject(pObject, _LayerIdx);
+
+}
+
+void CScript::Destroy()
+{
+	if (GetOwner()->IsDead()) return;
+	TaskInfo info = {};
+	info.Type = TASK_TYPE::DESTROY_OBJECT;
+	info.Param_0 = (DWORD_PTR)GetOwner();
+	TaskMgr::GetInst()->AddTask(info);
+}
