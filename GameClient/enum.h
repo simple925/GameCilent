@@ -28,6 +28,7 @@ enum class DS_TYPE
 {
 	LESS,				// 기본옵션 깊이가 더 가까워야 통과됨, 성공 - 깊이쓰기 0
 	LESS_EQUL,			// 작거나 같으면 통과, 깊이판정 LESS_EQUAL
+	NO_WRITE,			// 깊이판정 LESS		     성공 시 - 깊이쓰기 X
 	NO_TEST,			// 깊이판정 X(무조건 성공)			성공 - 깊이쓰기 O
 	NO_TEST_NO_WRITE,	// 깊이판정 X(무조건 성공)			성공 - 깊이쓰기 X
 	END,
@@ -148,6 +149,7 @@ enum class RENDER_DOMAIN
 {
 	DOMAIN_OPAQUE,		// 불투명
 	DOMAIN_MASKED,		// 불투명 + 완전 투명
+	DOMAIN_PARTICLE,	// 파티클
 	DOMAIN_TRANSPARENT,	// 반투명
 	DOMAIN_POSTPROCESS,	// 후처리 - 가장 마지막에 동작, 기존에 그려진 장면을 재 가공
 	DOMAIN_DEBUG,

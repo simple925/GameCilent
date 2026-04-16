@@ -340,6 +340,18 @@
     <ClInclude Include="FontMgr.h">
       <Filter>GameEngine\03. Manager\13. FontMgr</Filter>
     </ClInclude>
+    <ClInclude Include="AComputeShader.h">
+      <Filter>GameEngine\04. Asset\11. ComputeShader</Filter>
+    </ClInclude>
+    <ClInclude Include="CParticleRender.h">
+      <Filter>GameEngine\06. Component\RenderComponent\06. ParticleRender</Filter>
+    </ClInclude>
+    <ClInclude Include="AParticleTickCS.h">
+      <Filter>HSL\3. Compute\Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Scripts\CShockWaveScript.h">
+      <Filter>Source\Scripts</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="GameClient.ico">
@@ -660,6 +672,18 @@
     <ClCompile Include="FontMgr.cpp">
       <Filter>GameEngine\03. Manager\13. FontMgr</Filter>
     </ClCompile>
+    <ClCompile Include="AComputeShader.cpp">
+      <Filter>GameEngine\04. Asset\11. ComputeShader</Filter>
+    </ClCompile>
+    <ClCompile Include="CParticleRender.cpp">
+      <Filter>GameEngine\06. Component\RenderComponent\06. ParticleRender</Filter>
+    </ClCompile>
+    <ClCompile Include="AParticleTickCS.cpp">
+      <Filter>HSL\3. Compute\Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scripts\CShockWaveScript.cpp">
+      <Filter>Source\Scripts</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Default">
@@ -950,6 +974,21 @@
     <Filter Include="GameEngine\04. Asset\10. Sound">
       <UniqueIdentifier>{04300e5d-7d6b-4228-a41a-288fa1483130}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameEngine\04. Asset\11. ComputeShader">
+      <UniqueIdentifier>{0adbbace-59e4-4cb0-8c31-4ddde17bf065}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\06. Component\RenderComponent\06. ParticleRender">
+      <UniqueIdentifier>{cd407d1e-878e-448e-9106-0137ea257f13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\04. Asset\12. ParticleTickCS">
+      <UniqueIdentifier>{566baf40-7993-4d39-93d7-fb62f8dbefd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HSL\3. Compute\SetColor">
+      <UniqueIdentifier>{9716fa14-ae14-498f-8c19-6b7cde978643}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HSL\2. Render\2D\PostProcess">
+      <UniqueIdentifier>{bf9ff90b-19ad-4d85-aab3-d9c023a624af}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameClient.rc">
@@ -992,8 +1031,20 @@
     <FxCompile Include="std3d.fx">
       <Filter>HSL\2. Render\3D</Filter>
     </FxCompile>
+    <FxCompile Include="particle_func.fx">
+      <Filter>HSL\3. Compute\Particle</Filter>
+    </FxCompile>
+    <FxCompile Include="particle.fx">
+      <Filter>HSL\2. Render\3D</Filter>
+    </FxCompile>
+    <FxCompile Include="particle_tick.fx">
+      <Filter>HSL\3. Compute\Particle</Filter>
+    </FxCompile>
     <FxCompile Include="setcolor.fx">
-      <Filter>HSL\3. Compute</Filter>
+      <Filter>HSL\3. Compute\SetColor</Filter>
+    </FxCompile>
+    <FxCompile Include="distortion.fx">
+      <Filter>HSL\2. Render\2D\PostProcess</Filter>
     </FxCompile>
   </ItemGroup>
 </Project>

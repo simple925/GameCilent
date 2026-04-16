@@ -107,6 +107,7 @@ void CCamera::SortObject()
 
 	m_vecOpaque.clear();
 	m_vecMasked.clear();
+	m_vecParticle.clear();
 	m_vecTransparent.clear();
 	m_vecPostProcess.clear();
 
@@ -148,6 +149,9 @@ void CCamera::SortObject()
 			case RENDER_DOMAIN::DOMAIN_MASKED:
 				m_vecMasked.push_back(gameObject.Get());
 				break;
+			case RENDER_DOMAIN::DOMAIN_PARTICLE:
+				m_vecParticle.push_back(gameObject.Get());
+				break;
 			case RENDER_DOMAIN::DOMAIN_TRANSPARENT:
 				m_vecTransparent.push_back(gameObject.Get());
 				break;
@@ -167,8 +171,14 @@ void CCamera::Render()
 	// Domain 순서대로 렌더링 진행
 	for (const auto& opaque : m_vecOpaque) opaque->Render();
 	for (const auto& masked : m_vecMasked) masked->Render();
+	for (const auto& particle : m_vecParticle) particle->Render();
 	for (const auto& transparent : m_vecTransparent) transparent->Render();
-	for (const auto& postProcess : m_vecPostProcess) postProcess->Render();
+	for (const auto& postProcess : m_vecPostProcess) {
+		// RenderTarget 장면을 PostprocessTarget 으로 복사
+		RenderMgr::GetInst()->CopyPostProcess();
+
+		postProcess->Render();
+	}
 }
 
 void CCamera::LayerCheck(int _Idx)

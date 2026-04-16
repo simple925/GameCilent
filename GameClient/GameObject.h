@@ -71,6 +71,7 @@ public:
     void FitCollider2D();
 public:
     //Component Create Return
+    GET_COMPONENT(ParticleRender, PARTICLE_RENDER);
     GET_COMPONENT(Clickable, CLICKABLE);
     GET_COMPONENT(Light3D, LIGHT3D);
     GET_COMPONENT(Rigidbody2D, RIGIDBODY2D);

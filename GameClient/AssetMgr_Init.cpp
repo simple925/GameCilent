@@ -23,6 +23,22 @@ void AssetMgr::Init()
 void AssetMgr::CreateEngineMesh()
 {
 	Ptr<AMesh> pMesh = nullptr;
+
+
+	// =========
+	// PointMesh
+	// =========
+	Ptr<AMesh> pPointMesh = new AMesh;
+	Vtx vPoint;
+
+	vPoint.vPos = Vec3(0.f, 0.f, 0.f);
+	vPoint.vUV = Vec2(0.f, 0.f);
+	vPoint.vColor = Vec4(1.f, 1.f, 1.f, 1.f);
+	UINT Idx = 0;
+
+	pPointMesh->Create(&vPoint, 1, &Idx, 1);
+	AddAsset(L"PointMesh", pPointMesh.Get());
+
 	// 네모
 	Vtx arrVtx[4] = {};
 	arrVtx[0].vPos = Vec3(-0.5f, 0.5f, 0.f);
@@ -291,7 +307,17 @@ void AssetMgr::CreateEngineShader()
 	pShader->SetBSType(BS_TYPE::DEFAULT);
 	AddAsset(L"DbgShader", pShader.Get());
 
+	// ================
+	// DistortionShader
+	// ================
+	pShader = new AGraphicShader;
+	pShader->CreateVertexShader(L"Shader\\distortion.fx", "VS_Distortion");
+	pShader->CreatePixelShader(L"Shader\\distortion.fx", "PS_Distortion");
+	pShader->SetRSType(RS_TYPE::CULL_NONE);
+	pShader->SetDSType(DS_TYPE::NO_TEST_NO_WRITE);
+	pShader->SetBSType(BS_TYPE::DEFAULT);
 
+	AddAsset(L"DistortionShader", pShader.Get());
 }
 
 void AssetMgr::CreateEngineTexture()
@@ -424,7 +450,17 @@ void AssetMgr::CreateEngineMaterial()
 	pMtrl->SetDomain(RENDER_DOMAIN::DOMAIN_DEBUG);
 	AddAsset(pMtrl->GetName(), pMtrl.Get());
 
-	//Load<AMaterial>(L"Material\\Default Material_0.mtrl", L"Material\\Default Material_0.mtrl");
+	// ==============
+	// DistortionMtrl
+	// ==============
+	pMtrl = new AMaterial;
+	pMtrl->SetName(L"DistortionMtrl");
+	pMtrl->SetShader(Find<AGraphicShader>(L"DistortionShader"));
+	pMtrl->SetDomain(RENDER_DOMAIN::DOMAIN_POSTPROCESS);
+
+	pMtrl->SetTexture(TEX_0, LOAD(ATexture, L"Texture\\noise\\noise_03.jpg"));
+
+	AddAsset(pMtrl->GetName(), pMtrl.Get());
 }
 
 void AssetMgr::CreateEngineSprite()

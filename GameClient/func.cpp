@@ -215,6 +215,7 @@ Vec3 ToEuler(const Quat& q)
 #include "Source\\Scripts\\CPlayerScript.h"
 #include "Source\\Scripts\\CCamMoveScript.h"
 #include "Source\\Scripts\\CMonsterScript.h"
+#include "Source/Scripts/CShockWaveScript.h"
 
 void CreateTestLevel()
 {
@@ -267,7 +268,7 @@ void CreateTestLevel()
 	pCameraObj->Camera()->SetFOV(90.f);
 	pCameraObj->Camera()->SetOrthoScale(1.f);
 
-	Vec2 vResolution = Device::GetInst()->GetRenderResol();
+	Vec2 vResolution = Device::GetInst()->GetRenderResolution();
 	pCameraObj->Camera()->SetAspectRatio(vResolution.x / vResolution.y); // 종횡비(AspectRatio)
 	pCameraObj->Camera()->SetWidth(vResolution.x);
 
@@ -511,7 +512,6 @@ void CreateTestLevel()
 	* Ground End ===============================================
 	*/
 
-
 	/*
 	* Tile Start ===============================================
 	pTileObj->SetName(L"TileObj");
@@ -586,6 +586,24 @@ void CreateTestLevel()
 	//FezlvlLoder::Load(L"Prefab\\untitled.fezts.pref", L"levels\\trial\\nature_hub.fezlvl.json", pLevel.Get());
 	//FezlvlLoder::Load(L"Prefab\\industrial.fezts.pref", L"levels\\trial\\pivot_watertower.fezlvl.json", pLevel.Get());
 	//FezlvlLoder::Load(L"Prefab\\industrial.fezts.pref", L"levels\\trial\\pivot_watertower.fezlvl.json", pLevel.Get());
+
+	// ==================
+	// PostProcess 테스트
+	// ==================
+	Ptr<GameObject> PostProcessObj = new GameObject;
+	PostProcessObj->SetName(L"Postproces");
+
+	PostProcessObj->AddComponent(new CTransform);
+	PostProcessObj->AddComponent(new CMeshRender);
+	PostProcessObj->AddComponent(new CShockWaveScript);
+
+	PostProcessObj->Transform()->SetRelativePos(Vec3(-500.f, 0.f, -100.f));
+	PostProcessObj->Transform()->SetRelativeScale(Vec3(200.f, 200.f, 1.f));
+
+	PostProcessObj->MeshRender()->SetMesh(FIND(AMesh, L"q"));
+	PostProcessObj->MeshRender()->SetMaterial(FIND(AMaterial, L"DistortionMtrl"));
+
+	pLevel->AddObject(0, PostProcessObj);
 
 	// 레벨을 변경
 	ChangeLevel(L"TestLevel");

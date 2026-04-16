@@ -17,6 +17,9 @@ private:
 	vector<Ptr<CLight3D>>		m_vecLight3D;		// 레벨 안에 있는 모든 광원
 	Ptr<StructuredBuffer>		m_Light2DBuffer;	// 광원의 데이터를 입력받을 구조화버퍼
 	Ptr<StructuredBuffer>		m_Light3DBuffer;	// 광원의 데이터를 입력받을 구조화버퍼
+
+	Ptr<ATexture>				m_PostProcessTex;	// 포스트 프로세스 용도 텍스쳐
+
 	bool						m_bDebugRender;		// 디버그 렌더 기능 On / Off
 public:
 	void RegisterCamera(Ptr<CCamera> _Cam) { m_MainCam = _Cam; }
@@ -27,8 +30,7 @@ public:
 	void RegisterLight2D(Ptr<CLight2D> _Light2D) { m_vecLight2D.push_back(_Light2D); }
 	void RegisterLight3D(Ptr<CLight3D> _Light3D) { m_vecLight3D.push_back(_Light3D); }
 
-	//Vec2 ProjectTo2D(Vec3 worldPos);
-	//Vec3 ScreenToWorld2D(Vec2 screen);
+	void CopyPostProcess();
 	
 private:
 	void Render_Debug();

@@ -82,6 +82,9 @@ Texture2D g_tex_5 : register(t5);
 
 StructuredBuffer<Light2DInfo> g_Light2D : register(t12);
 StructuredBuffer<Light3DInfo> g_Light3D : register(t13);
+
+Texture2D PostprocessTarget : register(t14);
+
 #define PI 3.1415926535f
 
 #include "func.fx"

@@ -45,8 +45,8 @@ bool CPlayerScript::IsMouseOver()
 	GetCursorPos(&pt);
 	//ScreenToClient(, &pt);
 
-	float width = (float)Device::GetInst()->GetRenderResol().x;
-	float height = (float)Device::GetInst()->GetRenderResol().y;
+	float width = (float)Device::GetInst()->GetRenderResolution().x;
+	float height = (float)Device::GetInst()->GetRenderResolution().y;
 
 	float x = (pt.x / width) * 2.f - 1.f;
 	float y = 1.f - (pt.y / height) * 2.f;

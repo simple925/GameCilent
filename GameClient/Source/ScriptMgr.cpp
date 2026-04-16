@@ -8,6 +8,7 @@
 #include "Scripts/CMonsterScript.h"
 #include "Scripts/CPlanetControllerScript.h"
 #include "Scripts/CPlayerScript.h"
+#include "Scripts/CShockWaveScript.h"
 #include "Scripts/CStateScript.h"
 
 void ScriptMgr::GetScriptInfo(vector<wstring>& _vec)
@@ -19,6 +20,7 @@ void ScriptMgr::GetScriptInfo(vector<wstring>& _vec)
 	_vec.push_back(L"CMonsterScript");
 	_vec.push_back(L"CPlanetControllerScript");
 	_vec.push_back(L"CPlayerScript");
+	_vec.push_back(L"CShockWaveScript");
 	_vec.push_back(L"CStateScript");
 }
 
@@ -38,6 +40,8 @@ CScript * ScriptMgr::GetScript(const wstring& _strScriptName)
 		return new CPlanetControllerScript;
 	if (L"CPlayerScript" == _strScriptName)
 		return new CPlayerScript;
+	if (L"CShockWaveScript" == _strScriptName)
+		return new CShockWaveScript;
 	if (L"CStateScript" == _strScriptName)
 		return new CStateScript;
 	return nullptr;
@@ -67,6 +71,9 @@ CScript * ScriptMgr::GetScript(UINT _iScriptType)
 		break;
 	case (UINT)SCRIPT_TYPE::PLAYERSCRIPT:
 		return new CPlayerScript;
+		break;
+	case (UINT)SCRIPT_TYPE::SHOCKWAVESCRIPT:
+		return new CShockWaveScript;
 		break;
 	case (UINT)SCRIPT_TYPE::STATESCRIPT:
 		return new CStateScript;
@@ -105,6 +112,10 @@ const wchar_t * ScriptMgr::GetScriptName(CScript * _pScript)
 
 	case SCRIPT_TYPE::PLAYERSCRIPT:
 		return L"CPlayerScript";
+		break;
+
+	case SCRIPT_TYPE::SHOCKWAVESCRIPT:
+		return L"CShockWaveScript";
 		break;
 
 	case SCRIPT_TYPE::STATESCRIPT:

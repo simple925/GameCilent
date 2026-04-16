@@ -178,14 +178,17 @@ void EditorMgr::CreateEditorObject()
     pCameraObj->AddComponent(new CCamera);
     pCameraObj->AddComponent(new CEditorCamMoveScript);
 
-    pCameraObj->Camera()->LayerCheckAll();
+    pCameraObj->Transform()->SetRelativePos(Vec3(0.f, 0.f, -500.f));
 
-    pCameraObj->Camera()->SetProjType(PROJ_TYPE::ORTHOGRAPHIC);
+    pCameraObj->Camera()->LayerCheckAll();
+    pCameraObj->Camera()->SetProjType(PROJ_TYPE::PERSPECTIVE);
+
+    //pCameraObj->Camera()->SetProjType(PROJ_TYPE::ORTHOGRAPHIC);
     pCameraObj->Camera()->SetFar(10000.f);
     pCameraObj->Camera()->SetFOV(90.f);
     pCameraObj->Camera()->SetOrthoScale(1.f);
 
-    Vec2 vResolution = Device::GetInst()->GetRenderResol();
+    Vec2 vResolution = Device::GetInst()->GetRenderResolution();
     pCameraObj->Camera()->SetAspectRatio(vResolution.x / vResolution.y); // 종횡비(AspectRatio)
     pCameraObj->Camera()->SetWidth(vResolution.x);
 

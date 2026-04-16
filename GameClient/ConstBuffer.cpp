@@ -1,4 +1,4 @@
-﻿#include "pch.h"
+#include "pch.h"
 #include "ConstBuffer.h"
 
 #include "Device.h"
@@ -59,5 +59,10 @@ void ConstBuffer::Binding()
 	CONTEXT->DSSetConstantBuffers((UINT)m_Type/*상수버퍼를 바인딩할 레지스터 번호*/, 1, m_CB.GetAddressOf());
 	CONTEXT->GSSetConstantBuffers((UINT)m_Type/*상수버퍼를 바인딩할 레지스터 번호*/, 1, m_CB.GetAddressOf());
 	CONTEXT->PSSetConstantBuffers((UINT)m_Type/*상수버퍼를 바인딩할 레지스터 번호*/, 1, m_CB.GetAddressOf());
+}
+
+void ConstBuffer::Binding_CS()
+{
+	CONTEXT->CSSetConstantBuffers((UINT)m_Type, 1, m_CB.GetAddressOf());
 }
 

@@ -362,6 +362,15 @@ int Device::CreateDepthStencilState()
 	Desc.StencilEnable = false;
 	if (FAILED(DEVICE->CreateDepthStencilState(&Desc, m_DSState[(UINT)DS_TYPE::NO_TEST].GetAddressOf()))) return E_FAIL;
 
+	// NO_WRITE
+	Desc.DepthEnable = true;
+	Desc.DepthFunc = D3D11_COMPARISON_LESS;				// 깊이판정은 LESS 로 비교
+	Desc.DepthWriteMask = D3D11_DEPTH_WRITE_MASK_ZERO;	// 자신의 깊이를 기록하지 않음
+	Desc.StencilEnable = false;
+
+	if (FAILED(DEVICE->CreateDepthStencilState(&Desc, m_DSState[(UINT)DS_TYPE::NO_WRITE].GetAddressOf())))
+		return E_FAIL;
+
 	// NO_TEST_NO_WRITE
 	Desc.DepthEnable = false;
 	if (FAILED(DEVICE->CreateDepthStencilState(&Desc, m_DSState[(UINT)DS_TYPE::NO_TEST_NO_WRITE].GetAddressOf()))) return E_FAIL;

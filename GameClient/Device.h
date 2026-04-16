@@ -34,10 +34,13 @@ public:
 	void OMSetTarget();
 	void Present() { m_SwapChain->Present(0, 0); }
 
-	Vec2 GetRenderResol() { return m_RenderResol; }
+	Vec2 GetRenderResolution() { return m_RenderResol; }
 	ComPtr<ID3D11Device> GetDevice() { return m_Device; };
 	ComPtr<ID3D11DeviceContext> GetContext() { return m_Context; };
 	Ptr<ConstBuffer> GetCB(CB_TYPE _Type) { return m_CB[(UINT)_Type]; }
+
+	ComPtr<ID3D11Texture2D>	GetRenderTarget() { return m_RenderTarget; }
+	ComPtr<ID3D11Texture2D> GetDSTarget() { return 	m_DepthStencilTarget; }
 
 	ComPtr<ID3D11RasterizerState> GetRSState(RS_TYPE _Type) { return m_RSState[(UINT)_Type]; }
 	ComPtr<ID3D11DepthStencilState> GetDSState(DS_TYPE _Type) { return m_DSState[(UINT)_Type]; }

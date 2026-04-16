@@ -157,10 +157,12 @@ call CodeGen.exe</Command>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AComputeShader.h" />
     <ClInclude Include="AFlipbook.h" />
     <ClInclude Include="AGraphicShader.h" />
     <ClInclude Include="ALevel.h" />
     <ClInclude Include="AMesh.h" />
+    <ClInclude Include="AParticleTickCS.h" />
     <ClInclude Include="APrefab.h" />
     <ClInclude Include="ASound.h" />
     <ClInclude Include="ASprite.h" />
@@ -189,6 +191,7 @@ call CodeGen.exe</Command>
     <ClInclude Include="ComputeShaderUI.h" />
     <ClInclude Include="ConstBuffer.h" />
     <ClInclude Include="ContentUI.h" />
+    <ClInclude Include="CParticleRender.h" />
     <ClInclude Include="CRenderComponent.h" />
     <ClInclude Include="CRigidbody2D.h" />
     <ClInclude Include="CScript.h" />
@@ -254,6 +257,7 @@ call CodeGen.exe</Command>
     <ClInclude Include="Source\Scripts\CMonsterScript.h" />
     <ClInclude Include="Source\Scripts\CPlanetControllerScript.h" />
     <ClInclude Include="Source\Scripts\CPlayerScript.h" />
+    <ClInclude Include="Source\Scripts\CShockWaveScript.h" />
     <ClInclude Include="Source\Scripts\CStateScript.h" />
     <ClInclude Include="SpriteRenderUI.h" />
     <ClInclude Include="SpriteUI.h" />
@@ -272,10 +276,12 @@ call CodeGen.exe</Command>
     <ClInclude Include="PhysicsUtil.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AComputeShader.cpp" />
     <ClCompile Include="AFlipbook.cpp" />
     <ClCompile Include="AGraphicShader.cpp" />
     <ClCompile Include="ALevel.cpp" />
     <ClCompile Include="AMesh.cpp" />
+    <ClCompile Include="AParticleTickCS.cpp" />
     <ClCompile Include="APrefab.cpp" />
     <ClCompile Include="ASound.cpp" />
     <ClCompile Include="ASprite.cpp" />
@@ -303,6 +309,7 @@ call CodeGen.exe</Command>
     <ClCompile Include="ComputeShaderUI.cpp" />
     <ClCompile Include="ConstBuffer.cpp" />
     <ClCompile Include="ContentUI.cpp" />
+    <ClCompile Include="CParticleRender.cpp" />
     <ClCompile Include="CRenderComponent.cpp" />
     <ClCompile Include="CRigidbody2D.cpp" />
     <ClCompile Include="CScript.cpp" />
@@ -367,6 +374,7 @@ call CodeGen.exe</Command>
     <ClCompile Include="Source\Scripts\CMonsterScript.cpp" />
     <ClCompile Include="Source\Scripts\CPlanetControllerScript.cpp" />
     <ClCompile Include="Source\Scripts\CPlayerScript.cpp" />
+    <ClCompile Include="Source\Scripts\CShockWaveScript.cpp" />
     <ClCompile Include="Source\Scripts\CStateScript.cpp" />
     <ClCompile Include="SpriteRenderUI.cpp" />
     <ClCompile Include="SpriteUI.cpp" />
@@ -398,8 +406,12 @@ call CodeGen.exe</Command>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Effect</ShaderType>
       <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
     </FxCompile>
+    <FxCompile Include="distortion.fx" />
     <FxCompile Include="flipbook.fx" />
     <FxCompile Include="func.fx" />
+    <FxCompile Include="particle.fx" />
+    <FxCompile Include="particle_func.fx" />
+    <FxCompile Include="particle_tick.fx" />
     <FxCompile Include="setcolor.fx" />
     <FxCompile Include="sprite.fx">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Effect</ShaderType>
