@@ -2,6 +2,7 @@
 #include "TimeMgr.h"
 #include "Engine.h"
 #include "LevelMgr.h"
+#include "FontMgr.h"
 TimeMgr::TimeMgr()
 	: m_Frequency{}
 	, m_Prev{}
@@ -46,7 +47,9 @@ void TimeMgr::Tick()
 
 		wchar_t buff[255] = {};
 		swprintf_s(buff, 255, L"DeltaTime : %f, FPS : %d", m_DeltaTime, m_FPS);
-		SetWindowText(Engine::GetInst()->GetMainWndHwnd(), buff);
+		m_strFPS = buff;
+
+		//SetWindowText(Engine::GetInst()->GetMainWndHwnd(), buff);
 
 		// 초기화
 		m_FPS = 0;
@@ -70,4 +73,9 @@ void TimeMgr::Tick()
 		g_Global.DeltaTime = m_DeltaTime;
 		g_Global.Time += m_DeltaTime;
 	}
+}
+
+void TimeMgr::Render()
+{
+	FontMgr::GetInst()->DrawFont(m_strFPS.c_str(), 10, 30, 24, FONT_RGBA(200, 20, 20, 255));
 }

@@ -334,6 +334,12 @@
     <ClInclude Include="Source\Scripts\CCubeScript.h">
       <Filter>Source\Scripts</Filter>
     </ClInclude>
+    <ClInclude Include="ASound.h">
+      <Filter>GameEngine\04. Asset\10. Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="FontMgr.h">
+      <Filter>GameEngine\03. Manager\13. FontMgr</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="GameClient.ico">
@@ -648,6 +654,12 @@
     <ClCompile Include="GifExport.cpp">
       <Filter>Utils\gif</Filter>
     </ClCompile>
+    <ClCompile Include="ASound.cpp">
+      <Filter>GameEngine\04. Asset\10. Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="FontMgr.cpp">
+      <Filter>GameEngine\03. Manager\13. FontMgr</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Default">
@@ -926,6 +938,18 @@
     <Filter Include="Utils\gif">
       <UniqueIdentifier>{f7f64bc6-8957-40cd-866e-4ada6b2a4194}</UniqueIdentifier>
     </Filter>
+    <Filter Include="HSL\3. Compute">
+      <UniqueIdentifier>{2152f9ba-643a-410e-baf0-789fe97d00d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HSL\3. Compute\Particle">
+      <UniqueIdentifier>{ab8e305c-841d-4864-82c6-5e4c200d5d19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\03. Manager\13. FontMgr">
+      <UniqueIdentifier>{8bdadeaa-1b8d-4019-996a-899969d3c731}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\04. Asset\10. Sound">
+      <UniqueIdentifier>{04300e5d-7d6b-4228-a41a-288fa1483130}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameClient.rc">
@@ -967,6 +991,9 @@
     </FxCompile>
     <FxCompile Include="std3d.fx">
       <Filter>HSL\2. Render\3D</Filter>
+    </FxCompile>
+    <FxCompile Include="setcolor.fx">
+      <Filter>HSL\3. Compute</Filter>
     </FxCompile>
   </ItemGroup>
 </Project>

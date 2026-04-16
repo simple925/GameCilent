@@ -171,6 +171,7 @@ ASSET_TYPE GetAssetType()
     else if constexpr (std::is_same_v<T, ATileMap>) return ASSET_TYPE::TILEMAP;
     else if constexpr (std::is_same_v<T, ALevel>) return ASSET_TYPE::LEVEL;
     else if constexpr (std::is_same_v<T, APrefab>)return ASSET_TYPE::PREFAB;
+    else if constexpr (std::is_same_v<T, ASound>) return ASSET_TYPE::SOUND;
     return ASSET_TYPE::END;
 }
 

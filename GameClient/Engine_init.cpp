@@ -8,6 +8,7 @@
 #include "AssetMgr.h"
 #include "LevelMgr.h"
 #include "RenderMgr.h"
+#include "FontMgr.h"
 #include "EditorMgr.h"
 #include "PhysicsMgr.h"
 #include "ClickMgr.h"
@@ -100,6 +101,19 @@ int Engine::Init(HINSTANCE _hInst, UINT _Width, UINT _Height, bool _EditorMode)
     RenderMgr::GetInst()->Init();
 
     ClickMgr::GetInst()->Init();
+
+    // Font 매니저 초기화
+    FontMgr::GetInst()->Init();
+
+    // FMOD 초기화	
+    {
+        FMOD::System_Create(&m_FMODSystem);
+        assert(m_FMODSystem);
+
+        // 32개 채널 생성
+        FMOD_RESULT result = m_FMODSystem->init(32, FMOD_DEFAULT, nullptr);
+    }
+
 
     // Editor 매니저 초기화
     if(m_EditorMode) EditorMgr::GetInst()->Init();

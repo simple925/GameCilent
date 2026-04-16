@@ -162,6 +162,7 @@ call CodeGen.exe</Command>
     <ClInclude Include="ALevel.h" />
     <ClInclude Include="AMesh.h" />
     <ClInclude Include="APrefab.h" />
+    <ClInclude Include="ASound.h" />
     <ClInclude Include="ASprite.h" />
     <ClInclude Include="asserts.h" />
     <ClInclude Include="Asset.h" />
@@ -206,6 +207,7 @@ call CodeGen.exe</Command>
     <ClInclude Include="FezTrileSet.h" />
     <ClInclude Include="FlipbookRenderUI.h" />
     <ClInclude Include="FlipbookUI.h" />
+    <ClInclude Include="FontMgr.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="func.h" />
     <ClInclude Include="GameClient.h" />
@@ -275,6 +277,7 @@ call CodeGen.exe</Command>
     <ClCompile Include="ALevel.cpp" />
     <ClCompile Include="AMesh.cpp" />
     <ClCompile Include="APrefab.cpp" />
+    <ClCompile Include="ASound.cpp" />
     <ClCompile Include="ASprite.cpp" />
     <ClCompile Include="AssetMgr_Init.cpp" />
     <ClCompile Include="Asset.cpp" />
@@ -317,6 +320,7 @@ call CodeGen.exe</Command>
     <ClCompile Include="FezTrileSet.cpp" />
     <ClCompile Include="FlipbookRenderUI.cpp" />
     <ClCompile Include="FlipbookUI.cpp" />
+    <ClCompile Include="FontMgr.cpp" />
     <ClCompile Include="func.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GifExport.cpp" />
@@ -396,6 +400,7 @@ call CodeGen.exe</Command>
     </FxCompile>
     <FxCompile Include="flipbook.fx" />
     <FxCompile Include="func.fx" />
+    <FxCompile Include="setcolor.fx" />
     <FxCompile Include="sprite.fx">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Effect</ShaderType>
       <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
