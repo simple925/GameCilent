@@ -352,6 +352,7 @@
     <ClInclude Include="Source\Scripts\CShockWaveScript.h">
       <Filter>Source\Scripts</Filter>
     </ClInclude>
+    <ClInclude Include="ASetColorCS.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="GameClient.ico">
@@ -684,6 +685,7 @@
     <ClCompile Include="Source\Scripts\CShockWaveScript.cpp">
       <Filter>Source\Scripts</Filter>
     </ClCompile>
+    <ClCompile Include="ASetColorCS.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Default">

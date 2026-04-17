@@ -103,6 +103,7 @@ int Engine::Init(HINSTANCE _hInst, UINT _Width, UINT _Height, bool _EditorMode)
     ClickMgr::GetInst()->Init();
 
     // Font 매니저 초기화
+    //FontMgr::GetInst()->Init(L"Font\\_bitmap_font____romulus_by_pix3m-d6aokem.ttf", L"Romulus");
     FontMgr::GetInst()->Init();
 
     // FMOD 초기화	

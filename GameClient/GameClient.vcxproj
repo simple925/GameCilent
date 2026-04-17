@@ -164,6 +164,7 @@ call CodeGen.exe</Command>
     <ClInclude Include="AMesh.h" />
     <ClInclude Include="AParticleTickCS.h" />
     <ClInclude Include="APrefab.h" />
+    <ClInclude Include="ASetColorCS.h" />
     <ClInclude Include="ASound.h" />
     <ClInclude Include="ASprite.h" />
     <ClInclude Include="asserts.h" />
@@ -283,6 +284,7 @@ call CodeGen.exe</Command>
     <ClCompile Include="AMesh.cpp" />
     <ClCompile Include="AParticleTickCS.cpp" />
     <ClCompile Include="APrefab.cpp" />
+    <ClCompile Include="ASetColorCS.cpp" />
     <ClCompile Include="ASound.cpp" />
     <ClCompile Include="ASprite.cpp" />
     <ClCompile Include="AssetMgr_Init.cpp" />
