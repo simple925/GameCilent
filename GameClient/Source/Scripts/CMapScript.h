@@ -1,55 +1,33 @@
 #pragma once
 #include "CScript.h"
 
-enum class MapColliderType
-{
-    Normal,
-    Trigger,    // ForceHugging - 사다리/덩굴 감지용
-};
+enum class MapColliderType { Default, Trigger };
 
-class CMapScript :
-    public CScript
+class CMapScript : public CScript
 {
 private:
-    float m_RotationSpeed;
-    float m_TargetAngle;
-    float m_CurrentAngle;
-    bool m_IsRotating;
-    vector<Ptr<GameObject>> m_vecColliderObjects;
-    bool m_bInitialized;
-    bool m_NeedUpdateColliders;
+    vector<Ptr<GameObject>>     m_vecColliderObjects;
+    bool                        m_NeedUpdateColliders;
+    int                         m_CurrentViewAngle;     // 0 / 90 / 180 / 270
 
-    bool m_NeedSetPivot;
-    float m_PendingAngle;
-
-    Ptr<CCamera> m_Camera;
-    Ptr<GameObject> m_Player;
-
-    Vec3 m_PivotPos;
-    float m_PlayerZ;
-    float m_SavedMapZ;
 public:
+    // CCamMoveScript에서 카메라 회전 완료 시 호출
+    void OnCameraRotated(int viewAngle);
+
+private:
+    void UpdateColliders();
+    Ptr<GameObject> CreateColliderObject(Vec3 worldPos, Vec2 size,
+        CollisionType colType, bool bThin,
+        MapColliderType mapColType = MapColliderType::Default);
+
+public:
+    CLONE(CMapScript);
     virtual void Begin() override;
     virtual void Tick() override;
-private:
-    void HandleInput();
-    Ptr<GameObject> CreateColliderObject(
-        Vec3 worldPos, Vec2 size, CollisionType colType,
-        bool bThin = false, MapColliderType mapColType = MapColliderType::Normal
-    );
-public:
-    void RotateBy(float angle);
-    void UpdateColliders();
-public:
-    void SetPlayer(Ptr<GameObject> _Player) { m_Player = _Player; }
-    GET_SET(float, PlayerZ);
-public:
-    // 저장 불러오기
     virtual void SaveToLevelFile(FILE* _File) override;
     virtual void LoadFromLevelFile(FILE* _File) override;
 
-    CLONE(CMapScript);
+public:
     CMapScript();
-    virtual ~CMapScript();
+    ~CMapScript();
 };
-

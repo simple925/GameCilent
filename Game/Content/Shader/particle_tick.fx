@@ -36,7 +36,7 @@ void CS_ParticleTick(int3 _ID : SV_DispatchThreadID)
 			float NormalizedThreadID = (float) _ID.x / (float) MAX_PARTICLE;
 			ParticleInit(g_Buffer[_ID.x], g_Module[0], g_tex_0, g_btex_0, NormalizedThreadID);
 		}
-		
+		/*
 		int Success = 0;
 		while (g_Spawn[0].SpawnCount)
 		{
@@ -58,6 +58,7 @@ void CS_ParticleTick(int3 _ID : SV_DispatchThreadID)
 			float NormalizedThreadID = (float) _ID.x / (float) MAX_PARTICLE;
 			ParticleInit(g_Buffer[_ID.x], g_Module[0], g_tex_0, g_btex_0, NormalizedThreadID);
 		}
+		*/
 	}
 	else
 	{

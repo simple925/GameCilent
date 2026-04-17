@@ -590,6 +590,7 @@ void CreateTestLevel()
 	// ==================
 	// PostProcess 테스트
 	// ==================
+	/*
 	Ptr<GameObject> PostProcessObj = new GameObject;
 	PostProcessObj->SetName(L"Postproces");
 
@@ -604,6 +605,7 @@ void CreateTestLevel()
 	PostProcessObj->MeshRender()->SetMaterial(FIND(AMaterial, L"DistortionMtrl"));
 
 	pLevel->AddObject(0, PostProcessObj);
+	*/
 
 	// 레벨을 변경
 	ChangeLevel(L"TestLevel");

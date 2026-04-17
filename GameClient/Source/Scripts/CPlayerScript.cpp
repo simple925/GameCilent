@@ -188,9 +188,8 @@ void CPlayerScript::Shoot()
 void CPlayerScript::Begin()
 {
 	// 사운드 재생 테스트
-	Ptr<ASound> pSound = LOAD(ASound, L"Sound\\DM.wav");
-
-	pSound->Play(0, 0.5f, false);
+	//Ptr<ASound> pSound = LOAD(ASound, L"Sound\\DM.wav");
+	//pSound->Play(0, 0.5f, false);
 }
 
 void CPlayerScript::Tick()

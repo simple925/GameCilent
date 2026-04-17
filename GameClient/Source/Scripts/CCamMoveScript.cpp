@@ -1,18 +1,40 @@
 #include "pch.h"
 #include "Source\\Scripts\\CCamMoveScript.h"
+#include "Source\\Scripts\\CPlayerScript.h"
+#include "Source\\Scripts\\CMapScript.h"
 #include "KeyMgr.h"
 #include "TimeMgr.h"
+#include "LevelMgr.h"
 #include "CTransform.h"
 CCamMoveScript::CCamMoveScript()
 	: CScript(SCRIPT_TYPE::CAMMOVESCRIPT)
 	, m_Target(nullptr)
+	, m_MapScript(nullptr)
+	, m_PlayerScript(nullptr)
 	, m_fTargetRotY(0.f)
+	, m_fCurrentRotY(0.f)
 	, m_bIsRotating(false)
+	, m_fRotationSpeed(5.f)       // 보간 속도 (클수록 빠름)
+	, m_fRotationThreshold(0.001f)
+	, m_iViewAngle(0)
 {
 }
 
 CCamMoveScript::~CCamMoveScript()
 {
+}
+
+void CCamMoveScript::Begin()
+{
+	// Map 오브젝트에서 CMapScript 탐색
+	Ptr<GameObject> mapObj = LevelMgr::GetInst()->GetLevel()->FindObjectByName(L"Map");
+	if (mapObj)
+		m_MapScript = mapObj->GetScript<CMapScript>();
+
+	// Player 오브젝트에서 CPlayerScript 탐색
+	Ptr<GameObject> playerObj = LevelMgr::GetInst()->GetLevel()->FindObjectByName(L"Player");
+	if (playerObj)
+		m_PlayerScript = playerObj->GetScript<CPlayerScript>();
 }
 
 void CCamMoveScript::Tick()
@@ -26,7 +48,6 @@ void CCamMoveScript::Tick()
 			MoveFree();
 	else
 		MoveOrthographic();
-	
 }
 
 void CCamMoveScript::MoveOrthographic()
@@ -37,7 +58,8 @@ void CCamMoveScript::MoveOrthographic()
 	{
 		vPos = m_Target->Transform()->GetRelativePos();
 	}
-	else {
+	else
+	{
 		if (KEY_PRESSED(KEY::W))
 			vPos.y += DT * 100.f;
 		if (KEY_PRESSED(KEY::S))
@@ -55,39 +77,61 @@ void CCamMoveScript::MoveOrthographic()
 void CCamMoveScript::MoveOrbit()
 {
 	if (nullptr == Transform()) return;
-	Vec3 vRot = Transform()->GetRelativeRot();
-	Vec3 vTargetPos = m_Target->Transform()->GetWorldPos();
-	Vec3 vCurPos = Transform()->GetRelativePos();
 
-	//if (KEY_TAP(KEY::F1)) m_fTargetRotY += XM_PIDIV2;
-	//if (KEY_TAP(KEY::F2)) m_fTargetRotY -= XM_PIDIV2;
+	// 회전 중 추가 입력 무시
+	if (KEY_TAP(KEY::F1))
+	{
+		m_iPrevViewAngle = m_iViewAngle;
+		m_fTargetRotY += XM_PIDIV2;
+		m_iViewAngle = (m_iViewAngle + 90) % 360;
+		m_bIsRotating = true;
+	}
+	if (KEY_TAP(KEY::F2))
+	{
+		m_iPrevViewAngle = m_iViewAngle;
+		m_fTargetRotY -= XM_PIDIV2;
+		m_iViewAngle = ((m_iViewAngle - 90) % 360 + 360) % 360;
+		m_bIsRotating = true;
+	}
 
-	// 마우스 우클릭으로 궤도 수정 시 목표값 갱신
-	//if (KEY_PRESSED(KEY::M_RBUTTON))
-	//{
-		//Vec2 vMouseDir = KeyMgr::GetInst()->GetMouseDir();
-		//m_fTargetRotY += vMouseDir.x * DT * XM_2PI;
-	//}
+	// ── 각도 보간 ─────────────────────────────────────────
+	if (m_bIsRotating)
+	{
+		m_fCurrentRotY = XMVectorGetX(XMVectorLerp(
+			XMLoadFloat(&m_fCurrentRotY),
+			XMLoadFloat(&m_fTargetRotY),
+			m_fRotationSpeed * DT));
 
-	
+		if (fabsf(m_fTargetRotY - m_fCurrentRotY) < m_fRotationThreshold)
+		{
+			m_fCurrentRotY = m_fTargetRotY;
+			m_bIsRotating = false;
+
+			OnRotationCompleted();
+		}
+	}
+
 	// 거리 및 휠 줌 기능
-	float fDist = Camera()->GetfOrbitDist();
+	//float fDist = Camera()->GetfOrbitDist();
 	//if (1 == KeyMgr::GetInst()->GetWheel()) fDist -= 100.f;
 	//if (-1 == KeyMgr::GetInst()->GetWheel()) fDist += 100.f;
 	//Camera()->SetfOrbitDist(fDist);
 
-	// 구면 좌표계 위치 계산
-	Vec3 vPos;
-	vPos.x = vTargetPos.x + sinf(m_fTargetRotY) * fDist * cosf(vRot.x);
-	vPos.y = vTargetPos.y - sinf(vRot.x) * fDist;
-	vPos.z = vTargetPos.z - cosf(m_fTargetRotY) * fDist * cosf(vRot.x);
+	// ── 공전 위치 계산 (구면 좌표계) ──────────────────────
+	Vec3  vRot = Transform()->GetRelativeRot();
+	Vec3  vTargetPos = m_Target->Transform()->GetWorldPos();
+	Vec3  vCurPos = Transform()->GetRelativePos();
+	float fDist = Camera()->GetfOrbitDist();
 
-	// 위치 보간 부드럽게 움직이도록
+	Vec3 vPos;
+	vPos.x = vTargetPos.x + sinf(m_fCurrentRotY) * fDist * cosf(vRot.x);
+	vPos.y = vTargetPos.y - sinf(vRot.x) * fDist;
+	vPos.z = vTargetPos.z - cosf(m_fCurrentRotY) * fDist * cosf(vRot.x);
+
 	Vec3 vSmoothPos = Vec3(
 		XMVectorLerp(XMLoadFloat3(&vCurPos), XMLoadFloat3(&vPos), 10.f * DT)
 	);
 
-	// LookAt용 방향 계산 (보간된 위치 기준!)
 	Vec3 vDir = vTargetPos - vSmoothPos;
 	vDir.Normalize();
 
@@ -95,10 +139,6 @@ void CCamMoveScript::MoveOrbit()
 	float pitch = -asinf(vDir.y);
 
 	Transform()->SetRelativeRot(Vec3(pitch, yaw, 0.f));
-
-
-	
-
 	Transform()->SetRelativePos(vSmoothPos);
 }
 
@@ -150,6 +190,10 @@ void CCamMoveScript::MoveFree()
 
 	Transform()->SetRelativePos(vPos);
 	Transform()->SetRelativeRot(vRot);
+}
+
+void CCamMoveScript::OnRotationCompleted()
+{
 }
 
 // 정점쉐이더 버텍스쉐이더

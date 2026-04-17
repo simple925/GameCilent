@@ -30,13 +30,13 @@ void CCubeScript::Tick()
 
 void CCubeScript::BeginOverlap(CCollider2D* _OwnCollider, CCollider2D* _OtherCollider)
 {
-	if (_OtherCollider->GetOwner()->GetName() == L"Player")
-	{
-		if (m_RootMap)
-		{
-			m_RootMap->SetPlayerZ(m_Z);
-		}
-	}
+	//if (_OtherCollider->GetOwner()->GetName() == L"Player")
+	//{
+		//if (m_RootMap)
+		//{
+			//m_RootMap->SetPlayerZ(m_Z);
+		//}
+	//}
 }
 
 
